@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bk7rxoscrt13y"]
+
+[ext_resource type="Script" uid="uid://iwpust1vsmo" path="res://Scripts/PlayerCharacter/PlayerCharacter.cs" id="1_q032g"]
+[ext_resource type="Texture2D" uid="uid://bycdlvhpt3vg" path="res://icon.svg" id="1_qt8f8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q032g"]
+size = Vector2(130, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlonj"]
+size = Vector2(130, 129)
+
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider")]
+script = ExtResource("1_q032g")
+collider = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2047861863]
+position = Vector2(0, -65)
+texture = ExtResource("1_qt8f8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1545014522]
+position = Vector2(0, -65)
+shape = SubResource("RectangleShape2D_q032g")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=56307738]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=54933080]
+position = Vector2(0, -65.5)
+shape = SubResource("RectangleShape2D_rlonj")

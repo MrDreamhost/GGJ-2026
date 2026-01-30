@@ -1,3 +1,28 @@
 [gd_scene format=3 uid="uid://ov4jdrcm0jn5"]
 
+[ext_resource type="PackedScene" uid="uid://5e2aa74bdg0" path="res://Scenes/World/Ground.tscn" id="1_tcdxw"]
+[ext_resource type="PackedScene" uid="uid://bk7rxoscrt13y" path="res://Scenes/Character/Player/PlayerCharacter.tscn" id="2_a844p"]
+[ext_resource type="PackedScene" uid="uid://cokoy0o5b4ly0" path="res://Scenes/World/Door.tscn" id="3_u6ftt"]
+
 [node name="TestMain" type="Node2D" unique_id=292979677]
+
+[node name="Ground" parent="." unique_id=1588224004 instance=ExtResource("1_tcdxw")]
+position = Vector2(1, 606)
+scale = Vector2(21.12, 1)
+
+[node name="Ground2" parent="." unique_id=1880320897 instance=ExtResource("1_tcdxw")]
+position = Vector2(689, 316)
+scale = Vector2(-1.0428832, 10.671685)
+
+[node name="PlayerCharacter" parent="." unique_id=2092427089 instance=ExtResource("2_a844p")]
+position = Vector2(222, 593)
+
+[node name="Door" parent="." unique_id=1202597749 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_u6ftt")]
+position = Vector2(577, 515)
+scale = Vector2(-6.9350214, 8.060442)
+linkedDoor = NodePath("../Door2")
+
+[node name="Door2" parent="." unique_id=769404568 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_u6ftt")]
+position = Vector2(1009.9999, 140.00003)
+scale = Vector2(7.8675056, 8.767721)
+linkedDoor = NodePath("../Door")
