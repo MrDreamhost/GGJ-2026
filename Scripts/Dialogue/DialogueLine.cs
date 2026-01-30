@@ -5,14 +5,18 @@ public partial class DialogueLine : GodotObject
 {
     public int ID;
     public string Line;
+    public int ItemId;
+    public int Amount;
     public Array<DialogueCondition> NextLines = new Array<DialogueCondition>();
     public Array<DialogueCondition> FontConditions = new Array<DialogueCondition>();
 
-    public DialogueLine(int ID, string Line)
+    public DialogueLine(int ID, string Line, int itemId, int amount)
     {
         NextLines = new Array<DialogueCondition>();
         this.ID = ID;
         this.Line = Line;
+        this.ItemId = itemId;
+        this.Amount = amount;
     }
 
     //Returns 0 if none found or acceptable, so close the dialogue box
@@ -29,5 +33,12 @@ public partial class DialogueLine : GodotObject
         }
 
         return 0;
+    }
+
+    public void PostLine()
+    {
+        if (ItemId != 0 && Amount != 0) {
+            UiManager.Instance.GetPlayer().GetInventory().AddItem(ItemId, Amount, "dialogue line "+ ID);
+        }
     }
 }

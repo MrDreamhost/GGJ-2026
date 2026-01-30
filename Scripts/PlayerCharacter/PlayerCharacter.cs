@@ -33,6 +33,7 @@ public partial class PlayerCharacter : CharacterBody2D
 		{
 			Logger.Fatal("inventory was not assigned on playerCharacter");
 		}
+		UiManager.Instance.RegisterPlayer(this);
 		base._Ready();
 	}
 

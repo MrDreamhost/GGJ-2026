@@ -62,8 +62,8 @@ public partial class DialogueManager : Node
         {
             dialogueBox.Hide();
             return;
-            
         }
+        currentLine.PostLine();
         DialogueLine nextLine = null;
         foreach (var condition in currentLine.NextLines)
         {

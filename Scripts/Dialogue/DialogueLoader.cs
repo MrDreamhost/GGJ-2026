@@ -19,6 +19,9 @@ public static class DialogueLoader
         public int ID { get; set; }
         public bool SkipLine { get; set; }
         public string Line { get; set; }
+        
+        public int ItemId { get; set; }
+        public int Amount { get; set; }
         public List<DialogueConditionDB> DialogueConditions { get; set; }
         public List<DialogueConditionDB> FontConditions { get; set; }
     }
@@ -56,7 +59,7 @@ public static class DialogueLoader
 
         foreach (var lineDb in dialogueDb.DialogueLines)
         {
-            var line = new DialogueLine(lineDb.ID, lineDb.Line);
+            var line = new DialogueLine(lineDb.ID, lineDb.Line, lineDb.ItemId, lineDb.Amount);
             if (lineDb.DialogueConditions != null)
                 line.NextLines = GenerateConditions(lineDb.DialogueConditions);
             

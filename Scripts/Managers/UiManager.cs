@@ -7,6 +7,8 @@ public partial class UiManager : Node
 
     private DialogueManager dialogueManager;
 
+    private PlayerCharacter player;
+
     public override void _Ready()
     {
         Instance = this;
@@ -15,6 +17,16 @@ public partial class UiManager : Node
     public void RegisterDialogueManager(DialogueManager dialogueManager)
     {
         this.dialogueManager = dialogueManager;
+    }
+
+    public void RegisterPlayer(PlayerCharacter player)
+    {
+        this.player = player;
+    }
+
+    public PlayerCharacter GetPlayer()
+    {
+        return player;
     }
 
     public void StartDialogueSequence(int dialogueSequence)

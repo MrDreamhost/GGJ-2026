@@ -18,7 +18,9 @@
 	},
 	{
 	  "ID": 2,
-	  "Line": "random hihi LALA"
+	  "Line": "random hihi LALA",
+		"ItemId": 2,
+		"Amount": 1
 	},
 	{
 	  "ID": 3,
