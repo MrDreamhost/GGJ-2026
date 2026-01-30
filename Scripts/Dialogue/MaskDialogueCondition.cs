@@ -3,7 +3,7 @@ using System;
 
 public partial class MaskDialogueCondition : DialogueCondition
 {
-    public override bool CheckCondition()
+    public override bool IsConditionTrue()
     {
         //TODO check for player mask
         var maskID = 2;

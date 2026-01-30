@@ -1,20 +1,19 @@
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
-using GGJ2026.Scripts.Dialogue;
 using Godot;
-using Godot.Collections;
-using FileAccess = Godot.FileAccess;
 
 public partial class DialogueManager : Node
 {
     [Export] private RichTextLabel textBox = null;
     [Export] private TextureRect dialogueBox = null;
 
+    [Export]
+    private Godot.Collections.Dictionary<string, Font> fonts = new Godot.Collections.Dictionary<string, Font>();
+
     private Godot.Collections.Dictionary<int, DialogueLine> dialogueDataBase;
 
     private string dialogueDBPath = "res://resources/DialogueDB.txt";
 
+    private string defaultFontName = "default";
+    
     private DialogueLine currentLine;
     
    
@@ -30,7 +29,12 @@ public partial class DialogueManager : Node
         {
             Logger.Fatal("DialogueManager has no dialogueBox assigned");
         }
-        dialogueBox.Hide();
+
+        if (fonts[defaultFontName] == null)
+        {
+            Logger.Fatal("No font found in the font map with 'default', cannot continue without a default fallback font");
+        }
+        dialogueBox?.Hide();
         
         //Fully Initialize before registering to UIManager
         LoadLines();
@@ -63,7 +67,7 @@ public partial class DialogueManager : Node
         DialogueLine nextLine = null;
         foreach (var condition in currentLine.NextLines)
         {
-            if (condition.CheckCondition())
+            if (condition.IsConditionTrue())
             {
                 nextLine = dialogueDataBase[condition.NextLineID];
                 if (nextLine == null)
@@ -88,8 +92,31 @@ public partial class DialogueManager : Node
             dialogueBox.Hide();
             return;
         }
+        textBox.Theme.DefaultFont = GetFontForCurrentLine();
         textBox.SetText(currentLine.Line);
         dialogueBox.Show();
+    }
+
+    private Font GetFontForCurrentLine()
+    {
+        if (currentLine == null)
+        {
+            return fonts[defaultFontName];
+        }
+        foreach (var fontCondition in currentLine.FontConditions)
+        {
+            if (fontCondition.IsConditionTrue())
+            {
+                var font = fonts[fontCondition.Font];
+                if (font != null)
+                {
+                    return font;
+                }
+                
+            }
+        }
+
+        return fonts[defaultFontName];
     }
 
     private void LoadLines()

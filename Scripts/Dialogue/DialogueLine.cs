@@ -5,7 +5,8 @@ public partial class DialogueLine : GodotObject
 {
     public int ID;
     public string Line;
-    public Array<DialogueCondition> NextLines;
+    public Array<DialogueCondition> NextLines = new Array<DialogueCondition>();
+    public Array<DialogueCondition> FontConditions = new Array<DialogueCondition>();
 
     public DialogueLine(int ID, string Line)
     {
@@ -19,7 +20,7 @@ public partial class DialogueLine : GodotObject
     {
         foreach (var line in NextLines)
         {
-            if (line.CheckCondition())
+            if (line.IsConditionTrue())
             {
                 Logger.DebugInfo("Next Line {0} chosen from current line {1}", line.NextLineID, ID);
                 return line.NextLineID;

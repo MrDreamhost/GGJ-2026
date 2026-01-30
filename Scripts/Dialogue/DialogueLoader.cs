@@ -4,7 +4,6 @@ using System.Text.Json;
 using Godot;
 using Godot.Collections;
 
-namespace GGJ2026.Scripts.Dialogue;
 
 public static class DialogueLoader
 {
@@ -13,6 +12,7 @@ public static class DialogueLoader
         public int NextLineID { get; set; }
         public string ConditionType { get; set; }
         public int ConditionValue { get; set; }
+        public string Font { get; set; }
     }
 
     public class DialogueLineDB
@@ -21,6 +21,7 @@ public static class DialogueLoader
         public bool SkipLine { get; set; }
         public string Line { get; set; }
         public List<DialogueConditionDB> DialogueConditions { get; set; }
+        public List<DialogueConditionDB> FontConditions { get; set; }
     }
 
     public class DialogueDB
@@ -54,37 +55,50 @@ public static class DialogueLoader
         {
             var line = new DialogueLine(lineDb.ID, lineDb.Line);
             if (lineDb.DialogueConditions != null)
-            {
-                foreach (var conditionDb in lineDb.DialogueConditions)
-                {
-                    DialogueCondition condition = null;
-                    switch (conditionDb.ConditionType)
-                    {
-                        case "Has_Mask":
-                            condition = new MaskDialogueCondition();
-                            break;
-                        case "Not_Has_Mask":
-                            condition = new MaskDialogueCondition();
-                            condition.Invert = true;
-                            break;
-                    }
-
-                    if (condition == null)
-                    {
-                        Logger.Error("Could not create line condition for type {0}, skipping condition",
-                            conditionDb.ConditionType);
-                        continue;
-                    }
-
-                    condition.NextLineID = conditionDb.NextLineID;
-                    condition.Value = conditionDb.ConditionValue;
-
-                    line.NextLines.Add(condition);
-                }
-            }
+                line.NextLines = GenerateConditions(lineDb.DialogueConditions);
+            
+            if (lineDb.FontConditions != null)
+                line.FontConditions = GenerateConditions(lineDb.FontConditions);
 
             dialogueList[line.ID] = line;
         }
         return dialogueList;
+    }
+
+    public static Array<DialogueCondition> GenerateConditions(List<DialogueConditionDB> conditionDbs)
+    {
+        var conditions = new Array<DialogueCondition>();
+        if (conditionDbs == null)
+        {
+            return conditions;}
+        foreach (var conditionDb in conditionDbs)
+        {
+            DialogueCondition condition = null;
+            switch (conditionDb.ConditionType)
+            {
+                case "Has_Mask":
+                    condition = new MaskDialogueCondition();
+                    break;
+                case "Not_Has_Mask":
+                    condition = new MaskDialogueCondition();
+                    condition.Invert = true;
+                    break;
+            }
+
+            if (condition == null)
+            {
+                Logger.Error("Could not create line condition for type {0}, skipping condition",
+                    conditionDb.ConditionType);
+                continue;
+            }
+
+            condition.NextLineID = conditionDb.NextLineID;
+            condition.Value = conditionDb.ConditionValue;
+            condition.Font = conditionDb.Font;
+
+            conditions.Add(condition);
+        }
+
+        return conditions;
     }
 }

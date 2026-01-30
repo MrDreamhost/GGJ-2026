@@ -10,11 +10,15 @@
 		  "ConditionValue": 1
 		},
 		{
-		  "NextLineID": 4,
+		  "NextLineID": 2,
 		  "ConditionType": "Not_Has_Mask",
 		  "ConditionValue": 1
 		}
 	  ]
+	},
+	{
+	  "ID": 2,
+	  "Line": "random hihi LALA"
 	},
 	{
 	  "ID": 3,
@@ -22,8 +26,15 @@
 	},
 	{
 	  "ID": 4,
-	  "Line": "you don't have a mask"
+	  "Line": "you don't have a MASK",
+	  "FontConditions": [
+		{
+		  "NextLineID": 4,
+		  "ConditionType": "Not_Has_Mask",
+		  "ConditionValue": 1,
+		  "Font": "gibberish"
+		}
+	  ]
 	}
   ]
-  
 }
