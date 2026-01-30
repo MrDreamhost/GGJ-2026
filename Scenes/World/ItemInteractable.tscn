@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://db0k1g0djrlaw"]
+
+[ext_resource type="PackedScene" uid="uid://dl0prki06r0nh" path="res://Scenes/World/Interactable.tscn" id="1_gp3mo"]
+[ext_resource type="Script" uid="uid://dj8a0auwlxunc" path="res://Scripts/World/ItemInteractable.cs" id="2_bmh3d"]
+
+[node name="Interactable" unique_id=1820013233 instance=ExtResource("1_gp3mo")]
+script = ExtResource("2_bmh3d")
+itemId = 0
+amount = 0

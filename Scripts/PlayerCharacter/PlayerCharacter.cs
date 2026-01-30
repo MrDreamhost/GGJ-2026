@@ -7,7 +7,7 @@ public partial class PlayerCharacter : CharacterBody2D
 	[Export] private int baseAcceleration = 50;
 	[Export] private Area2D collider = null;
 	[Export] private AudioStreamPlayer2D footsteps = null;
-
+	[Export] private PlayerInventory inventory = null;
 	private State currentState = State.EIdle;
 	
 	public enum State{EIdle, EWalk, ETalking}
@@ -27,6 +27,11 @@ public partial class PlayerCharacter : CharacterBody2D
 		if (footsteps == null)
 		{
 			Logger.Fatal("Footsteps AudioStreamPlayer2D not assigned on playerCharacter");
+		}
+
+		if (inventory == null)
+		{
+			Logger.Fatal("inventory was not assigned on playerCharacter");
 		}
 		base._Ready();
 	}
@@ -96,5 +101,9 @@ public partial class PlayerCharacter : CharacterBody2D
 		return newVelocity;
 	}
 
+	public PlayerInventory GetInventory()
+	{
+		return this.inventory;
+	}
 	
 }

@@ -1,0 +1,14 @@
+{
+	"Items": [
+		{
+		"ID": 1,
+		"name": "mask of placeholder",
+		"texturePath": "res://idkhowtohandlethisyet"
+		},
+		{
+		"ID": 2,
+		"name": "mask of temporary",
+		"texturePath": "res://idkhowtohandlethisyet"			
+		}
+	]
+}

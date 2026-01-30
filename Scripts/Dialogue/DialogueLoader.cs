@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
 using Godot;
 using Godot.Collections;
@@ -34,7 +33,7 @@ public static class DialogueLoader
         var file = FileAccess.Open(DialogueDBPath, FileAccess.ModeFlags.Read);
         if (file == null)
         {
-            Logger.Fatal("Failed to open file with path {0}", DialogueDBPath);
+            Logger.Fatal("Failed to open dialogue database file with path {0}", DialogueDBPath);
         }
         var data = file.GetAsText();
         if (data == "") {

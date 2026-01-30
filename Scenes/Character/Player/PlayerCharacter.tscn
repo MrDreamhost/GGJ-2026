@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://iwpust1vsmo" path="res://Scripts/PlayerCharacter/PlayerCharacter.cs" id="1_q032g"]
 [ext_resource type="Texture2D" uid="uid://byvjg81ldb4e3" path="res://Art/Sprites/Characters/Mage3.png" id="2_q032g"]
 [ext_resource type="AudioStream" uid="uid://ddhdh0mn7acth" path="res://Audio/Footsteps.wav" id="3_rlonj"]
+[ext_resource type="Script" uid="uid://ckcuqx6p7by8t" path="res://Scripts/PlayerCharacter/Inventory/PlayerInventory.cs" id="4_4vboh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q032g"]
 size = Vector2(24, 24)
@@ -10,10 +11,11 @@ size = Vector2(24, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlonj"]
 size = Vector2(24, 24)
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "footsteps")]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "footsteps", "inventory")]
 script = ExtResource("1_q032g")
 collider = NodePath("Area2D")
 footsteps = NodePath("Footsteps")
+inventory = NodePath("Inventory")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2047861863]
 texture = ExtResource("2_q032g")
@@ -36,3 +38,6 @@ current = true
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="." unique_id=1244662103]
 stream = ExtResource("3_rlonj")
+
+[node name="Inventory" type="Node" parent="." unique_id=1423886156]
+script = ExtResource("4_4vboh")
