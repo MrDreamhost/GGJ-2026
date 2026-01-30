@@ -1,0 +1,10 @@
+[gd_resource type="AudioStreamPlaylist" format=3 uid="uid://bq4bndssethfi"]
+
+[ext_resource type="AudioStream" uid="uid://c3qtj536ilmo7" path="res://Audio/Samples/FEETHmn-CONCRETE_AUDIOELK-Fs Concrete Shoes Pant Ruffles 02_AUDIOELK_AUDIOELK.wav" id="1_lwoye"]
+[ext_resource type="AudioStream" uid="uid://bkfd85ka78ms0" path="res://Audio/Samples/FEETHmn-CONCRETE_AUDIOELK-Fs Concrete Shoes Pant Ruffles 05_AUDIOELK_AUDIOELK.wav" id="2_cxraj"]
+
+[resource]
+fade_time = 0.02
+stream_count = 2
+stream_0 = ExtResource("1_lwoye")
+stream_1 = ExtResource("2_cxraj")

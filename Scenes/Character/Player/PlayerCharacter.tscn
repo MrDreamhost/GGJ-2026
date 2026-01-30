@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://iwpust1vsmo" path="res://Scripts/PlayerCharacter/PlayerCharacter.cs" id="1_q032g"]
 [ext_resource type="Texture2D" uid="uid://byvjg81ldb4e3" path="res://Art/Sprites/Characters/Mage3.png" id="2_q032g"]
+[ext_resource type="AudioStream" uid="uid://bq4bndssethfi" path="res://Audio/Footsteps.tres" id="3_rlonj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q032g"]
 size = Vector2(24, 24)
@@ -28,3 +29,9 @@ shape = SubResource("RectangleShape2D_q032g")
 shape = SubResource("RectangleShape2D_rlonj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1753473594]
+
+[node name="AudioListener" type="AudioListener2D" parent="." unique_id=1093205417]
+current = true
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="." unique_id=1244662103]
+stream = ExtResource("3_rlonj")
