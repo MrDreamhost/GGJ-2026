@@ -79,11 +79,11 @@ public static class DialogueLoader
                     condition.NextLine = conditionDB.NextLineID;
                     condition.Value = conditionDB.ConditionValue;
 
-                    line.NextLines.Append(condition);
+                    line.NextLines.Add(condition);
                 }
             }
 
-            DialogueList.Append(line);
+            DialogueList.Add(line);
         }
         return DialogueList;
     }
