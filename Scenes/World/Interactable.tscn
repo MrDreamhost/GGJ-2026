@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dl0prki06r0nh"]
 
-[ext_resource type="Script" uid="uid://b5l1h5emd4oqp" path="res://Scenes/World/Interactable.cs" id="1_fbpgm"]
+[ext_resource type="Script" uid="uid://b5l1h5emd4oqp" path="res://Scripts/World/Interactable.cs" id="1_fbpgm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfew6"]
 

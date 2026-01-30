@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cbw3il7ovq3p6"]
+
+[ext_resource type="Script" uid="uid://fwdmeta2y3qf" path="res://Scripts/Managers/DialogueManager.cs" id="1_jo1ms"]
+[ext_resource type="Texture2D" uid="uid://bycdlvhpt3vg" path="res://icon.svg" id="1_sd512"]
+
+[node name="Hud" type="CanvasLayer" unique_id=371431169]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=533690240]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="DialogueManager" type="Node" parent="VBoxContainer" unique_id=27897502 node_paths=PackedStringArray("textBox")]
+script = ExtResource("1_jo1ms")
+textBox = NodePath("DialogueBox/MarginContainer/TextBox")
+
+[node name="DialogueBox" type="TextureRect" parent="VBoxContainer/DialogueManager" unique_id=673553789]
+offset_top = 520.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_sd512")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/DialogueManager/DialogueBox" unique_id=462128029]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TextBox" type="RichTextLabel" parent="VBoxContainer/DialogueManager/DialogueBox/MarginContainer" unique_id=885642707]
+layout_mode = 2
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaa I AM SPEAKING WEIRD LANGUAGE AAAAAAAAAAAAAAA"

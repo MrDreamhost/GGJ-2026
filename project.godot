@@ -15,6 +15,11 @@ run/main_scene="uid://ov4jdrcm0jn5"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+UIManager="*uid://btdviqcos4ikq"
+Hud="*uid://cbw3il7ovq3p6"
+
 [dotnet]
 
 project/assembly_name="GGJ-2026"

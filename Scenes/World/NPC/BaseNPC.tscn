@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cwixy28qbt3ob"]
+
+[ext_resource type="PackedScene" uid="uid://dl0prki06r0nh" path="res://Scenes/World/Interactable.tscn" id="1_vc6wy"]
+[ext_resource type="Script" uid="uid://bbwb5jkodam1e" path="res://Scripts/World/NPC/NpcBase.cs" id="2_5h2my"]
+
+[node name="BaseNPC" unique_id=1820013233 instance=ExtResource("1_vc6wy")]
+script = ExtResource("2_5h2my")
+dialogueSequence = 0
+
+[node name="ColorRect" parent="CollisionShape2D" parent_id_path=PackedInt32Array(1653949719) index="0" unique_id=1047643334]
+color = Color(0.3615264, 0.80096495, 0.40393066, 1)

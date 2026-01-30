@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://5e2aa74bdg0" path="res://Scenes/World/Ground.tscn" id="1_tcdxw"]
 [ext_resource type="PackedScene" uid="uid://bk7rxoscrt13y" path="res://Scenes/Character/Player/PlayerCharacter.tscn" id="2_a844p"]
 [ext_resource type="PackedScene" uid="uid://cokoy0o5b4ly0" path="res://Scenes/World/Door.tscn" id="3_u6ftt"]
+[ext_resource type="PackedScene" uid="uid://cwixy28qbt3ob" path="res://Scenes/World/NPC/BaseNPC.tscn" id="4_qxe6s"]
 
 [node name="TestMain" type="Node2D" unique_id=292979677]
 
@@ -26,3 +27,11 @@ linkedDoor = NodePath("../Door2")
 position = Vector2(1009.9999, 140.00003)
 scale = Vector2(7.8675056, 8.767721)
 linkedDoor = NodePath("../Door")
+
+[node name="Interactable" parent="." unique_id=1820013233 instance=ExtResource("4_qxe6s")]
+position = Vector2(-156, 541)
+dialogueSequence = 18
+
+[node name="Interactable2" parent="." unique_id=870214802 instance=ExtResource("4_qxe6s")]
+position = Vector2(105, 537)
+dialogueSequence = 14
