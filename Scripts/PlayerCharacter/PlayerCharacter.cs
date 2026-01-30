@@ -6,6 +6,7 @@ public partial class PlayerCharacter : CharacterBody2D
 	[Export] private int baseSpeed = 300;
 	[Export] private int baseAcceleration = 50;
 	[Export] private Area2D collider = null;
+	[Export] private AudioStreamPlayer2D footsteps = null;
 
 	private State currentState = State.EIdle;
 	
@@ -22,13 +23,18 @@ public partial class PlayerCharacter : CharacterBody2D
 		{
 			Logger.Fatal("Area2D collider not assigned on playerCharacter");
 		}
+
+		if (footsteps == null)
+		{
+			Logger.Fatal("Footsteps AudioStreamPlayer2D not assigned on playerCharacter");
+		}
 		base._Ready();
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		ProcessInputs();
-		SetVelocity(new Vector2(ProcessHorizontalInput(), ProcessVerticalInput()));
+		SetVelocity(ProcessMovementInput());
 		UpdateState();
 		MoveAndSlide();
 		base._PhysicsProcess(delta);
@@ -60,36 +66,35 @@ public partial class PlayerCharacter : CharacterBody2D
 		switch (currentState)
 		{
 			case State.EIdle:
-				if (Velocity.X != 0)
+				if (Velocity.X != 0 || Velocity.Y != 0)
+				{
+					if (!footsteps.Playing)
+						footsteps.Play();
+					
 					currentState = State.EWalk;
+				}
+
 				break;
 			case State.EWalk:
-				if (Velocity.X == 0)
+				if (Velocity.X == 0 && Velocity.Y == 0)
+				{
+					footsteps.Stop();
 					currentState = State.EIdle;
+				}
+
 				break;
 		}
 	}
 
-	private float ProcessHorizontalInput()
+	private Vector2 ProcessMovementInput()
 	{
-		var direction = 0;
-		if (Input.IsActionPressed("move_left"))
-			direction -= 1;
-		if (Input.IsActionPressed("move_right"))
-			direction += 1;
-
-		return Mathf.MoveToward(Velocity.X, direction * baseSpeed, baseAcceleration);
+		Vector2 direction = Input.GetVector("move_left", "move_right", "move_up", "move_down");
+		
+		Vector2 newVelocity = Velocity;
+		newVelocity.X = Mathf.MoveToward(Velocity.X, (direction * baseSpeed).X, baseAcceleration);
+		newVelocity.Y = Mathf.MoveToward(Velocity.Y, (direction * baseSpeed).Y, baseAcceleration);
+		return newVelocity;
 	}
 
-	private float ProcessVerticalInput()
-	{
-		var direction = 0;
-		if (Input.IsActionPressed("move_up"))
-			direction -= 1;
-		if (Input.IsActionPressed("move_down"))
-			direction += 1;
-
-		return Mathf.MoveToward(Velocity.Y, direction * baseSpeed, baseAcceleration);
-	}
 	
 }
