@@ -28,7 +28,7 @@ public partial class PlayerCharacter : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         ProcessInputs();
-        SetVelocity(new Vector2(ProcessHorizontalInput(), 0));
+        SetVelocity(new Vector2(ProcessHorizontalInput(), ProcessVerticalInput()));
         UpdateState();
         MoveAndSlide();
         base._PhysicsProcess(delta);
@@ -79,6 +79,17 @@ public partial class PlayerCharacter : CharacterBody2D
             direction += 1;
 
         return Mathf.MoveToward(Velocity.X, direction * baseSpeed, baseAcceleration);
+    }
+
+    private float ProcessVerticalInput()
+    {
+        var direction = 0;
+        if (Input.IsActionPressed("move_up"))
+            direction -= 1;
+        if (Input.IsActionPressed("move_down"))
+            direction += 1;
+
+        return Mathf.MoveToward(Velocity.Y, direction * baseSpeed, baseAcceleration);
     }
     
 }
