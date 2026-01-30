@@ -32,6 +32,10 @@ public static class DialogueLoader
     public static Godot.Collections.Dictionary<int, DialogueLine> LoadLines(string DialogueDBPath)
     {
         var file = FileAccess.Open(DialogueDBPath, FileAccess.ModeFlags.Read);
+        if (file == null)
+        {
+            Logger.Fatal("Failed to open file with path {0}", DialogueDBPath);
+        }
         var data = file.GetAsText();
         if (data == "") {
             Logger.Fatal("Failed to read Dialogue line data from json with path {0}", DialogueDBPath);

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fwdmeta2y3qf" path="res://Scripts/Managers/DialogueManager.cs" id="1_jo1ms"]
 [ext_resource type="Texture2D" uid="uid://bycdlvhpt3vg" path="res://icon.svg" id="1_sd512"]
-[ext_resource type="FontFile" uid="uid://c2nkbbf83pemc" path="res://Test.ttf" id="3_psnte"]
+[ext_resource type="FontFile" uid="uid://c2nkbbf83pemc" path="res://resources/Test.ttf" id="3_psnte"]
 
 [sub_resource type="SystemFont" id="SystemFont_psnte"]
 
