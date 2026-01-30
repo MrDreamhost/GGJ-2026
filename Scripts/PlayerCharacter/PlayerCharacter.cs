@@ -48,6 +48,11 @@ public partial class PlayerCharacter : CharacterBody2D
                 }
             }
         }
+
+        if (Input.IsActionJustReleased("progress_dialogue"))
+        {
+            UiManager.Instance.ContinueDialogueSequence();
+        }
     }
     
     private void UpdateState()

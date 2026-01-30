@@ -21,10 +21,10 @@ public partial class DialogueLine : GodotObject
         {
             if (line.CheckCondition())
             {
-                Logger.DebugInfo("Next Line {0} chosen from current line {1}", line.NextLine, ID);
-                return line.NextLine;
+                Logger.DebugInfo("Next Line {0} chosen from current line {1}", line.NextLineID, ID);
+                return line.NextLineID;
             }
-            Logger.DebugInfo("Next Line {0} NOT chosen from current line {1}", line.NextLine, ID);
+            Logger.DebugInfo("Next Line {0} NOT chosen from current line {1}", line.NextLineID, ID);
         }
 
         return 0;

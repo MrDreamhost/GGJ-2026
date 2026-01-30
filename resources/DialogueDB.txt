@@ -1,23 +1,6 @@
 {
   "DialogueLines": [
 	{
-	  "ID": 3,
-	  "SkipLine": true,
-	  "Line": "",
-	  "DialogueConditions": [
-		{
-		  "NextLineID": 3,
-		  "ConditionType": "Has_Mask",
-		  "ConditionValue": 1
-		},
-		{
-		  "NextLineID": 4,
-		  "ConditionType": "Has_Mask",
-		  "ConditionValue": 2
-		}
-	  ]
-	},
-	{
 	  "ID": 1,
 	  "Line": "Meep morp",
 	  "DialogueConditions": [

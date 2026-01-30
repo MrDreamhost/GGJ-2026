@@ -13,9 +13,10 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
-[node name="DialogueManager" type="Node" parent="VBoxContainer" unique_id=27897502 node_paths=PackedStringArray("textBox")]
+[node name="DialogueManager" type="Node" parent="VBoxContainer" unique_id=27897502 node_paths=PackedStringArray("textBox", "dialogueBox")]
 script = ExtResource("1_jo1ms")
 textBox = NodePath("DialogueBox/MarginContainer/TextBox")
+dialogueBox = NodePath("DialogueBox")
 
 [node name="DialogueBox" type="TextureRect" parent="VBoxContainer/DialogueManager" unique_id=673553789]
 offset_top = 520.0

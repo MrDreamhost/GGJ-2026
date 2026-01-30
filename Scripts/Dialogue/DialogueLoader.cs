@@ -28,7 +28,7 @@ public static class DialogueLoader
         public List<DialogueLineDB> DialogueLines { get; set; }
     }
     
-    public static Array<DialogueLine> LoadLines(string DialogueDBPath)
+    public static Godot.Collections.Dictionary<int, DialogueLine> LoadLines(string DialogueDBPath)
     {
         var file = FileAccess.Open(DialogueDBPath, FileAccess.ModeFlags.Read);
         var data = file.GetAsText();
@@ -46,19 +46,19 @@ public static class DialogueLoader
         return GenerateDialogueLines(dataDb);
     }
 
-    public static Array<DialogueLine> GenerateDialogueLines(DialogueDB dialogueDb)
+    public static Godot.Collections.Dictionary<int, DialogueLine> GenerateDialogueLines(DialogueDB dialogueDb)
     {
-        var DialogueList = new Array<DialogueLine>();
+        var dialogueList = new Godot.Collections.Dictionary<int, DialogueLine>();
 
-        foreach (var lineDB in dialogueDb.DialogueLines)
+        foreach (var lineDb in dialogueDb.DialogueLines)
         {
-            var line = new DialogueLine(lineDB.ID, lineDB.Line);
-            if (lineDB.DialogueConditions != null)
+            var line = new DialogueLine(lineDb.ID, lineDb.Line);
+            if (lineDb.DialogueConditions != null)
             {
-                foreach (var conditionDB in lineDB.DialogueConditions)
+                foreach (var conditionDb in lineDb.DialogueConditions)
                 {
                     DialogueCondition condition = null;
-                    switch (conditionDB.ConditionType)
+                    switch (conditionDb.ConditionType)
                     {
                         case "Has_Mask":
                             condition = new MaskDialogueCondition();
@@ -72,19 +72,19 @@ public static class DialogueLoader
                     if (condition == null)
                     {
                         Logger.Error("Could not create line condition for type {0}, skipping condition",
-                            conditionDB.ConditionType);
+                            conditionDb.ConditionType);
                         continue;
                     }
 
-                    condition.NextLine = conditionDB.NextLineID;
-                    condition.Value = conditionDB.ConditionValue;
+                    condition.NextLineID = conditionDb.NextLineID;
+                    condition.Value = conditionDb.ConditionValue;
 
                     line.NextLines.Add(condition);
                 }
             }
 
-            DialogueList.Add(line);
+            dialogueList[line.ID] = line;
         }
-        return DialogueList;
+        return dialogueList;
     }
 }

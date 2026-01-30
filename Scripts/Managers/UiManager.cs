@@ -17,7 +17,7 @@ public partial class UiManager : Node
         this.dialogueManager = dialogueManager;
     }
 
-    public void StartDialogueSequence(int dialogueSequence) //TODO create dialogue sequence struct
+    public void StartDialogueSequence(int dialogueSequence)
     {
         if (dialogueManager == null)
         {
@@ -26,5 +26,15 @@ public partial class UiManager : Node
         }
         Logger.Info("Starting Dialogue Sequence {0}", dialogueSequence);
         dialogueManager.StartDialogueSequence(dialogueSequence);
+    }
+
+    public void ContinueDialogueSequence()
+    {
+        if (dialogueManager == null)
+        {
+            Logger.Fatal("UIManager has no active reference to the DialogueManager");
+            return;
+        }
+        dialogueManager.ProcessNextLine();
     }
 }

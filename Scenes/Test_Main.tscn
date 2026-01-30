@@ -30,8 +30,8 @@ linkedDoor = NodePath("../Door")
 
 [node name="Interactable" parent="." unique_id=1820013233 instance=ExtResource("4_qxe6s")]
 position = Vector2(-156, 541)
-dialogueSequence = 18
+dialogueSequence = 1
 
 [node name="Interactable2" parent="." unique_id=870214802 instance=ExtResource("4_qxe6s")]
 position = Vector2(105, 537)
-dialogueSequence = 14
+dialogueSequence = 4
