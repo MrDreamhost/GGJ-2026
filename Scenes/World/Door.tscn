@@ -5,7 +5,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7hfi"]
 
 [node name="Door" type="Area2D" unique_id=1202597749]
-position = Vector2(1, 1)
 script = ExtResource("1_q6uv2")
 teleportOffset = Vector2(0, 90)
 
@@ -13,6 +12,7 @@ teleportOffset = Vector2(0, 90)
 shape = SubResource("RectangleShape2D_x7hfi")
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D" unique_id=1399126926]
+visible = false
 offset_left = -10.0
 offset_top = -10.0
 offset_right = 30.0

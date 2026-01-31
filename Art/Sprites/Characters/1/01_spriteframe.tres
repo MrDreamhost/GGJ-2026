@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://d4njcdnth2p57"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dbxrkknxs2rrv"]
 
 [ext_resource type="Texture2D" uid="uid://3liagko1m0ox" path="res://Art/Sprites/Characters/1/D_Idle.png" id="1_u86ol"]
 [ext_resource type="Texture2D" uid="uid://bv18tcfs47ev8" path="res://Art/Sprites/Characters/1/D_Walk.png" id="2_f3cao"]
