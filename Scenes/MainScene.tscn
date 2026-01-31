@@ -10,8 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://dra0f2hukoppn" path="res://Art/Sprites/Stairs_To_Secret.png" id="6_xb4mg"]
 [ext_resource type="Script" uid="uid://bbwb5jkodam1e" path="res://Scripts/World/NPC/NpcBase.cs" id="7_0iob3"]
 [ext_resource type="AudioStream" uid="uid://ckyjx8p37wsvh" path="res://Audio/Click.wav" id="8_4b75m"]
+[ext_resource type="SpriteFrames" uid="uid://bs7p03qaejxes" path="res://Art/Sprites/Characters/4/04_spriteframe.tres" id="9_6t1o7"]
 [ext_resource type="Texture2D" uid="uid://cubvyqsk17tpa" path="res://Art/Sprites/Book.png" id="9_8ju71"]
+[ext_resource type="SpriteFrames" uid="uid://dbxrkknxs2rrv" path="res://Art/Sprites/Characters/1/01_spriteframe.tres" id="10_5qxwa"]
 [ext_resource type="Texture2D" uid="uid://dohuj6sy2l7k1" path="res://Art/Sprites/FloatingSkull.png" id="11_6t1o7"]
+[ext_resource type="Texture2D" uid="uid://cjh4tk21oenmi" path="res://Art/Sprites/Characters/4/U_Special.png" id="11_xc4hf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q68mp"]
 atlas = ExtResource("2_y4jh7")
@@ -265,47 +268,106 @@ teleportOffset = Vector2(0, 0)
 position = Vector2(152, -180)
 dialogueSequence = 1
 
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Mage1" index="2" unique_id=1647837962]
+sprite_frames = ExtResource("9_6t1o7")
+animation = &"Left_Idle"
+autoplay = "Left_Idle"
+
 [node name="Mage2" parent="Interactable Objects/NPCs/Entrance Hall" unique_id=1327380156 instance=ExtResource("4_7rqgy")]
-position = Vector2(-261, 12)
+position = Vector2(-222, 41)
 dialogueSequence = 2
 
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Mage2" index="2" unique_id=1647837962]
+sprite_frames = ExtResource("9_6t1o7")
+animation = &"Up_Idle"
+autoplay = "Up_Idle"
+
 [node name="Artisan 1" parent="Interactable Objects/NPCs/Entrance Hall" unique_id=1474985067 instance=ExtResource("4_7rqgy")]
-position = Vector2(-52, -84)
+position = Vector2(-55, -81)
 dialogueSequence = 9991
+
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Artisan 1" index="2" unique_id=1647837962]
+sprite_frames = ExtResource("10_5qxwa")
+autoplay = "Down_Idle"
+frame_progress = 0.43179652
 
 [node name="Workshop" type="Node" parent="Interactable Objects/NPCs" unique_id=95255290]
 
 [node name="Mage1" parent="Interactable Objects/NPCs/Workshop" unique_id=153241482 instance=ExtResource("4_7rqgy")]
-position = Vector2(-1117, -124)
+position = Vector2(-1097, -134)
 dialogueSequence = 3
 
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Workshop/Mage1" index="2" unique_id=1647837962]
+sprite_frames = ExtResource("9_6t1o7")
+animation = &"Left_Idle"
+autoplay = "Left_Idle"
+
 [node name="Mage2" parent="Interactable Objects/NPCs/Workshop" unique_id=212940733 instance=ExtResource("4_7rqgy")]
-position = Vector2(-1605, 70)
+position = Vector2(-1601, 79)
 dialogueSequence = 4
 
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Workshop/Mage2" index="2" unique_id=1647837962]
+sprite_frames = ExtResource("9_6t1o7")
+autoplay = "Down_Idle"
+frame_progress = 0.7150288
+
 [node name="Artisan 1" parent="Interactable Objects/NPCs/Workshop" unique_id=977939756 instance=ExtResource("4_7rqgy")]
-position = Vector2(-1455, -173)
+position = Vector2(-1448, -207)
 dialogueSequence = 53
+
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Workshop/Artisan 1" index="2" unique_id=1647837962]
+sprite_frames = ExtResource("10_5qxwa")
+animation = &"Up_Special"
+autoplay = "Up_Special"
+frame_progress = 0.66189986
 
 [node name="Library" type="Node" parent="Interactable Objects/NPCs" unique_id=1002721591]
 
 [node name="Mage1" parent="Interactable Objects/NPCs/Library" unique_id=2100291416 instance=ExtResource("4_7rqgy")]
-position = Vector2(1232, -66)
+position = Vector2(1231, -62)
 dialogueSequence = 5
 
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Mage1" index="2" unique_id=1647837962]
+sprite_frames = ExtResource("9_6t1o7")
+autoplay = "Down_Idle"
+
 [node name="Mage2" parent="Interactable Objects/NPCs/Library" unique_id=1431913109 instance=ExtResource("4_7rqgy")]
-position = Vector2(1274, -338)
+position = Vector2(1224, -333)
 dialogueSequence = 6
 
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Mage2" index="2" unique_id=1647837962]
+sprite_frames = ExtResource("9_6t1o7")
+animation = &"Up_Idle"
+autoplay = "Up_Idle"
+
 [node name="Artisan 1" parent="Interactable Objects/NPCs/Library" unique_id=748979280 instance=ExtResource("4_7rqgy")]
-position = Vector2(1467, -180)
+position = Vector2(1465, -186)
 dialogueSequence = 54
 
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Artisan 1" index="2" unique_id=1647837962]
+sprite_frames = ExtResource("10_5qxwa")
+animation = &"Up_Idle"
+frame_progress = 0.5768061
+
 [node name="Library2" type="Node" parent="Interactable Objects/NPCs" unique_id=1744797719]
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactable Objects/NPCs/Library2" unique_id=500019037]
+position = Vector2(-118, 915.00006)
+rotation = -1.9168528
+texture = ExtResource("11_xc4hf")
+hframes = 6
+frame = 3
 
 [node name="Archmage" parent="Interactable Objects/NPCs/Library2" unique_id=1522918636 instance=ExtResource("4_7rqgy")]
 position = Vector2(-120, 906)
 dialogueSequence = 101
+
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library2/Archmage" index="2" unique_id=1647837962]
+sprite_frames = ExtResource("9_6t1o7")
+animation = &"Archmage"
+frame_progress = 0.47969854
+speed_scale = 1.0
+flip_h = true
 
 [node name="Objects" type="Node" parent="Interactable Objects" unique_id=173522546]
 
@@ -367,4 +429,15 @@ stream = ExtResource("8_4b75m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactable Objects/Objects/The Orb" unique_id=855788774]
 sprite_frames = SubResource("SpriteFrames_i0j58")
 autoplay = "default"
-frame_progress = 0.65730524
+frame_progress = 0.24878907
+
+[editable path="Interactable Objects/NPCs/Entrance Hall/Mage1"]
+[editable path="Interactable Objects/NPCs/Entrance Hall/Mage2"]
+[editable path="Interactable Objects/NPCs/Entrance Hall/Artisan 1"]
+[editable path="Interactable Objects/NPCs/Workshop/Mage1"]
+[editable path="Interactable Objects/NPCs/Workshop/Mage2"]
+[editable path="Interactable Objects/NPCs/Workshop/Artisan 1"]
+[editable path="Interactable Objects/NPCs/Library/Mage1"]
+[editable path="Interactable Objects/NPCs/Library/Mage2"]
+[editable path="Interactable Objects/NPCs/Library/Artisan 1"]
+[editable path="Interactable Objects/NPCs/Library2/Archmage"]

@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://ckyjx8p37wsvh" path="res://Audio/Click.wav" id="2_rfew6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfew6"]
+size = Vector2(36, 38)
 
 [node name="Interactable" type="Area2D" unique_id=1820013233 node_paths=PackedStringArray("audioStreamPlayer")]
 script = ExtResource("1_fbpgm")

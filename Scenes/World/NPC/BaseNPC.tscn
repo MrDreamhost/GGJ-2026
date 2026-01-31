@@ -2,10 +2,25 @@
 
 [ext_resource type="PackedScene" uid="uid://dl0prki06r0nh" path="res://Scenes/World/Interactable.tscn" id="1_vc6wy"]
 [ext_resource type="Script" uid="uid://bbwb5jkodam1e" path="res://Scripts/World/NPC/NpcBase.cs" id="2_5h2my"]
+[ext_resource type="SpriteFrames" uid="uid://coi78gjxjmtkt" path="res://Art/Sprites/Characters/2/02_spriteframe.tres" id="3_8w5cf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35iup"]
 
 [node name="BaseNPC" unique_id=1820013233 instance=ExtResource("1_vc6wy")]
 script = ExtResource("2_5h2my")
 dialogueSequence = 0
 
 [node name="ColorRect" parent="CollisionShape2D" parent_id_path=PackedInt32Array(1653949719) index="0" unique_id=1047643334]
+visible = false
 color = Color(0.3615264, 0.80096495, 0.40393066, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=1647837962]
+sprite_frames = ExtResource("3_8w5cf")
+animation = &"Down_Idle"
+speed_scale = 0.8
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3" unique_id=234746088]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=291867884]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_35iup")
