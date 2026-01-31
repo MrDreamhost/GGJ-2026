@@ -1,3 +1,15 @@
 [gd_resource type="Theme" format=3 uid="uid://boqxxkie5r1f6"]
 
+[ext_resource type="StyleBox" uid="uid://chtj4xnapelte" path="res://Art/UIAssets/StyleBoxes/StyleBox_TextBox.tres" id="1_lmais"]
+
 [resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0.4817894, 0.4817894, 0.48179042, 1)
+Button/colors/font_hover_color = Color(0.54497427, 0.5449743, 0.5449741, 1)
+Button/colors/font_hover_pressed_color = Color(0.66245234, 0.66245234, 0.6624523, 1)
+Button/colors/font_outline_color = Color(0.16924527, 0.1692453, 0.16924527, 1)
+Button/colors/font_pressed_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
+Button/constants/outline_size = 1
+Panel/styles/panel = ExtResource("1_lmais")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)

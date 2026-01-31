@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://blwl4xmxir15x" path="res://Scripts/UI/HudVignette.cs" id="1_s3jbq"]
 [ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="3_w0blg"]
 [ext_resource type="AudioStream" uid="uid://c0cyg85ifiyqx" path="res://Audio/Voice Reactions/Voice_Female_V1_Laugh_Short_Mono_08.wav" id="4_g8s2e"]
-[ext_resource type="Script" uid="uid://4xrlkhusjcn8" path="res://Scripts/UI/TimerLabel.cs" id="4_w0blg"]
+[ext_resource type="Script" path="res://Scripts/UI/TimerLabel.cs" id="4_w0blg"]
 [ext_resource type="AudioStream" uid="uid://bdpmw5k7dj5sy" path="res://Audio/Voice Reactions/Voice_Female_V1_Reflexion_Mouth_Close_Mono_11.wav" id="5_t385i"]
 [ext_resource type="AudioStream" uid="uid://beeo7gilgosl3" path="res://Audio/Voice Reactions/Voice_Female_V1_Sigh_Mono_14.wav" id="6_nfm57"]
 [ext_resource type="AudioStream" uid="uid://dr810w6ttdy4j" path="res://Audio/Voice Reactions/Voice_Female_V2_Reflexion_Mouth_Close_Mono_05.wav" id="7_xuldq"]
@@ -17,15 +17,13 @@
 [ext_resource type="AudioStream" uid="uid://ct7dbko2a52gh" path="res://Audio/Voice Reactions/Voice_Male_V2_Sigh_Mono_02.wav" id="13_g6jqq"]
 [ext_resource type="AudioStream" uid="uid://ckyjx8p37wsvh" path="res://Audio/Click.wav" id="14_5ouvn"]
 [ext_resource type="FontFile" uid="uid://di5mcjvv6dbmj" path="res://resources/Gibberish_v1-Regular.ttf" id="15_5ouvn"]
+[ext_resource type="FontFile" uid="uid://d074ain5jl370" path="res://resources/Kenney Pixel.ttf" id="16_w0blg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g8s2e"]
 shader = ExtResource("1_c3eba")
 shader_parameter/vignette_color = Color(0, 0, 0, 1)
 shader_parameter/intensity = 0.4
 shader_parameter/softness = 0.6
-
-[sub_resource type="SystemFont" id="SystemFont_psnte"]
-subpixel_positioning = 0
 
 [sub_resource type="Theme" id="Theme_psnte"]
 
@@ -78,7 +76,7 @@ audioFiles = Dictionary[String, AudioStreamWAV]({
 })
 audioPlayer = NodePath("DialogueAudioPlayer")
 fonts = Dictionary[String, Font]({
-"default": SubResource("SystemFont_psnte"),
+"default": ExtResource("16_w0blg"),
 "gibberish": ExtResource("15_5ouvn")
 })
 
