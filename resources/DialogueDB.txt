@@ -53,7 +53,13 @@
 	},
 	{
 	  "ID": 6,
-	  "Line": "SPEAKING WITH SPECIAL FONT - special font"
+	  "Line": "SPEAKING WITH SPECIAL FONT - special font",
+	"DialogueConditionGroups": [
+		{
+		  "NextLineID": 4,
+		  "DialogueConditions": []
+		}
+	  ]
 	},
 	{
 	  "ID": 7,

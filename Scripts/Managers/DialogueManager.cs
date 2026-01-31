@@ -127,4 +127,13 @@ public partial class DialogueManager : Node
             Logger.Fatal("Failed to load Dialogue Database");
         }
     }
+
+    public int GetCurrentLine()
+    {
+        if (currentLine == null)
+        {
+            return 0;}
+
+        return currentLine.ID;
+    }
 }

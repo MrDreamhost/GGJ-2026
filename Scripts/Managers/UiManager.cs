@@ -49,4 +49,15 @@ public partial class UiManager : Node
         }
         dialogueManager.ProcessNextLine();
     }
+
+    public int GetCurrentDialogueLine()
+    {
+        if (dialogueManager == null)
+        {
+            Logger.Fatal("UIManager has no active reference to the DialogueManager");
+            return 0;
+        }
+
+        return dialogueManager.GetCurrentLine();
+    }
 }
