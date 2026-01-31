@@ -218,7 +218,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DialogueManager" type="PanelContainer" parent="VBoxContainer" unique_id=1894326365 node_paths=PackedStringArray("textBox", "dialogueBox", "audioPlayer", "choiceBox1", "choiceBox1Text", "choiceBox2", "choiceBox2Text", "choiceBox3", "choiceBox3Text")]
+[node name="DialogueManager" type="PanelContainer" parent="VBoxContainer" unique_id=1894326365 node_paths=PackedStringArray("textBox", "dialogueBox", "audioPlayer", "choiceBox1", "choiceBox1Text", "choiceBox2", "choiceBox2Text", "choiceBox3", "choiceBox3Text", "nameTag", "nameTagBox")]
 layout_mode = 2
 script = ExtResource("1_jo1ms")
 textBox = NodePath("DialogueBox/MarginContainer/TextBox")
@@ -243,6 +243,8 @@ choiceBox2 = NodePath("../HBoxContainer/VBoxContainer/ChoiceBox2")
 choiceBox2Text = NodePath("../HBoxContainer/VBoxContainer/ChoiceBox2/HBoxContainer/ChoiceBox2Text")
 choiceBox3 = NodePath("../HBoxContainer/VBoxContainer/ChoiceBox3")
 choiceBox3Text = NodePath("../HBoxContainer/VBoxContainer/ChoiceBox3/HBoxContainer/ChoiceBox3Text")
+nameTag = NodePath("MarginContainer/Panel/NameTagLabel")
+nameTagBox = NodePath("MarginContainer/Panel")
 fonts = Dictionary[String, Font]({
 "default": ExtResource("16_w0blg"),
 "gibberish": ExtResource("15_5ouvn")
@@ -273,3 +275,35 @@ theme = SubResource("Theme_psnte")
 text = "a ihi HAHA HIHI aaaa I AM SPEAKING WEIRD LANGUAGE AAAAAAAAAAAAAAA"
 
 [node name="DialogueAudioPlayer" type="AudioStreamPlayer2D" parent="VBoxContainer/DialogueManager" unique_id=735548018]
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/DialogueManager" unique_id=927326797]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = -15
+
+[node name="Panel" type="Panel" parent="VBoxContainer/DialogueManager/MarginContainer" unique_id=1573180182]
+custom_minimum_size = Vector2(75, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="NameTagLabel" type="RichTextLabel" parent="VBoxContainer/DialogueManager/MarginContainer/Panel" unique_id=1744630437]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -48.0
+offset_right = 100.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+text = "Mage"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

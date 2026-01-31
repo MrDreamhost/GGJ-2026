@@ -13,6 +13,8 @@ public partial class DialogueManager : Node
     [Export] private RichTextLabel choiceBox2Text = null;
     [Export] private Panel choiceBox3 = null;
     [Export] private RichTextLabel choiceBox3Text = null;
+    [Export] private RichTextLabel nameTag = null;
+    [Export] private Panel nameTagBox = null;
     
 
     [Export]
@@ -81,7 +83,18 @@ public partial class DialogueManager : Node
         {
             Logger.Fatal("DialogueManager has no choiceBox3Text assigned");
         }
+
+        if (nameTag == null)
+        {
+            Logger.Fatal("DialogueManager has no nameTag assigned");
+        }
+
+        if (nameTagBox == null)
+        {
+            Logger.Fatal("DialogueManager has no nameTagBox assigned");
+        }
         dialogueBox?.Hide();
+        nameTagBox.Hide();
         choiceBox1.Hide();
         choiceBox2.Hide();
         choiceBox3.Hide();
@@ -111,6 +124,7 @@ public partial class DialogueManager : Node
         if (currentLine == null)
         {
             dialogueBox.Hide();
+            nameTagBox.Hide();
             return;
         }
 
@@ -146,10 +160,17 @@ public partial class DialogueManager : Node
         if (currentLine == null)
         {
             dialogueBox.Hide();
+            nameTagBox.Hide();
             return;
         }
         textBox.Theme.DefaultFont = GetFontForCurrentLine();
         textBox.SetText(currentLine.Line);
+        nameTagBox.Hide();
+        if (currentLine.Name != null && currentLine.Name != "")
+        {
+            nameTag.SetText(currentLine.Name);
+            nameTagBox.Show();
+        }
         dialogueBox.Show();
 
         if (currentLine.AudioPath != "")

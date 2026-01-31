@@ -92,6 +92,7 @@
 	  "ID": 52,
 	  "Line": "The Workshop Button is in the water",
 	  "Audio": "M_Laugh",
+	  "Name": "Temporary",
 	  "FontConditionGroups": [{
 		"Font": "gibberish", 
 		"FontConditions": [{

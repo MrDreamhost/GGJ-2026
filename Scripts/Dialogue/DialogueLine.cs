@@ -8,6 +8,7 @@ public partial class DialogueLine : GodotObject
     public int ItemId;
     public int Amount;
     public string AudioPath;
+    public string Name;
     public Array<DialogueConditionGroup> NextLines = new Array<DialogueConditionGroup>();
     public Array<DialogueConditionGroup> FontConditions = new Array<DialogueConditionGroup>();
     public Array<PlayerFlag> ChangeFlags = new Array<PlayerFlag>();

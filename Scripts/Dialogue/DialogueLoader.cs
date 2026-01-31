@@ -36,7 +36,7 @@ public static class DialogueLoader
         public bool SkipLine { get; set; }
         public string Line { get; set; }
         public string Audio { get; set; }
-        
+        public string Name { get; set; }
         public int ItemId { get; set; }
         public int Amount { get; set; }
         public List<DialogueConditionGroupDB> DialogueConditionGroups { get; set; }
@@ -86,6 +86,7 @@ public static class DialogueLoader
         {
             var line = new DialogueLine(lineDb.ID, lineDb.Line, lineDb.ItemId, lineDb.Amount);
             line.AudioPath = lineDb.Audio;
+            line.Name = lineDb.Name;
             if (lineDb.DialogueConditionGroups != null)
             {
                 foreach (var conditionGroupDb in lineDb.DialogueConditionGroups)
