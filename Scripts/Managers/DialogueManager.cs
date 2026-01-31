@@ -15,6 +15,7 @@ public partial class DialogueManager : Node
     [Export] private RichTextLabel choiceBox3Text = null;
     [Export] private RichTextLabel nameTag = null;
     [Export] private Panel nameTagBox = null;
+    [Export] private MarginContainer nextIcon = null;
     
 
     [Export]
@@ -93,7 +94,13 @@ public partial class DialogueManager : Node
         {
             Logger.Fatal("DialogueManager has no nameTagBox assigned");
         }
+
+        if (nextIcon == null)
+        {
+            Logger.Fatal("DialogueManager has no nextIcon assigned");
+        }
         dialogueBox?.Hide();
+        nextIcon.Hide();
         nameTagBox.Hide();
         choiceBox1.Hide();
         choiceBox2.Hide();
@@ -124,6 +131,7 @@ public partial class DialogueManager : Node
         if (currentLine == null)
         {
             dialogueBox.Hide();
+            nextIcon.Hide();
             nameTagBox.Hide();
             return;
         }
@@ -160,6 +168,7 @@ public partial class DialogueManager : Node
         if (currentLine == null)
         {
             dialogueBox.Hide();
+            nextIcon.Hide();
             nameTagBox.Hide();
             return;
         }
@@ -172,6 +181,7 @@ public partial class DialogueManager : Node
             nameTagBox.Show();
         }
         dialogueBox.Show();
+        nextIcon.Show();
 
         if (currentLine.AudioPath != "")
         {
@@ -188,6 +198,7 @@ public partial class DialogueManager : Node
                 var choice = group.Choices[0];
                 choiceBox1.Show();
                 choiceBox1Text.SetText(choice.Line);
+                nextIcon.Hide();
             }
             if (group.Choices.Count > 1)
             {

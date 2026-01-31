@@ -20,6 +20,7 @@
 [ext_resource type="FontFile" uid="uid://d074ain5jl370" path="res://resources/Kenney Pixel.ttf" id="16_w0blg"]
 [ext_resource type="Script" uid="uid://bt8gls0mk3jjm" path="res://Scripts/Dialogue/ChoiceGroup.cs" id="18_lqayy"]
 [ext_resource type="Script" uid="uid://b5u1kxmecsead" path="res://Scripts/Dialogue/Choice.cs" id="19_lrioy"]
+[ext_resource type="Texture2D" uid="uid://bq0m18vcencqw" path="res://Art/UIAssets/In-Use/tile_0009.png" id="21_8kn8h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g8s2e"]
 shader = ExtResource("1_c3eba")
@@ -218,8 +219,13 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DialogueManager" type="PanelContainer" parent="VBoxContainer" unique_id=1894326365 node_paths=PackedStringArray("textBox", "dialogueBox", "audioPlayer", "choiceBox1", "choiceBox1Text", "choiceBox2", "choiceBox2Text", "choiceBox3", "choiceBox3Text", "nameTag", "nameTagBox")]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1341178303]
 layout_mode = 2
+alignment = 2
+
+[node name="DialogueManager" type="PanelContainer" parent="VBoxContainer/HBoxContainer2" unique_id=1894326365 node_paths=PackedStringArray("textBox", "dialogueBox", "audioPlayer", "choiceBox1", "choiceBox1Text", "choiceBox2", "choiceBox2Text", "choiceBox3", "choiceBox3Text", "nameTag", "nameTagBox", "nextIcon")]
+layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("1_jo1ms")
 textBox = NodePath("DialogueBox/MarginContainer/TextBox")
 dialogueBox = NodePath("DialogueBox")
@@ -237,14 +243,15 @@ audioFiles = Dictionary[String, AudioStreamWAV]({
 "Pickup": ExtResource("14_5ouvn")
 })
 audioPlayer = NodePath("DialogueAudioPlayer")
-choiceBox1 = NodePath("../HBoxContainer/VBoxContainer/ChoiceBox1")
-choiceBox1Text = NodePath("../HBoxContainer/VBoxContainer/ChoiceBox1/HBoxContainer/ChoiceBox1Text")
-choiceBox2 = NodePath("../HBoxContainer/VBoxContainer/ChoiceBox2")
-choiceBox2Text = NodePath("../HBoxContainer/VBoxContainer/ChoiceBox2/HBoxContainer/ChoiceBox2Text")
-choiceBox3 = NodePath("../HBoxContainer/VBoxContainer/ChoiceBox3")
-choiceBox3Text = NodePath("../HBoxContainer/VBoxContainer/ChoiceBox3/HBoxContainer/ChoiceBox3Text")
+choiceBox1 = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox1")
+choiceBox1Text = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox1/HBoxContainer/ChoiceBox1Text")
+choiceBox2 = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox2")
+choiceBox2Text = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox2/HBoxContainer/ChoiceBox2Text")
+choiceBox3 = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox3")
+choiceBox3Text = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox3/HBoxContainer/ChoiceBox3Text")
 nameTag = NodePath("MarginContainer/Panel/NameTagLabel")
 nameTagBox = NodePath("MarginContainer/Panel")
+nextIcon = NodePath("NextIcon")
 fonts = Dictionary[String, Font]({
 "default": ExtResource("16_w0blg"),
 "gibberish": ExtResource("15_5ouvn")
@@ -253,11 +260,11 @@ choiceDatabase = Dictionary[int, ExtResource("18_lqayy")]({
 2: SubResource("Resource_ync2q")
 })
 
-[node name="DialogueBox" type="Panel" parent="VBoxContainer/DialogueManager" unique_id=1957812271]
+[node name="DialogueBox" type="Panel" parent="VBoxContainer/HBoxContainer2/DialogueManager" unique_id=1957812271]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/DialogueManager/DialogueBox" unique_id=462128029]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/DialogueManager/DialogueBox" unique_id=462128029]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -269,25 +276,25 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="TextBox" type="RichTextLabel" parent="VBoxContainer/DialogueManager/DialogueBox/MarginContainer" unique_id=885642707]
+[node name="TextBox" type="RichTextLabel" parent="VBoxContainer/HBoxContainer2/DialogueManager/DialogueBox/MarginContainer" unique_id=885642707]
 layout_mode = 2
 theme = SubResource("Theme_psnte")
 text = "a ihi HAHA HIHI aaaa I AM SPEAKING WEIRD LANGUAGE AAAAAAAAAAAAAAA"
 
-[node name="DialogueAudioPlayer" type="AudioStreamPlayer2D" parent="VBoxContainer/DialogueManager" unique_id=735548018]
+[node name="DialogueAudioPlayer" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer2/DialogueManager" unique_id=735548018]
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/DialogueManager" unique_id=927326797]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/DialogueManager" unique_id=927326797]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = -15
 
-[node name="Panel" type="Panel" parent="VBoxContainer/DialogueManager/MarginContainer" unique_id=1573180182]
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/DialogueManager/MarginContainer" unique_id=1573180182]
 custom_minimum_size = Vector2(75, 25)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="NameTagLabel" type="RichTextLabel" parent="VBoxContainer/DialogueManager/MarginContainer/Panel" unique_id=1744630437]
+[node name="NameTagLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer2/DialogueManager/MarginContainer/Panel" unique_id=1744630437]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 1
 anchors_preset = 8
@@ -307,3 +314,14 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NextIcon" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/DialogueManager" unique_id=1150132402]
+layout_mode = 2
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/DialogueManager/NextIcon" unique_id=1635446168]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("21_8kn8h")
