@@ -3,44 +3,43 @@
 	{
 	  "ID": 1,
 	  "Line": "Meep morp",
-	  "DialogueConditions": [
+	  "DialogueConditionGroups": [
 		{
 		  "NextLineID": 3,
-		  "ConditionType": "Has_Flag",
-		  "ConditionFlagValue": "test_01"
+		  "DialogueConditions": [
+			{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "test_01"
+			},
+			{
+			  "ConditionType": "Not_Has_Mask",
+			  "ConditionValue": 1
+			}
+		  ]
 		},
 		{
-		  "NextLineID": 2,
-		  "ConditionType": "Not_Has_Mask",
-		  "ConditionValue": 1
+		  "NextLineID": 4,
+		  "DialogueConditions": []
 		}
 	  ]
-	},
-	{
-	  "ID": 2,
-	  "Line": "random hihi LALA",
-	  "ItemId": 2,
-	  "Amount": 1
 	},
 	{
 	  "ID": 3,
-	  "Line": "you hav mask"
-	},
-	{
-	  "ID": 4,
-	  "Line": "you don't have a MASK",
-	  "FontConditions": [
+	  "Line": "going to selected line",
+	  "DialogueConditionGroups": [
 		{
 		  "NextLineID": 4,
-		  "ConditionType": "Not_Has_Mask",
-		  "ConditionValue": 1,
-		  "Font": "gibberish"
+		  "DialogueConditions": []
 		}
 	  ]
 	},
 	{
+	  "ID": 4,
+	  "Line": "going to default line"
+	},
+	{
 	  "ID": 5,
-	  "Line": "you hav mask",
+	  "Line": "setting multiple flags",
 	  "ChangeFlags": [
 		{
 		  "Flag": "test_01",
@@ -49,6 +48,29 @@
 		{
 		  "Flag": "test_02",
 		  "Value": true
+		}
+	  ]
+	},
+	{
+	  "ID": 6,
+	  "Line": "SPEAKING WITH SPECIAL FONT - special font"
+	},
+	{
+	  "ID": 7,
+	  "Line": "SPEAKING WITH SPECIAL FONT twO - special font",
+	  "FontConditionGroups": [
+		{
+		  "Font": "gibberish",
+		  "FontConditions": [
+			{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "test_01"
+			},
+			{
+			  "ConditionType": "Not_Has_Mask",
+			  "ConditionValue": 1
+			}
+		  ]
 		}
 	  ]
 	}

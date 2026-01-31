@@ -9,13 +9,26 @@ public static class DialogueLoader
 {
     public class DialogueConditionDB
     {
-        public int NextLineID { get; set; }
         public string ConditionType { get; set; }
         public int ConditionValue { get; set; }
         
         public string ConditionFlagValue { get; set; }
         public string Font { get; set; }
     }
+    
+    public class DialogueConditionGroupDB
+    {
+        public int NextLineID { get; set; }
+        public List<DialogueConditionDB> DialogueConditions { get; set; }
+        public string Font { get; set; }
+    }
+
+    public class FontConditionGroupDB : DialogueConditionGroupDB
+    {
+        public List<DialogueConditionDB> FontConditions { get; set; }
+    }
+    
+    
 
     public class DialogueLineDB
     {
@@ -25,8 +38,8 @@ public static class DialogueLoader
         
         public int ItemId { get; set; }
         public int Amount { get; set; }
-        public List<DialogueConditionDB> DialogueConditions { get; set; }
-        public List<DialogueConditionDB> FontConditions { get; set; }
+        public List<DialogueConditionGroupDB> DialogueConditionGroups { get; set; }
+        public List<FontConditionGroupDB> FontConditionGroups { get; set; }
         
         public List<DialogueFlag> ChangeFlags { get; set; }
     }
@@ -71,11 +84,29 @@ public static class DialogueLoader
         foreach (var lineDb in dialogueDb.DialogueLines)
         {
             var line = new DialogueLine(lineDb.ID, lineDb.Line, lineDb.ItemId, lineDb.Amount);
-            if (lineDb.DialogueConditions != null)
-                line.NextLines = GenerateConditions(lineDb.DialogueConditions);
-            
-            if (lineDb.FontConditions != null)
-                line.FontConditions = GenerateConditions(lineDb.FontConditions);
+            if (lineDb.DialogueConditionGroups != null)
+            {
+                foreach (var conditionGroupDb in lineDb.DialogueConditionGroups)
+                {
+                    var conditionGroup = new DialogueConditionGroup();
+                    conditionGroup.NextLineID = conditionGroupDb.NextLineID;
+                    conditionGroup.Font =  conditionGroupDb.Font;
+                    conditionGroup.Conditions = GenerateConditions(conditionGroupDb.DialogueConditions);
+                    
+                    line.NextLines.Add(conditionGroup);
+                }
+            }
+
+            if (lineDb.FontConditionGroups != null)
+            {
+                foreach (var fontConditionGroupDb in lineDb.FontConditionGroups)
+                {
+                    var fontConditionGroup = new DialogueConditionGroup();
+                    fontConditionGroup.Font =  fontConditionGroupDb.Font;
+                    fontConditionGroup.Conditions = GenerateConditions(fontConditionGroupDb.FontConditions);
+                    line.FontConditions.Add(fontConditionGroup);
+                }
+            }
 
             if (lineDb.ChangeFlags != null)
             {
@@ -116,6 +147,9 @@ public static class DialogueLoader
                     condition = new FlagDialogueCondition();
                     condition.FlagValue = conditionDb.ConditionFlagValue;
                     break;
+                case "True":
+                    condition = new DialogueCondition();
+                    break;
             }
 
             if (condition == null)
@@ -124,8 +158,6 @@ public static class DialogueLoader
                     conditionDb.ConditionType);
                 continue;
             }
-
-            condition.NextLineID = conditionDb.NextLineID;
             condition.Value = conditionDb.ConditionValue;
             condition.Font = conditionDb.Font;
 

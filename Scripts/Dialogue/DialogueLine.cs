@@ -7,13 +7,14 @@ public partial class DialogueLine : GodotObject
     public string Line;
     public int ItemId;
     public int Amount;
-    public Array<DialogueCondition> NextLines = new Array<DialogueCondition>();
-    public Array<DialogueCondition> FontConditions = new Array<DialogueCondition>();
+    public Array<DialogueConditionGroup> NextLines = new Array<DialogueConditionGroup>();
+    public Array<DialogueConditionGroup> FontConditions = new Array<DialogueConditionGroup>();
     public Array<PlayerFlag> ChangeFlags = new Array<PlayerFlag>();
 
     public DialogueLine(int ID, string Line, int itemId, int amount)
     {
-        NextLines = new Array<DialogueCondition>();
+        NextLines = new Array<DialogueConditionGroup>();
+        FontConditions = new Array<DialogueConditionGroup>();
         this.ID = ID;
         this.Line = Line;
         this.ItemId = itemId;
@@ -23,14 +24,14 @@ public partial class DialogueLine : GodotObject
     //Returns 0 if none found or acceptable, so close the dialogue box
     public int GetNextLine()
     {
-        foreach (var line in NextLines)
+        foreach (var conditionGroup in NextLines)
         {
-            if (line.IsConditionTrue())
+            if (conditionGroup.AreConditionsTrue())
             {
-                Logger.DebugInfo("Next Line {0} chosen from current line {1}", line.NextLineID, ID);
-                return line.NextLineID;
+                Logger.DebugInfo("Next Line {0} chosen from current line {1}", conditionGroup.NextLineID, ID);
+                return conditionGroup.NextLineID;
             }
-            Logger.DebugInfo("Next Line {0} NOT chosen from current line {1}", line.NextLineID, ID);
+            Logger.DebugInfo("Next Line {0} NOT chosen from current line {1}", conditionGroup.NextLineID, ID);
         }
 
         return 0;

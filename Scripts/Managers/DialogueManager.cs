@@ -67,18 +67,18 @@ public partial class DialogueManager : Node
         DialogueLine nextLine = null;
         foreach (var condition in currentLine.NextLines)
         {
-            if (condition.IsConditionTrue())
+            if (condition.AreConditionsTrue())
             {
                 nextLine = dialogueDataBase[condition.NextLineID];
                 if (nextLine == null)
                 {
-                    Logger.Error("Tried to start dialogue line {0} but line not found in database, moving on to next condition", condition.NextLineID);
+                    Logger.Error("Tried to start dialogue line {0} but line not found in database, moving on to next condition group", condition.NextLineID);
                     continue;
                 }
-                Logger.DebugInfo("condition passed, moving to line {0}", nextLine.ID);
+                Logger.DebugInfo("condition group passed, moving to line {0}", nextLine.ID);
                 break;
             }
-            Logger.DebugInfo("condition failed, skipping line {0}", condition.NextLineID);
+            Logger.DebugInfo("condition group failed, skipping line {0}", condition.NextLineID);
         }
         //it's ok if nextLine is null. That will mean that the dialogue will end
         currentLine = nextLine;
@@ -105,7 +105,7 @@ public partial class DialogueManager : Node
         }
         foreach (var fontCondition in currentLine.FontConditions)
         {
-            if (fontCondition.IsConditionTrue())
+            if (fontCondition.AreConditionsTrue())
             {
                 var font = fonts[fontCondition.Font];
                 if (font != null)
