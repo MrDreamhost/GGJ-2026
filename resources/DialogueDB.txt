@@ -54,7 +54,7 @@
 	{
 	  "ID": 6,
 	  "Line": "SPEAKING WITH SPECIAL FONT - special font",
-	"DialogueConditionGroups": [
+	  "DialogueConditionGroups": [
 		{
 		  "NextLineID": 4,
 		  "DialogueConditions": []
@@ -69,11 +69,7 @@
 		  "Font": "gibberish",
 		  "FontConditions": [
 			{
-			  "ConditionType": "Has_Flag",
-			  "ConditionFlagValue": "test_01"
-			},
-			{
-			  "ConditionType": "Not_Has_Mask",
+			  "ConditionType": "Has_Mask",
 			  "ConditionValue": 1
 			}
 		  ]

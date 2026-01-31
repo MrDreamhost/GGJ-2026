@@ -5,14 +5,12 @@ public partial class MaskDialogueCondition : DialogueCondition
 {
     public override bool IsConditionTrue()
     {
-        //TODO check for player mask
-        var maskID = 2;
-
+        var maskId = UiManager.Instance.GetPlayer().GetCurMask();
         if (Invert)
         {
-            return Value != maskID;
+            return Value != maskId;
         }
 
-        return Value == maskID;
+        return Value == maskId;
     }
 }

@@ -1,10 +1,35 @@
 [gd_scene format=3 uid="uid://bk7rxoscrt13y"]
 
 [ext_resource type="Script" uid="uid://iwpust1vsmo" path="res://Scripts/PlayerCharacter/PlayerCharacter.cs" id="1_q032g"]
-[ext_resource type="Texture2D" uid="uid://byjcdy0qvvj5v" path="res://Art/Sprites/Characters/1/S_Walk.png" id="2_l36xu"]
+[ext_resource type="Script" uid="uid://ctw31u6rki5y5" path="res://Scripts/PlayerCharacter/MaskData.cs" id="2_7dca7"]
+[ext_resource type="Texture2D" uid="uid://dn2l5xm0e530t" path="res://Art/Sprites/Characters/3/U_Walk.png" id="2_l36xu"]
+[ext_resource type="Texture2D" uid="uid://hqqefr5d1f8b" path="res://Art/Sprites/Characters/3/D_Idle.png" id="3_cuei4"]
+[ext_resource type="Texture2D" uid="uid://3liagko1m0ox" path="res://Art/Sprites/Characters/1/D_Idle.png" id="3_kgfos"]
 [ext_resource type="AudioStream" uid="uid://ddhdh0mn7acth" path="res://Audio/Footsteps.wav" id="3_rlonj"]
 [ext_resource type="Script" uid="uid://ckcuqx6p7by8t" path="res://Scripts/PlayerCharacter/Inventory/PlayerInventory.cs" id="4_4vboh"]
+[ext_resource type="Texture2D" uid="uid://dsrfqpmk4irhu" path="res://Art/Sprites/Characters/2/D_Idle.png" id="4_kgfos"]
 [ext_resource type="Script" uid="uid://clwruc87wgnne" path="res://Scripts/PlayerCharacter/PlayerFlags.cs" id="5_l36xu"]
+
+[sub_resource type="Resource" id="Resource_7v36p"]
+script = ExtResource("2_7dca7")
+PlayerSprite = ExtResource("3_kgfos")
+metadata/_custom_type_script = "uid://ctw31u6rki5y5"
+
+[sub_resource type="Resource" id="Resource_ew8jb"]
+script = ExtResource("2_7dca7")
+MaskId = 1
+PlayerSprite = ExtResource("4_kgfos")
+VignetteColor = Color(1, 0, 0, 0.40392157)
+UnlockConditionFlags = Array[String](["test_01"])
+metadata/_custom_type_script = "uid://ctw31u6rki5y5"
+
+[sub_resource type="Resource" id="Resource_61rfw"]
+script = ExtResource("2_7dca7")
+MaskId = 2
+PlayerSprite = ExtResource("3_cuei4")
+VignetteColor = Color(0, 1, 0, 0.37254903)
+UnlockConditionFlags = Array[String](["has_mask_02"])
+metadata/_custom_type_script = "uid://ctw31u6rki5y5"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q032g"]
 size = Vector2(24, 24)
@@ -12,10 +37,12 @@ size = Vector2(24, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlonj"]
 size = Vector2(24, 24)
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "footsteps", "inventory", "flags")]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "inventory", "flags")]
 script = ExtResource("1_q032g")
 collider = NodePath("Area2D")
+playerSprite = NodePath("Sprite2D")
 footsteps = NodePath("Footsteps")
+maskData = Array[ExtResource("2_7dca7")]([SubResource("Resource_7v36p"), SubResource("Resource_ew8jb"), SubResource("Resource_61rfw")])
 inventory = NodePath("Inventory")
 flags = NodePath("PlayerFlags")
 

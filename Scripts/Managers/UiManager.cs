@@ -9,6 +9,8 @@ public partial class UiManager : Node
 
     private PlayerCharacter player;
 
+    private HudVignette vignette;
+
     public override void _Ready()
     {
         Instance = this;
@@ -19,9 +21,20 @@ public partial class UiManager : Node
         this.dialogueManager = dialogueManager;
     }
 
+    //TODO this is disgusting
     public void RegisterPlayer(PlayerCharacter player)
     {
         this.player = player;
+    }
+
+    public void RegisterHudVignette(HudVignette vignette)
+    {
+        this.vignette = vignette;
+    }
+
+    public HudVignette GetHudVignette()
+    {
+        return vignette;
     }
 
     public PlayerCharacter GetPlayer()
@@ -54,7 +67,6 @@ public partial class UiManager : Node
     {
         if (dialogueManager == null)
         {
-            Logger.Fatal("UIManager has no active reference to the DialogueManager");
             return 0;
         }
 

@@ -1,14 +1,18 @@
+using System.Collections.Generic;
 using Godot;
-using System;
-using System.Diagnostics;
+using Godot.Collections;
 
 public partial class PlayerCharacter : CharacterBody2D
 {
     [Export] private int baseSpeed = 300;
     [Export] private int baseAcceleration = 50;
     [Export] private Area2D collider = null;
+    [Export] private Sprite2D playerSprite = null;
 
     [Export] private AudioStreamPlayer2D footsteps = null;
+
+    [Export] private Array<MaskData> maskData = new Array<MaskData>();
+    private int curMaskIndex = 0;
 
     //TODO save both inventory (and maybe flags?)
     [Export] private PlayerInventory inventory = null;
@@ -50,7 +54,18 @@ public partial class PlayerCharacter : CharacterBody2D
             Logger.Fatal("flag system node was not assigned on playerCharacter");
         }
 
+        if (maskData.Count <= 1)
+        {
+            Logger.Fatal("MaskData was not filled in on playerCharacter, mask 0 is default player");
+        }
+
+        if (playerSprite == null)
+        {
+            Logger.Fatal("playerSprite was not assigned on playerCharacter");
+        }
+
         UiManager.Instance.RegisterPlayer(this);
+        SetCurMask(maskData[0]);
         base._Ready();
     }
 
@@ -84,6 +99,11 @@ public partial class PlayerCharacter : CharacterBody2D
             {
                 UiManager.Instance.ContinueDialogueSequence();
             }
+        }
+
+        if (Input.IsActionJustReleased("switch_mask"))
+        {
+            SwitchMask();
         }
 
     }
@@ -184,6 +204,56 @@ public partial class PlayerCharacter : CharacterBody2D
         }
 
         Logger.DebugInfo("Unhandled state {0} in CanInteract, allowing interaction", currentState);
+        return true;
+    }
+
+    //TODO by index or ID?
+    private void SwitchMask()
+    {
+        if (maskData.Count > curMaskIndex + 1)
+        {
+            curMaskIndex += 1;
+            if (!IsMaskUnlocked(maskData[curMaskIndex]))
+            {
+                SwitchMask();
+                return;
+            }
+        }
+        else
+        {
+            curMaskIndex = 0;
+        }
+        SetCurMask(maskData[curMaskIndex]);
+    }
+
+    private void SetCurMask(MaskData mask)
+    {
+        Logger.DebugInfo("Setting current mask to {0}", mask.MaskId);
+        playerSprite.Texture = mask.PlayerSprite;
+        var material = UiManager.Instance.GetHudVignette()?.GetMaterial() as ShaderMaterial;
+        if (material == null)
+        {
+            Logger.Error("Found no shader material on vignette");
+            return;
+        }
+        
+        material.SetShaderParameter("vignette_color", mask.VignetteColor);
+    }
+
+    public int GetCurMask()
+    {
+        return curMaskIndex;
+    }
+
+    private bool IsMaskUnlocked(MaskData mask)
+    {
+        foreach (var flagKey in mask.UnlockConditionFlags)
+        {
+            if (!flags.GetFlag(flagKey))
+            {
+                return false;
+            }
+        }
         return true;
     }
 }

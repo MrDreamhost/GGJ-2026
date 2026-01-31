@@ -38,7 +38,7 @@ public partial class DialogueManager : Node
         
         //Fully Initialize before registering to UIManager
         LoadLines();
-        
+        Logger.DebugInfo("Finished loading lines into dialogue manager");
         UiManager.Instance.RegisterDialogueManager(this);
         base._Ready();
     }
