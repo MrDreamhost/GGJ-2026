@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://blwl4xmxir15x" path="res://Scripts/UI/HudVignette.cs" id="1_s3jbq"]
 [ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="3_w0blg"]
 [ext_resource type="AudioStream" uid="uid://c0cyg85ifiyqx" path="res://Audio/Voice Reactions/Voice_Female_V1_Laugh_Short_Mono_08.wav" id="4_g8s2e"]
+[ext_resource type="Script" uid="uid://4xrlkhusjcn8" path="res://Scripts/UI/TimerLabel.cs" id="4_w0blg"]
 [ext_resource type="AudioStream" uid="uid://bdpmw5k7dj5sy" path="res://Audio/Voice Reactions/Voice_Female_V1_Reflexion_Mouth_Close_Mono_11.wav" id="5_t385i"]
 [ext_resource type="AudioStream" uid="uid://beeo7gilgosl3" path="res://Audio/Voice Reactions/Voice_Female_V1_Sigh_Mono_14.wav" id="6_nfm57"]
 [ext_resource type="AudioStream" uid="uid://dr810w6ttdy4j" path="res://Audio/Voice Reactions/Voice_Female_V2_Reflexion_Mouth_Close_Mono_05.wav" id="7_xuldq"]
@@ -51,11 +52,17 @@ mouse_filter = 2
 theme = ExtResource("3_w0blg")
 alignment = 2
 
+[node name="TimerLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=437812424]
+layout_mode = 2
+size_flags_vertical = 0
+fit_content = true
+script = ExtResource("4_w0blg")
+
 [node name="DialogueManager" type="PanelContainer" parent="VBoxContainer" unique_id=1894326365 node_paths=PackedStringArray("textBox", "dialogueBox", "audioPlayer")]
 layout_mode = 2
 script = ExtResource("1_jo1ms")
 textBox = NodePath("DialogueBox/MarginContainer/TextBox")
-dialogueBox = NodePath("")
+dialogueBox = NodePath("DialogueBox")
 audioFiles = Dictionary[String, AudioStreamWAV]({
 "Fem_Curious": ExtResource("7_xuldq"),
 "Fem_Laugh": ExtResource("4_g8s2e"),

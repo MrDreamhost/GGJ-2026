@@ -7,7 +7,8 @@
 [ext_resource type="SpriteFrames" uid="uid://coi78gjxjmtkt" path="res://Art/Sprites/Characters/2/02_spriteframe.tres" id="4_cuei4"]
 [ext_resource type="SpriteFrames" uid="uid://dsemnpc16hltc" path="res://Art/Sprites/Characters/3/03_spriteframe.tres" id="5_kgfos"]
 [ext_resource type="Script" uid="uid://clwruc87wgnne" path="res://Scripts/PlayerCharacter/PlayerFlags.cs" id="5_l36xu"]
-[ext_resource type="PackedScene" uid="uid://d4f44064f3cb4" path="res://Scenes/PauseScreen.tscn" id="6_cuei4"]
+[ext_resource type="PackedScene" uid="uid://d4f44064f3cb4" path="res://Scenes/GameOverScreen.tscn" id="6_cuei4"]
+[ext_resource type="PackedScene" uid="uid://cp2qxycup62mc" path="res://Scenes/PauseScreen.tscn" id="10_61rfw"]
 [ext_resource type="PackedScene" uid="uid://cbw3il7ovq3p6" path="res://Scenes/HUD.tscn" id="10_ew8jb"]
 [ext_resource type="SpriteFrames" uid="uid://dbxrkknxs2rrv" path="res://Art/Sprites/Characters/1/01_spriteframe.tres" id="10_kgfos"]
 
@@ -39,13 +40,14 @@ height = 18.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlonj"]
 size = Vector2(20, 28)
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "pauseScreen", "inventory", "flags")]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "pauseScreen", "gameOverScreen", "inventory", "flags")]
 script = ExtResource("1_q032g")
 collider = NodePath("Area2D")
 playerSprite = NodePath("AnimatedSprite2D")
 footsteps = NodePath("Footsteps")
 maskData = Array[ExtResource("2_7dca7")]([SubResource("Resource_7v36p"), SubResource("Resource_ew8jb"), SubResource("Resource_61rfw")])
 pauseScreen = NodePath("PauseScreen")
+gameOverScreen = NodePath("GameOverScreen")
 inventory = NodePath("Inventory")
 flags = NodePath("PlayerFlags")
 
@@ -78,6 +80,8 @@ script = ExtResource("4_4vboh")
 [node name="PlayerFlags" type="Node" parent="." unique_id=745528235]
 script = ExtResource("5_l36xu")
 
-[node name="PauseScreen" parent="." unique_id=623124825 instance=ExtResource("6_cuei4")]
+[node name="GameOverScreen" parent="." unique_id=623124825 instance=ExtResource("6_cuei4")]
+
+[node name="PauseScreen" parent="." unique_id=1199044570 instance=ExtResource("10_61rfw")]
 
 [node name="Hud" parent="." unique_id=371431169 instance=ExtResource("10_ew8jb")]

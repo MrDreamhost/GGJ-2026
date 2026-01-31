@@ -11,6 +11,8 @@ public partial class UiManager : Node
 
     private HudVignette vignette;
 
+    private RichTextLabel timerLabel;
+
     public override void _Ready()
     {
         Instance = this;
@@ -32,6 +34,11 @@ public partial class UiManager : Node
         this.vignette = vignette;
     }
 
+    public void RegisterTimerLabel(RichTextLabel timerLabel)
+    {
+        this.timerLabel = timerLabel;
+    }
+
     public HudVignette GetHudVignette()
     {
         return vignette;
@@ -40,6 +47,11 @@ public partial class UiManager : Node
     public PlayerCharacter GetPlayer()
     {
         return player;
+    }
+
+    public RichTextLabel GetTimerLabel()
+    {
+        return timerLabel;
     }
 
     public void StartDialogueSequence(int dialogueSequence)

@@ -11,6 +11,10 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private AudioStreamPlayer2D footsteps = null;
     [Export] private Array<MaskData> maskData = new Array<MaskData>();
     [Export] private PauseScreen pauseScreen = null;
+    [Export] private GameOverScreen gameOverScreen = null;
+    [Export] private double gameTimerSeconds = 300;
+    private Timer gameTimer = null;
+    
     private int curMaskIndex = 0;
 
     //TODO save both inventory (and maybe flags?)
@@ -25,7 +29,8 @@ public partial class PlayerCharacter : CharacterBody2D
         EIdle,
         EWalk,
         EInDialogue,
-        EInMenu
+        EInMenu,
+        EGameOver,
     }
 
     public State GetState()
@@ -76,9 +81,16 @@ public partial class PlayerCharacter : CharacterBody2D
         {
             Logger.Fatal("pauseScreen was not assigned on playerCharacter");
         }
+        
+        if (gameOverScreen == null)
+        {
+            Logger.Fatal("gameOverScreen was not assigned on playerCharacter");
+        }
 
         nextIdleAnim = "Down_Idle";
         pauseScreen.DoHide();
+        gameOverScreen.DoHide();
+        StartTimer();
         UiManager.Instance.RegisterPlayer(this);
         SetCurMask(maskData[0]);
         base._Ready();
@@ -92,6 +104,27 @@ public partial class PlayerCharacter : CharacterBody2D
         ProcessAnimations();
         MoveAndSlide();
         base._PhysicsProcess(delta);
+    }
+
+    public override void _Process(double delta)
+    {
+        
+        double timeLeft = gameTimer.TimeLeft;
+
+        int mins = (int)(timeLeft / 60);
+        int secs = (int)(timeLeft % 60);
+
+        var timerLabel = UiManager.Instance.GetTimerLabel();
+        if (timerLabel != null)
+        {
+            timerLabel.Text = string.Format("{0:00}:{1:00}", mins, secs);
+        }
+        else
+        {
+            Logger.Error("Failed to get TimerLabel from UIManager");
+        }
+
+        base._Process(delta);
     }
 
     private void ProcessInputs()
@@ -116,20 +149,22 @@ public partial class PlayerCharacter : CharacterBody2D
             }
         }
 
-        if (Input.IsActionJustReleased("switch_mask"))
+        if (Input.IsActionJustReleased("switch_mask") && CanMove())
         {
             SwitchMask();
         }
 
-        if (Input.IsActionJustReleased("open_pause_menu"))
+        if (Input.IsActionJustReleased("open_pause_menu") && currentState != State.EGameOver)
         {
             pauseScreen.FlipFlop();
             if (pauseScreen.IsGamePaused())
             {
                 currentState = State.EInMenu;
+                gameTimer.SetPaused(true);
             }
             else
             {
+                gameTimer.SetPaused(false);
                 if (UiManager.Instance.GetCurrentDialogueLine() != 0)
                 {
                     currentState = State.EInDialogue;
@@ -249,6 +284,7 @@ public partial class PlayerCharacter : CharacterBody2D
                 return true;
             case State.EInDialogue:
             case State.EInMenu:
+            case State.EGameOver:
                 return false;
         }
 
@@ -265,6 +301,7 @@ public partial class PlayerCharacter : CharacterBody2D
                 return true;
             case State.EInDialogue:
             case State.EInMenu:
+            case State.EGameOver:
                 return false;
         }
 
@@ -324,5 +361,22 @@ public partial class PlayerCharacter : CharacterBody2D
         }
 
         return true;
+    }
+
+    private void StartTimer()
+    {
+        gameTimer = new Timer();
+        AddChild(gameTimer);
+        gameTimer.SetWaitTime(gameTimerSeconds);
+        gameTimer.OneShot = true;
+        gameTimer.Timeout += OnTimerEnd;
+        gameTimer.Start();
+    }
+
+    private void OnTimerEnd()
+    {
+        SetState(State.EGameOver, "Game timer ended, locking player");
+        gameOverScreen.DoShow();
+        Logger.DebugInfo("Timer ended!");
     }
 }

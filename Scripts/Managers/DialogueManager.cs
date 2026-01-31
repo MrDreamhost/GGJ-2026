@@ -4,7 +4,7 @@ using Godot.Collections;
 public partial class DialogueManager : Node
 {
     [Export] private RichTextLabel textBox = null;
-    [Export] private TextureRect dialogueBox = null;
+    [Export] private Panel dialogueBox = null;
     [Export] private Dictionary<string, AudioStreamWav> audioFiles = new Dictionary<string, AudioStreamWav>();
     [Export] private AudioStreamPlayer2D audioPlayer = null;
 

@@ -1,19 +1,19 @@
-[gd_scene format=3 uid="uid://cp2qxycup62mc"]
+[gd_scene format=3 uid="uid://d4f44064f3cb4"]
 
-[ext_resource type="Script" uid="uid://bs1dx3ohf7uqu" path="res://Scripts/UI/PauseScreen.cs" id="1_pwwx1"]
+[ext_resource type="Script" uid="uid://d01hobopcgoei" path="res://Scripts/UI/GameOverScreen.cs" id="1_d4r0f"]
 
-[node name="PauseScreen" type="Control" unique_id=623124825 node_paths=PackedStringArray("canvasLayer")]
+[node name="GameOverScreen" type="Control" unique_id=623124825 node_paths=PackedStringArray("canvasLayer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pwwx1")
+script = ExtResource("1_d4r0f")
 canvasLayer = NodePath("CanvasLayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1547096555]
-layer = 10
+layer = 20
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1410147423]
 anchors_preset = 15
@@ -41,15 +41,15 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Game is paused"
+text = "Game over"
 fit_content = true
 autowrap_mode = 0
 
-[node name="ResumeButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=2051841714]
+[node name="RestartButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=2051841714]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Resume"
+text = "Restart"
 
 [node name="SettingsButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=2089665834]
 layout_mode = 2
@@ -75,7 +75,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Quit"
 
-[connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/ResumeButton" to="." method="OnResumeButton"]
+[connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/RestartButton" to="." method="OnRestartButton"]
 [connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/SettingsButton" to="." method="OnSettingsButton"]
 [connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/HowToPlayButton" to="." method="OnHowToPlayButton"]
 [connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/BackToMainMenuButton" to="." method="OnBackToMenuButton"]
