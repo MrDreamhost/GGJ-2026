@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cp2qxycup62mc"]
 
-[ext_resource type="Script" uid="uid://bs1dx3ohf7uqu" path="res://Scripts/UI/PauseScreen.cs" id="1_pwwx1"]
+[ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="1_8uhfr"]
+[ext_resource type="Script" path="res://Scripts/UI/PauseScreen.cs" id="1_pwwx1"]
 
 [node name="PauseScreen" type="Control" unique_id=623124825 node_paths=PackedStringArray("canvasLayer")]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_8uhfr")
 script = ExtResource("1_pwwx1")
 canvasLayer = NodePath("CanvasLayer")
 
@@ -32,46 +34,52 @@ offset_left = -80.0
 offset_right = 80.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_8uhfr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=1800975732]
 layout_mode = 2
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=135561945]
+[node name="Panel" type="Panel" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=609490583]
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel" unique_id=135561945]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 4.0
+offset_right = 154.0
+offset_bottom = 31.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Game is paused"
 fit_content = true
 autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=2051841714]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Resume"
 
 [node name="SettingsButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=2089665834]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Settings"
 
 [node name="HowToPlayButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1812721382]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "How To Play"
 
 [node name="BackToMainMenuButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=2077474554]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Back To Main Menu"
 
 [node name="QuitButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=28678488]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Quit"
 

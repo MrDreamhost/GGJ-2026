@@ -1,16 +1,17 @@
-[gd_scene format=3 uid="uid://cimjskbb50tki"]
+[gd_scene format=3 uid="uid://bhhbi0l6lavnq"]
 
+[ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="1_853f1"]
 [ext_resource type="Script" uid="uid://dqyi605olglr4" path="res://Scripts/UI/MainMenu.cs" id="1_tt5f1"]
 
-[node name="MainMenu" type="Control" unique_id=1468994464 node_paths=PackedStringArray("ResetSaveButton")]
+[node name="MainMenu" type="Control" unique_id=1468994464]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_853f1")
 script = ExtResource("1_tt5f1")
-ResetSaveButton = NodePath("HBoxContainer/VBoxContainer/ResetSaveButton")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=709534236]
 layout_mode = 1
@@ -35,31 +36,26 @@ alignment = 1
 
 [node name="PlayButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1065781445]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Play"
 
 [node name="SettingsButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=458929657]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Settings"
 
 [node name="ResetSaveButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=2094579583]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Reset Save FIle"
 
 [node name="HowToPlayButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1896566696]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "How To Play"
 
 [node name="QuitButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=147842940]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Quit"
 
