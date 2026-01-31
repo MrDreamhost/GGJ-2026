@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dosip8oy6r30"
+path="res://.godot/imported/Rotation Click.wav-92c2bd0e5b4b92a01adf95a8c3e8474d.sample"
+
+[deps]
+
+source_file="res://Audio/Rotation Click.wav"
+dest_files=["res://.godot/imported/Rotation Click.wav-92c2bd0e5b4b92a01adf95a8c3e8474d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

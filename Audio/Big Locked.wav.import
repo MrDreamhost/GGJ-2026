@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://mcsoejvptwcu"
+path="res://.godot/imported/Big Locked.wav-4b763047e74240ad75a56d94dbf5d6f8.sample"
+
+[deps]
+
+source_file="res://Audio/Big Locked.wav"
+dest_files=["res://.godot/imported/Big Locked.wav-4b763047e74240ad75a56d94dbf5d6f8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ckpm188pe4gj1" path="res://Scripts/World/Door.cs" id="1_q6uv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7hfi"]
+size = Vector2(23, 32)
 
 [node name="Door" type="Area2D" unique_id=1202597749 node_paths=PackedStringArray("audioStreamPlayer")]
 script = ExtResource("1_q6uv2")
