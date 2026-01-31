@@ -2,12 +2,12 @@
 	"Items": [
 		{
 		"ID": 1,
-		"name": "mask of placeholder",
+		"name": "mask of the Mage",
 		"texturePath": "res://idkhowtohandlethisyet"
 		},
 		{
 		"ID": 2,
-		"name": "mask of temporary",
+		"name": "mask of the Artisan",
 		"texturePath": "res://idkhowtohandlethisyet"			
 		}
 	]

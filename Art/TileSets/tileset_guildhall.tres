@@ -2118,6 +2118,7 @@ texture = ExtResource("8_aouxi")
 15:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 8, -4, 4, 4, 4, 4, 8)
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
