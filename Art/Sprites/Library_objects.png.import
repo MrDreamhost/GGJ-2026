@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0ukawlqiqyo5"
-path="res://.godot/imported/Walls_street.png-3aa84ececf8f9d5383daedf0c3b57a18.ctex"
+uid="uid://c2k3bmm7ts0cw"
+path="res://.godot/imported/Library_objects.png-334f1774f1ceb2402ed8f9ebce59d82a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/Walls_street.png"
-dest_files=["res://.godot/imported/Walls_street.png-3aa84ececf8f9d5383daedf0c3b57a18.ctex"]
+source_file="res://Art/Sprites/Library_objects.png"
+dest_files=["res://.godot/imported/Library_objects.png-334f1774f1ceb2402ed8f9ebce59d82a.ctex"]
 
 [params]
 
