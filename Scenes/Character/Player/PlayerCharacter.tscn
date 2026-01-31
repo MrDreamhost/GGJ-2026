@@ -75,6 +75,7 @@ current = true
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="." unique_id=1244662103]
 stream = ExtResource("3_rlonj")
+bus = &"SFX"
 
 [node name="Inventory" type="Node" parent="." unique_id=1423886156]
 script = ExtResource("4_4vboh")
