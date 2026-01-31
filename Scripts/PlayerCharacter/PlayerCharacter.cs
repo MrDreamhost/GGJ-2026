@@ -10,6 +10,7 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private AnimatedSprite2D playerSprite = null;
     [Export] private AudioStreamPlayer2D footsteps = null;
     [Export] private Array<MaskData> maskData = new Array<MaskData>();
+    [Export] private PauseScreen pauseScreen = null;
     private int curMaskIndex = 0;
 
     //TODO save both inventory (and maybe flags?)
@@ -32,8 +33,15 @@ public partial class PlayerCharacter : CharacterBody2D
         return currentState;
     }
 
+    public void SetState(State state, string reason)
+    {
+        Logger.Info("Externally setting state {0} with reason {1}", state, reason);
+        this.currentState = state;
+    }
+
     public override void _Ready()
     {
+        Logger.Info("Readied player");
         if (collider == null)
         {
             Logger.Fatal("Area2D collider not assigned on playerCharacter");
@@ -64,8 +72,13 @@ public partial class PlayerCharacter : CharacterBody2D
             Logger.Fatal("playerSprite was not assigned on playerCharacter");
         }
 
-        nextIdleAnim = "Down_Idle";
+        if (pauseScreen == null)
+        {
+            Logger.Fatal("pauseScreen was not assigned on playerCharacter");
+        }
 
+        nextIdleAnim = "Down_Idle";
+        pauseScreen.DoHide();
         UiManager.Instance.RegisterPlayer(this);
         SetCurMask(maskData[0]);
         base._Ready();
@@ -106,6 +119,27 @@ public partial class PlayerCharacter : CharacterBody2D
         if (Input.IsActionJustReleased("switch_mask"))
         {
             SwitchMask();
+        }
+
+        if (Input.IsActionJustReleased("open_pause_menu"))
+        {
+            pauseScreen.FlipFlop();
+            if (pauseScreen.IsGamePaused())
+            {
+                currentState = State.EInMenu;
+            }
+            else
+            {
+                if (UiManager.Instance.GetCurrentDialogueLine() != 0)
+                {
+                    currentState = State.EInDialogue;
+                }
+                else
+                {
+                    currentState = State.EIdle;
+                }
+                Logger.Info("Setting state to {0} after unpause", currentState);
+            }
         }
     }
 
@@ -148,8 +182,12 @@ public partial class PlayerCharacter : CharacterBody2D
                     Logger.Info("Setting state to idle");
                     currentState = State.EIdle;
                 }
-
                 break;
+            case State.EInMenu:
+                footsteps.Stop();
+                playerSprite.Play(nextIdleAnim);
+                break;
+                
         }
     }
 
