@@ -1,3 +1,15 @@
 [gd_resource type="StyleBoxTexture" format=3 uid="uid://ddrgfb7l837jv"]
 
+[ext_resource type="Texture2D" uid="uid://b8x8ln7oaocbk" path="res://Art/UIAssets/In-Use/tile_0001.png" id="1_mnrai"]
+
 [resource]
+texture = ExtResource("1_mnrai")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+modulate_color = Color(1, 0.85, 0.85, 1)

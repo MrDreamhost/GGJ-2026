@@ -1,3 +1,10 @@
 [gd_resource type="StyleBoxTexture" format=3 uid="uid://bqira2uqgcsch"]
 
+[ext_resource type="Texture2D" uid="uid://b8x8ln7oaocbk" path="res://Art/UIAssets/In-Use/tile_0001.png" id="1_ppp22"]
+
 [resource]
+texture = ExtResource("1_ppp22")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0

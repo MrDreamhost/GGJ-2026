@@ -1,15 +1,49 @@
 [gd_resource type="Theme" format=3 uid="uid://boqxxkie5r1f6"]
 
 [ext_resource type="StyleBox" uid="uid://chtj4xnapelte" path="res://Art/UIAssets/StyleBoxes/StyleBox_TextBox.tres" id="1_lmais"]
+[ext_resource type="FontFile" uid="uid://d074ain5jl370" path="res://resources/Kenney Pixel.ttf" id="1_tnwo1"]
+[ext_resource type="StyleBox" uid="uid://cujgnf156ti26" path="res://Art/UIAssets/StyleBoxes/Button_hover.tres" id="2_lnns8"]
+[ext_resource type="StyleBox" uid="uid://bqira2uqgcsch" path="res://Art/UIAssets/StyleBoxes/Button_normal.tres" id="3_pk8ij"]
+[ext_resource type="StyleBox" uid="uid://ddrgfb7l837jv" path="res://Art/UIAssets/StyleBoxes/Button_pressed.tres" id="4_5a2ic"]
+[ext_resource type="Texture2D" uid="uid://b8khxp74ariv" path="res://Art/UIAssets/In-Use/tile_0023.png" id="5_qbyfo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ufqg"]
+bg_color = Color(0.6392157, 0.4392157, 0.22745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdf16"]
+bg_color = Color(0.77254903, 0.5294118, 0.2784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yccki"]
+bg_color = Color(0.9372549, 0.8039216, 0.6745098, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.93699783, 0.8042826, 0.67618746, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [resource]
-Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_color = Color(0.8560673, 0.8560673, 0.85606724, 1)
 Button/colors/font_focus_color = Color(0.4817894, 0.4817894, 0.48179042, 1)
 Button/colors/font_hover_color = Color(0.54497427, 0.5449743, 0.5449741, 1)
 Button/colors/font_hover_pressed_color = Color(0.66245234, 0.66245234, 0.6624523, 1)
-Button/colors/font_outline_color = Color(0.16924527, 0.1692453, 0.16924527, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
-Button/constants/outline_size = 1
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_tnwo1")
+Button/styles/focus = ExtResource("2_lnns8")
+Button/styles/hover = ExtResource("2_lnns8")
+Button/styles/normal = ExtResource("3_pk8ij")
+Button/styles/pressed = ExtResource("4_5a2ic")
+HSlider/icons/grabber = ExtResource("5_qbyfo")
+HSlider/icons/grabber_highlight = ExtResource("5_qbyfo")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_8ufqg")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_mdf16")
+HSlider/styles/slider = SubResource("StyleBoxFlat_yccki")
 Panel/styles/panel = ExtResource("1_lmais")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)
