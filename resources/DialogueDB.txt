@@ -6,8 +6,8 @@
 	  "DialogueConditions": [
 		{
 		  "NextLineID": 3,
-		  "ConditionType": "Has_Mask",
-		  "ConditionValue": 1
+		  "ConditionType": "Has_Flag",
+		  "ConditionFlagValue": "test_01"
 		},
 		{
 		  "NextLineID": 2,
@@ -19,8 +19,8 @@
 	{
 	  "ID": 2,
 	  "Line": "random hihi LALA",
-		"ItemId": 2,
-		"Amount": 1
+	  "ItemId": 2,
+	  "Amount": 1
 	},
 	{
 	  "ID": 3,
@@ -35,6 +35,20 @@
 		  "ConditionType": "Not_Has_Mask",
 		  "ConditionValue": 1,
 		  "Font": "gibberish"
+		}
+	  ]
+	},
+	{
+	  "ID": 5,
+	  "Line": "you hav mask",
+	  "ChangeFlags": [
+		{
+		  "Flag": "test_01",
+		  "Value": true
+		},
+		{
+		  "Flag": "test_02",
+		  "Value": true
 		}
 	  ]
 	}

@@ -7,7 +7,9 @@ public partial class PlayerCharacter : CharacterBody2D
 	[Export] private int baseAcceleration = 50;
 	[Export] private Area2D collider = null;
 	[Export] private AudioStreamPlayer2D footsteps = null;
+	//TODO save both inventory (and maybe flags?)
 	[Export] private PlayerInventory inventory = null;
+	[Export] private PlayerFlags flags = null;
 	private State currentState = State.EIdle;
 	
 	public enum State{EIdle, EWalk, ETalking}
@@ -32,6 +34,11 @@ public partial class PlayerCharacter : CharacterBody2D
 		if (inventory == null)
 		{
 			Logger.Fatal("inventory was not assigned on playerCharacter");
+		}
+
+		if (flags == null)
+		{
+			Logger.Fatal("flag system node was not assigned on playerCharacter");
 		}
 		UiManager.Instance.RegisterPlayer(this);
 		base._Ready();
@@ -106,5 +113,9 @@ public partial class PlayerCharacter : CharacterBody2D
 	{
 		return this.inventory;
 	}
-	
+
+	public PlayerFlags GetPlayerFlags()
+	{
+		return this.flags;
+	}
 }

@@ -9,6 +9,7 @@ public partial class DialogueLine : GodotObject
     public int Amount;
     public Array<DialogueCondition> NextLines = new Array<DialogueCondition>();
     public Array<DialogueCondition> FontConditions = new Array<DialogueCondition>();
+    public Array<PlayerFlag> ChangeFlags = new Array<PlayerFlag>();
 
     public DialogueLine(int ID, string Line, int itemId, int amount)
     {
@@ -39,6 +40,11 @@ public partial class DialogueLine : GodotObject
     {
         if (ItemId != 0 && Amount != 0) {
             UiManager.Instance.GetPlayer().GetInventory().AddItem(ItemId, Amount, "dialogue line "+ ID);
+        }
+
+        foreach (var flag in ChangeFlags)
+        {
+            UiManager.Instance.GetPlayer().GetPlayerFlags().SetFlag(flag.key, flag.value);
         }
     }
 }

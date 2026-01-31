@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json;
+using GGJ2026.Scripts.Dialogue;
 using Godot;
 using Godot.Collections;
 
@@ -11,6 +12,8 @@ public static class DialogueLoader
         public int NextLineID { get; set; }
         public string ConditionType { get; set; }
         public int ConditionValue { get; set; }
+        
+        public string ConditionFlagValue { get; set; }
         public string Font { get; set; }
     }
 
@@ -24,6 +27,14 @@ public static class DialogueLoader
         public int Amount { get; set; }
         public List<DialogueConditionDB> DialogueConditions { get; set; }
         public List<DialogueConditionDB> FontConditions { get; set; }
+        
+        public List<DialogueFlag> ChangeFlags { get; set; }
+    }
+
+    public class DialogueFlag
+    {
+        public string Flag { get; set; }
+        public bool Value { get; set; }
     }
 
     public class DialogueDB
@@ -66,6 +77,14 @@ public static class DialogueLoader
             if (lineDb.FontConditions != null)
                 line.FontConditions = GenerateConditions(lineDb.FontConditions);
 
+            if (lineDb.ChangeFlags != null)
+            {
+                foreach (var flagDb in lineDb.ChangeFlags)
+                {
+                    line.ChangeFlags.Add(new PlayerFlag(flagDb.Flag, flagDb.Value));
+                }
+            }
+
             dialogueList[line.ID] = line;
         }
         return dialogueList;
@@ -88,6 +107,14 @@ public static class DialogueLoader
                 case "Not_Has_Mask":
                     condition = new MaskDialogueCondition();
                     condition.Invert = true;
+                    break;
+                case "Has_Flag":
+                    condition = new FlagDialogueCondition();
+                    condition.FlagValue = conditionDb.ConditionFlagValue;
+                    break;
+                case "Not_Has_Flag":
+                    condition = new FlagDialogueCondition();
+                    condition.FlagValue = conditionDb.ConditionFlagValue;
                     break;
             }
 
