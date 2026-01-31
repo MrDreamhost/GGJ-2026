@@ -3,7 +3,6 @@
 [ext_resource type="Shader" uid="uid://bis8cw7qif8k" path="res://Shaders/Vignette.gdshader" id="1_c3eba"]
 [ext_resource type="Script" uid="uid://fwdmeta2y3qf" path="res://Scripts/Managers/DialogueManager.cs" id="1_jo1ms"]
 [ext_resource type="Script" uid="uid://blwl4xmxir15x" path="res://Scripts/UI/HudVignette.cs" id="1_s3jbq"]
-[ext_resource type="Texture2D" uid="uid://bycdlvhpt3vg" path="res://icon.svg" id="1_sd512"]
 [ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="3_w0blg"]
 [ext_resource type="AudioStream" uid="uid://c0cyg85ifiyqx" path="res://Audio/Voice Reactions/Voice_Female_V1_Laugh_Short_Mono_08.wav" id="4_g8s2e"]
 [ext_resource type="AudioStream" uid="uid://bdpmw5k7dj5sy" path="res://Audio/Voice Reactions/Voice_Female_V1_Reflexion_Mouth_Close_Mono_11.wav" id="5_t385i"]
@@ -56,7 +55,7 @@ alignment = 2
 layout_mode = 2
 script = ExtResource("1_jo1ms")
 textBox = NodePath("DialogueBox/MarginContainer/TextBox")
-dialogueBox = NodePath("DialogueBox")
+dialogueBox = NodePath("")
 audioFiles = Dictionary[String, AudioStreamWAV]({
 "Fem_Curious": ExtResource("7_xuldq"),
 "Fem_Laugh": ExtResource("4_g8s2e"),
@@ -76,9 +75,9 @@ fonts = Dictionary[String, Font]({
 "gibberish": ExtResource("15_5ouvn")
 })
 
-[node name="DialogueBox" type="TextureRect" parent="VBoxContainer/DialogueManager" unique_id=673553789]
+[node name="DialogueBox" type="Panel" parent="VBoxContainer/DialogueManager" unique_id=1957812271]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
-texture = ExtResource("1_sd512")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/DialogueManager/DialogueBox" unique_id=462128029]
 layout_mode = 1
