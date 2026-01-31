@@ -7,10 +7,8 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private int baseSpeed = 300;
     [Export] private int baseAcceleration = 50;
     [Export] private Area2D collider = null;
-    [Export] private Sprite2D playerSprite = null;
-
+    [Export] private AnimatedSprite2D playerSprite = null;
     [Export] private AudioStreamPlayer2D footsteps = null;
-
     [Export] private Array<MaskData> maskData = new Array<MaskData>();
     private int curMaskIndex = 0;
 
@@ -18,6 +16,8 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private PlayerInventory inventory = null;
     [Export] private PlayerFlags flags = null;
     private State currentState = State.EIdle;
+
+    private string nextIdleAnim = "";
 
     public enum State
     {
@@ -64,6 +64,8 @@ public partial class PlayerCharacter : CharacterBody2D
             Logger.Fatal("playerSprite was not assigned on playerCharacter");
         }
 
+        nextIdleAnim = "Down_Idle";
+
         UiManager.Instance.RegisterPlayer(this);
         SetCurMask(maskData[0]);
         base._Ready();
@@ -74,6 +76,7 @@ public partial class PlayerCharacter : CharacterBody2D
         ProcessInputs();
         SetVelocity(ProcessMovementInput());
         UpdateState();
+        ProcessAnimations();
         MoveAndSlide();
         base._PhysicsProcess(delta);
     }
@@ -94,7 +97,6 @@ public partial class PlayerCharacter : CharacterBody2D
                 }
             }
 
-
             if (currentState == State.EInDialogue)
             {
                 UiManager.Instance.ContinueDialogueSequence();
@@ -105,7 +107,6 @@ public partial class PlayerCharacter : CharacterBody2D
         {
             SwitchMask();
         }
-
     }
 
     private void UpdateState()
@@ -130,6 +131,7 @@ public partial class PlayerCharacter : CharacterBody2D
                 if (Velocity.X == 0 && Velocity.Y == 0)
                 {
                     footsteps.Stop();
+                    playerSprite.Play(nextIdleAnim);
                     currentState = State.EIdle;
                 }
 
@@ -163,6 +165,31 @@ public partial class PlayerCharacter : CharacterBody2D
         newVelocity.X = Mathf.MoveToward(Velocity.X, (direction * baseSpeed).X, baseAcceleration);
         newVelocity.Y = Mathf.MoveToward(Velocity.Y, (direction * baseSpeed).Y, baseAcceleration);
         return newVelocity;
+    }
+
+    private void ProcessAnimations()
+    {
+        if (Velocity.Y < 0)
+        {
+            playerSprite.Play("Up_Walk");
+            nextIdleAnim = "Up_Idle";
+            return;
+        }
+
+        if (Velocity.X != 0)
+        {
+            playerSprite.Play("Left_Walk");
+            nextIdleAnim = "Left_Idle";
+            playerSprite.SetFlipH(Velocity.X > 0);
+            return;
+        }
+        
+        if (Velocity.Y > 0)
+        {
+            playerSprite.Play("Down_Walk");
+            nextIdleAnim = "Down_Idle";
+            return;
+        }
     }
 
     public PlayerInventory GetInventory()
@@ -223,20 +250,23 @@ public partial class PlayerCharacter : CharacterBody2D
         {
             curMaskIndex = 0;
         }
+
         SetCurMask(maskData[curMaskIndex]);
     }
 
     private void SetCurMask(MaskData mask)
     {
         Logger.DebugInfo("Setting current mask to {0}", mask.MaskId);
-        playerSprite.Texture = mask.PlayerSprite;
+        var currentAnim = playerSprite.Animation;
+        playerSprite.SetSpriteFrames(mask.PlayerSprite);
+        playerSprite.Play(currentAnim);
         var material = UiManager.Instance.GetHudVignette()?.GetMaterial() as ShaderMaterial;
         if (material == null)
         {
             Logger.Error("Found no shader material on vignette");
             return;
         }
-        
+
         material.SetShaderParameter("vignette_color", mask.VignetteColor);
     }
 
@@ -254,6 +284,7 @@ public partial class PlayerCharacter : CharacterBody2D
                 return false;
             }
         }
+
         return true;
     }
 }

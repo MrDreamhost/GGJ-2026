@@ -5,7 +5,7 @@ using Godot.Collections;
 public partial class MaskData : Resource
 {
     [Export] public int MaskId;
-    [Export] public Texture2D PlayerSprite;
+    [Export] public SpriteFrames PlayerSprite;
     [Export] public Color VignetteColor;
     [Export] public Array<string> UnlockConditionFlags = new Array<string>();
 
