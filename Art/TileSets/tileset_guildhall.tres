@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://2uvwjs4sq1gm"]
 
-[ext_resource type="Texture2D" uid="uid://11u2qvaoa18a" path="res://Art/Sprites/Walls_interior.png" id="1_ukkpe"]
+[ext_resource type="Texture2D" uid="uid://11u2qvaoa18a" path="res://Art/Sprites/Walls_Entrance.png" id="1_ukkpe"]
 [ext_resource type="Texture2D" uid="uid://b0ukawlqiqyo5" path="res://Art/Sprites/Walls_street.png" id="2_bdb4c"]
 [ext_resource type="Texture2D" uid="uid://c3pxyfo3575ra" path="res://Art/Sprites/Windows_doors.png" id="3_nexa7"]
 [ext_resource type="Texture2D" uid="uid://bti747y637ey8" path="res://Art/Sprites/Decorative_cracks.png" id="4_82hbj"]

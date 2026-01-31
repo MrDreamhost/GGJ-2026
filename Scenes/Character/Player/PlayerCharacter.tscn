@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bk7rxoscrt13y"]
 
 [ext_resource type="Script" uid="uid://iwpust1vsmo" path="res://Scripts/PlayerCharacter/PlayerCharacter.cs" id="1_q032g"]
-[ext_resource type="Texture2D" uid="uid://byvjg81ldb4e3" path="res://Art/Sprites/Characters/Mage3.png" id="2_q032g"]
+[ext_resource type="Texture2D" uid="uid://byjcdy0qvvj5v" path="res://Art/Sprites/Characters/1/S_Walk.png" id="2_l36xu"]
 [ext_resource type="AudioStream" uid="uid://ddhdh0mn7acth" path="res://Audio/Footsteps.wav" id="3_rlonj"]
 [ext_resource type="Script" uid="uid://ckcuqx6p7by8t" path="res://Scripts/PlayerCharacter/Inventory/PlayerInventory.cs" id="4_4vboh"]
 [ext_resource type="Script" uid="uid://clwruc87wgnne" path="res://Scripts/PlayerCharacter/PlayerFlags.cs" id="5_l36xu"]
@@ -20,10 +20,9 @@ inventory = NodePath("Inventory")
 flags = NodePath("PlayerFlags")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2047861863]
-texture = ExtResource("2_q032g")
-hframes = 5
-vframes = 5
-frame = 15
+texture = ExtResource("2_l36xu")
+hframes = 6
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1545014522]
 shape = SubResource("RectangleShape2D_q032g")
