@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://ctw31u6rki5y5" path="res://Scripts/PlayerCharacter/MaskData.cs" id="2_7dca7"]
 [ext_resource type="AudioStream" uid="uid://ddhdh0mn7acth" path="res://Audio/Footsteps.wav" id="3_rlonj"]
 [ext_resource type="Script" uid="uid://ckcuqx6p7by8t" path="res://Scripts/PlayerCharacter/Inventory/PlayerInventory.cs" id="4_4vboh"]
-[ext_resource type="SpriteFrames" uid="uid://bj546qb5tux0d" path="res://Art/Sprites/Characters/2/02_spriteframe.tres" id="4_cuei4"]
-[ext_resource type="SpriteFrames" uid="uid://da6785i4llnkn" path="res://Art/Sprites/Characters/3/03_spriteframe.tres" id="5_kgfos"]
+[ext_resource type="SpriteFrames" uid="uid://coi78gjxjmtkt" path="res://Art/Sprites/Characters/2/02_spriteframe.tres" id="4_cuei4"]
+[ext_resource type="SpriteFrames" uid="uid://dsemnpc16hltc" path="res://Art/Sprites/Characters/3/03_spriteframe.tres" id="5_kgfos"]
 [ext_resource type="Script" uid="uid://clwruc87wgnne" path="res://Scripts/PlayerCharacter/PlayerFlags.cs" id="5_l36xu"]
-[ext_resource type="SpriteFrames" uid="uid://d4njcdnth2p57" path="res://Art/Sprites/Characters/1/01_spriteframe.tres" id="10_kgfos"]
+[ext_resource type="SpriteFrames" uid="uid://dbxrkknxs2rrv" path="res://Art/Sprites/Characters/1/01_spriteframe.tres" id="10_kgfos"]
 
 [sub_resource type="Resource" id="Resource_7v36p"]
 script = ExtResource("2_7dca7")
@@ -30,8 +30,9 @@ VignetteColor = Color(0, 1, 0, 0.37254903)
 UnlockConditionFlags = Array[String](["has_mask_02"])
 metadata/_custom_type_script = "uid://ctw31u6rki5y5"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q032g"]
-size = Vector2(20, 28)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dca7"]
+radius = 9.0
+height = 18.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlonj"]
 size = Vector2(20, 28)
@@ -45,9 +46,14 @@ maskData = Array[ExtResource("2_7dca7")]([SubResource("Resource_7v36p"), SubReso
 inventory = NodePath("Inventory")
 flags = NodePath("PlayerFlags")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2130371722]
+sprite_frames = ExtResource("10_kgfos")
+animation = &"Up_Idle"
+autoplay = "Down_Idle"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1545014522]
-position = Vector2(0, -5)
-shape = SubResource("RectangleShape2D_q032g")
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_7dca7")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=56307738]
 
@@ -68,8 +74,3 @@ script = ExtResource("4_4vboh")
 
 [node name="PlayerFlags" type="Node" parent="." unique_id=745528235]
 script = ExtResource("5_l36xu")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2130371722]
-sprite_frames = ExtResource("10_kgfos")
-animation = &"Up_Idle"
-autoplay = "Down_Idle"
