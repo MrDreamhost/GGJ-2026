@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="GGJ-2026"
-run/main_scene="uid://cimjskbb50tki"
+run/main_scene="uid://c5p6kaf6iyrl"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 UIManager="*uid://btdviqcos4ikq"
+Hud="*uid://cbw3il7ovq3p6"
 SceneManager="*uid://217gpwppxaf5"
 
 [display]
