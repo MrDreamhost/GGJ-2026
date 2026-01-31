@@ -84,4 +84,12 @@ public partial class UiManager : Node
 
         return dialogueManager.GetCurrentLine();
     }
+
+    public void SelectDialogueChoice(int index)
+    {
+        if (dialogueManager == null)
+            return;
+        
+        dialogueManager.SelectChoice(index);
+    }
 }

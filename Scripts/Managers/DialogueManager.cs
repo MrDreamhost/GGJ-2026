@@ -7,17 +7,28 @@ public partial class DialogueManager : Node
     [Export] private Panel dialogueBox = null;
     [Export] private Dictionary<string, AudioStreamWav> audioFiles = new Dictionary<string, AudioStreamWav>();
     [Export] private AudioStreamPlayer2D audioPlayer = null;
+    [Export] private Panel choiceBox1 = null;
+    [Export] private RichTextLabel choiceBox1Text = null;
+    [Export] private Panel choiceBox2 = null;
+    [Export] private RichTextLabel choiceBox2Text = null;
+    [Export] private Panel choiceBox3 = null;
+    [Export] private RichTextLabel choiceBox3Text = null;
+    
 
     [Export]
-    private Godot.Collections.Dictionary<string, Font> fonts = new Godot.Collections.Dictionary<string, Font>();
+    private Dictionary<string, Font> fonts = new Godot.Collections.Dictionary<string, Font>();
 
-    private Godot.Collections.Dictionary<int, DialogueLine> dialogueDataBase;
+    [Export] private Dictionary<int, ChoiceGroup> choiceDatabase = new Dictionary<int, ChoiceGroup>();
+    
+    private Dictionary<int, DialogueLine> dialogueDataBase;
 
     private string dialogueDBPath = "res://resources/DialogueDB.txt";
 
     private string defaultFontName = "default";
     
     private DialogueLine currentLine;
+    
+    
     
    
     
@@ -42,7 +53,38 @@ public partial class DialogueManager : Node
         {
             Logger.Fatal("DialogueManager has no audioPlayer assigned");
         }
+
+        if (choiceBox1 == null)
+        {
+            Logger.Fatal("DialogueManager has no choiceBox1 assigned");
+        }
+
+        if (choiceBox1Text == null)
+        {
+            Logger.Fatal("DialogueManager has no choiceBox1Text assigned");
+        }
+        if (choiceBox2 == null)
+        {
+            Logger.Fatal("DialogueManager has no choiceBox2 assigned");
+        }
+
+        if (choiceBox2Text == null)
+        {
+            Logger.Fatal("DialogueManager has no choiceBox2Text assigned");
+        }
+        if (choiceBox3 == null)
+        {
+            Logger.Fatal("DialogueManager has no choiceBox3 assigned");
+        }
+
+        if (choiceBox3Text == null)
+        {
+            Logger.Fatal("DialogueManager has no choiceBox3Text assigned");
+        }
         dialogueBox?.Hide();
+        choiceBox1.Hide();
+        choiceBox2.Hide();
+        choiceBox3.Hide();
         
         //Fully Initialize before registering to UIManager
         LoadLines();
@@ -69,6 +111,12 @@ public partial class DialogueManager : Node
         if (currentLine == null)
         {
             dialogueBox.Hide();
+            return;
+        }
+
+        if (choiceDatabase.TryGetValue(currentLine.ID, out ChoiceGroup group))
+        {
+            Logger.Info("not continuing sequence through interact key because current dialogue line has a choice attached");
             return;
         }
         currentLine.PostLine();
@@ -107,6 +155,31 @@ public partial class DialogueManager : Node
         if (currentLine.AudioPath != "")
         {
             PlayAudio(currentLine.AudioPath);
+        }
+        
+        choiceBox1.Hide();
+        choiceBox2.Hide();
+        choiceBox3.Hide();
+        if (choiceDatabase.TryGetValue(currentLine.ID, out ChoiceGroup group))
+        {
+            if (group.Choices.Count > 0)
+            {
+                var choice = group.Choices[0];
+                choiceBox1.Show();
+                choiceBox1Text.SetText(choice.Line);
+            }
+            if (group.Choices.Count > 1)
+            {
+                var choice = group.Choices[1];
+                choiceBox2.Show();
+                choiceBox2Text.SetText(choice.Line);
+            }
+            if (group.Choices.Count > 2)
+            {
+                var choice = group.Choices[2];
+                choiceBox3.Show();
+                choiceBox3Text.SetText(choice.Line);
+            }
         }
     }
 
@@ -161,5 +234,20 @@ public partial class DialogueManager : Node
         audioPlayer.Stream = audioFiles[audioName];
         audioPlayer.Play();
         Logger.DebugInfo("Playing audio {0}", audioName);
+    }
+
+    public void SelectChoice(int index)
+    {
+        if (currentLine == null)
+            return;
+        if (choiceDatabase.TryGetValue(currentLine.ID, out ChoiceGroup group))
+        {
+            var choice = group.Choices[index];
+            if (choice == null)
+                return;
+            
+            Logger.Info("Choice {0} selected, transitioning to line ID {1}", index, choice.NextLineId);
+            StartDialogueSequence(choice.NextLineId);
+        }
     }
 }

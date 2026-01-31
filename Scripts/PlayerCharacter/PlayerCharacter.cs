@@ -13,7 +13,7 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private Array<MaskData> maskData = new Array<MaskData>();
     [Export] private PauseScreen pauseScreen = null;
     [Export] private GameOverScreen gameOverScreen = null;
-    [Export] private double gameTimerSeconds = 30;
+    [Export] private double gameTimerSeconds = 300;
     private Timer gameTimer = null;
     
     private int curMaskIndex = 0;
@@ -178,6 +178,21 @@ public partial class PlayerCharacter : CharacterBody2D
                 Logger.Info("Setting state to {0} after unpause", currentState);
             }
         }
+
+        if (Input.IsActionJustReleased("choicebox_1") && currentState == State.EInDialogue)
+        {
+            UiManager.Instance.SelectDialogueChoice(0);
+        }
+        
+        if (Input.IsActionJustReleased("choicebox_2") && currentState == State.EInDialogue)
+        {
+            UiManager.Instance.SelectDialogueChoice(1);
+        }
+        if (Input.IsActionJustReleased("choicebox_3") && currentState == State.EInDialogue)
+        {
+            UiManager.Instance.SelectDialogueChoice(2);
+        }
+        
     }
 
     private void UpdateState()
