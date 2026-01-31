@@ -1,9 +1,12 @@
 using Godot;
+using Godot.Collections;
 
 public partial class DialogueManager : Node
 {
     [Export] private RichTextLabel textBox = null;
     [Export] private TextureRect dialogueBox = null;
+    [Export] private Dictionary<string, AudioStreamWav> audioFiles = new Dictionary<string, AudioStreamWav>();
+    [Export] private AudioStreamPlayer2D audioPlayer = null;
 
     [Export]
     private Godot.Collections.Dictionary<string, Font> fonts = new Godot.Collections.Dictionary<string, Font>();
@@ -33,6 +36,11 @@ public partial class DialogueManager : Node
         if (fonts[defaultFontName] == null)
         {
             Logger.Fatal("No font found in the font map with 'default', cannot continue without a default fallback font");
+        }
+
+        if (audioPlayer == null)
+        {
+            Logger.Fatal("DialogueManager has no audioPlayer assigned");
         }
         dialogueBox?.Hide();
         
@@ -95,6 +103,11 @@ public partial class DialogueManager : Node
         textBox.Theme.DefaultFont = GetFontForCurrentLine();
         textBox.SetText(currentLine.Line);
         dialogueBox.Show();
+
+        if (currentLine.AudioPath != "")
+        {
+            PlayAudio(currentLine.AudioPath);
+        }
     }
 
     private Font GetFontForCurrentLine()
@@ -135,5 +148,18 @@ public partial class DialogueManager : Node
             return 0;}
 
         return currentLine.ID;
+    }
+
+    public void PlayAudio(string audioName)
+    {
+        if (!audioFiles.ContainsKey(audioName))
+        {
+            Logger.Error("could not play audio with name {0}", audioName);
+            return;
+        }
+
+        audioPlayer.Stream = audioFiles[audioName];
+        audioPlayer.Play();
+        Logger.DebugInfo("Playing audio {0}", audioName);
     }
 }

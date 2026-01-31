@@ -5,6 +5,17 @@
 [ext_resource type="Script" uid="uid://blwl4xmxir15x" path="res://Scripts/UI/HudVignette.cs" id="1_s3jbq"]
 [ext_resource type="Texture2D" uid="uid://bycdlvhpt3vg" path="res://icon.svg" id="1_sd512"]
 [ext_resource type="FontFile" uid="uid://c2nkbbf83pemc" path="res://resources/Test.ttf" id="3_psnte"]
+[ext_resource type="AudioStream" uid="uid://c0cyg85ifiyqx" path="res://Audio/Voice Reactions/Voice_Female_V1_Laugh_Short_Mono_08.wav" id="4_g8s2e"]
+[ext_resource type="AudioStream" uid="uid://bdpmw5k7dj5sy" path="res://Audio/Voice Reactions/Voice_Female_V1_Reflexion_Mouth_Close_Mono_11.wav" id="5_t385i"]
+[ext_resource type="AudioStream" uid="uid://beeo7gilgosl3" path="res://Audio/Voice Reactions/Voice_Female_V1_Sigh_Mono_14.wav" id="6_nfm57"]
+[ext_resource type="AudioStream" uid="uid://dr810w6ttdy4j" path="res://Audio/Voice Reactions/Voice_Female_V2_Reflexion_Mouth_Close_Mono_05.wav" id="7_xuldq"]
+[ext_resource type="AudioStream" uid="uid://c2p2oermfooyn" path="res://Audio/Voice Reactions/Voice_Female_V2_Throat_Cleaning_Mono_01.wav" id="8_g6jqq"]
+[ext_resource type="AudioStream" uid="uid://co5xi004vy6ca" path="res://Audio/Voice Reactions/Voice_Male_V1_Laugh_Short_Mono_03.wav" id="9_5ouvn"]
+[ext_resource type="AudioStream" uid="uid://buguj6acqyctt" path="res://Audio/Voice Reactions/Voice_Male_V1_Reflexion_Mouth_Close_Mono_02.wav" id="10_w0blg"]
+[ext_resource type="AudioStream" uid="uid://nl1lclt613hp" path="res://Audio/Voice Reactions/Voice_Male_V1_Surprise_Mono_01.wav" id="11_lqayy"]
+[ext_resource type="AudioStream" uid="uid://bun67qqh2nydm" path="res://Audio/Voice Reactions/Voice_Male_V2_Nod_Mono_03.wav" id="12_lrioy"]
+[ext_resource type="AudioStream" uid="uid://ct7dbko2a52gh" path="res://Audio/Voice Reactions/Voice_Male_V2_Sigh_Mono_02.wav" id="13_g6jqq"]
+[ext_resource type="AudioStream" uid="uid://ckyjx8p37wsvh" path="res://Audio/Click.wav" id="14_5ouvn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g8s2e"]
 shader = ExtResource("1_c3eba")
@@ -37,11 +48,25 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
-[node name="DialogueManager" type="PanelContainer" parent="VBoxContainer" unique_id=1894326365 node_paths=PackedStringArray("textBox", "dialogueBox")]
+[node name="DialogueManager" type="PanelContainer" parent="VBoxContainer" unique_id=1894326365 node_paths=PackedStringArray("textBox", "dialogueBox", "audioPlayer")]
 layout_mode = 2
 script = ExtResource("1_jo1ms")
 textBox = NodePath("DialogueBox/MarginContainer/TextBox")
 dialogueBox = NodePath("DialogueBox")
+audioFiles = Dictionary[String, AudioStreamWAV]({
+"Fem_Curious": ExtResource("7_xuldq"),
+"Fem_Laugh": ExtResource("4_g8s2e"),
+"Fem_Mhm": ExtResource("5_t385i"),
+"Fem_Sigh": ExtResource("6_nfm57"),
+"Fem_ThroatClean": ExtResource("8_g6jqq"),
+"M_Laugh": ExtResource("9_5ouvn"),
+"M_Mhm": ExtResource("10_w0blg"),
+"M_Nod": ExtResource("12_lrioy"),
+"M_Sigh": ExtResource("13_g6jqq"),
+"M_Surprise": ExtResource("11_lqayy"),
+"Pickup": ExtResource("14_5ouvn")
+})
+audioPlayer = NodePath("DialogueAudioPlayer")
 fonts = Dictionary[String, Font]({
 "default": SubResource("SystemFont_psnte"),
 "gibberish": ExtResource("3_psnte")
@@ -67,3 +92,5 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme = SubResource("Theme_psnte")
 text = "a ihi HAHA HIHI aaaa I AM SPEAKING WEIRD LANGUAGE AAAAAAAAAAAAAAA"
+
+[node name="DialogueAudioPlayer" type="AudioStreamPlayer2D" parent="VBoxContainer/DialogueManager" unique_id=735548018]
