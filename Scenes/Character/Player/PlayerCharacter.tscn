@@ -32,10 +32,10 @@ UnlockConditionFlags = Array[String](["has_mask_02"])
 metadata/_custom_type_script = "uid://ctw31u6rki5y5"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q032g"]
-size = Vector2(24, 24)
+size = Vector2(20, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlonj"]
-size = Vector2(24, 24)
+size = Vector2(20, 28)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "inventory", "flags")]
 script = ExtResource("1_q032g")
@@ -53,11 +53,13 @@ hframes = 6
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1545014522]
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_q032g")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=56307738]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=54933080]
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_rlonj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1753473594]

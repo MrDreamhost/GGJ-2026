@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dl0prki06r0nh"]
 
 [ext_resource type="Script" uid="uid://b5l1h5emd4oqp" path="res://Scripts/World/Interactable.cs" id="1_fbpgm"]
+[ext_resource type="AudioStream" uid="uid://ckyjx8p37wsvh" path="res://Audio/Click.wav" id="2_rfew6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfew6"]
 
-[node name="Interactable" type="Area2D" unique_id=1820013233]
+[node name="Interactable" type="Area2D" unique_id=1820013233 node_paths=PackedStringArray("audioStreamPlayer")]
 script = ExtResource("1_fbpgm")
+audioStreamPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1653949719]
 shape = SubResource("RectangleShape2D_rfew6")
@@ -18,3 +20,6 @@ offset_bottom = 30.0
 scale = Vector2(0.49625447, 0.49485353)
 color = Color(0.69135684, 0.6913568, 0.69135684, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=523874294]
+stream = ExtResource("2_rfew6")

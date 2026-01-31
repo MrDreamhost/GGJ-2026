@@ -14,6 +14,6 @@ public partial class ItemInteractable : Interactable
         }
         playerCharacter.GetInventory().AddItem(itemId, amount, "Picked up from Interactable");
         base.OnInteract(playerCharacter);
-        QueueFree();
+        DoHide();
     }
 }
