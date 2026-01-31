@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://cimjskbb50tki"]
 
 [ext_resource type="Script" uid="uid://dqyi605olglr4" path="res://Scripts/UI/MainMenu.cs" id="1_tt5f1"]
-[ext_resource type="PackedScene" uid="uid://c5p6kaf6iyrl" path="res://Scenes/MainScene.tscn" id="2_853f1"]
 
-[node name="MainMenu" type="Control" unique_id=1468994464]
+[node name="MainMenu" type="Control" unique_id=1468994464 node_paths=PackedStringArray("ResetSaveButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tt5f1")
-gameScene = ExtResource("2_853f1")
+ResetSaveButton = NodePath("HBoxContainer/VBoxContainer/ResetSaveButton")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=709534236]
 layout_mode = 1

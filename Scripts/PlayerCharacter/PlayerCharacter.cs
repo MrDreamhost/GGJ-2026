@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Godot;
 using Godot.Collections;
@@ -12,7 +13,7 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private Array<MaskData> maskData = new Array<MaskData>();
     [Export] private PauseScreen pauseScreen = null;
     [Export] private GameOverScreen gameOverScreen = null;
-    [Export] private double gameTimerSeconds = 300;
+    [Export] private double gameTimerSeconds = 30;
     private Timer gameTimer = null;
     
     private int curMaskIndex = 0;
@@ -91,6 +92,7 @@ public partial class PlayerCharacter : CharacterBody2D
         pauseScreen.DoHide();
         gameOverScreen.DoHide();
         StartTimer();
+        LoadFromSaveData();
         UiManager.Instance.RegisterPlayer(this);
         SetCurMask(maskData[0]);
         base._Ready();
@@ -376,7 +378,33 @@ public partial class PlayerCharacter : CharacterBody2D
     private void OnTimerEnd()
     {
         SetState(State.EGameOver, "Game timer ended, locking player");
+        Logger.DebugInfo("Start saving player");
+        var saveData =  SaveManager.Instance.GetSaveData();
+        foreach (var mask in maskData)
+        {
+            foreach (var flag in mask.UnlockConditionFlags)
+            {
+                saveData[flag] = flags.GetFlag(flag).ToString();
+            }
+        }
+        SaveManager.Instance.UpdateSaveData(saveData);
+        Logger.DebugInfo("Finished saving player");
         gameOverScreen.DoShow();
         Logger.DebugInfo("Timer ended!");
+    }
+
+    private void LoadFromSaveData()
+    {
+        var saveData = SaveManager.Instance.GetSaveData();
+        if (saveData.Count == 0)
+        {
+            return; //Nothing to load from save file if save file is empty
+        }
+        
+        foreach (KeyValuePair<string, string> entry in saveData)
+        {
+            flags.SetFlag(entry.Key, Convert.ToBoolean(entry.Value));
+        }
+        
     }
 }
