@@ -9,11 +9,12 @@ public partial class DialogueLine : GodotObject
     public int Amount;
     public string AudioPath;
     public string Name;
+    public string Event;
     public Array<DialogueConditionGroup> NextLines = new Array<DialogueConditionGroup>();
     public Array<DialogueConditionGroup> FontConditions = new Array<DialogueConditionGroup>();
     public Array<PlayerFlag> ChangeFlags = new Array<PlayerFlag>();
 
-    public DialogueLine(int ID, string Line, int itemId, int amount)
+    public DialogueLine(int ID, string Line, int itemId, int amount, string Event)
     {
         NextLines = new Array<DialogueConditionGroup>();
         FontConditions = new Array<DialogueConditionGroup>();
@@ -21,6 +22,7 @@ public partial class DialogueLine : GodotObject
         this.Line = Line;
         this.ItemId = itemId;
         this.Amount = amount;
+        this.Event = Event;
     }
 
     //Returns 0 if none found or acceptable, so close the dialogue box
@@ -48,6 +50,21 @@ public partial class DialogueLine : GodotObject
         foreach (var flag in ChangeFlags)
         {
             UiManager.Instance.GetPlayer().GetPlayerFlags().SetFlag(flag.key, flag.value);
+        }
+        
+        ProcessDialogueEvent();
+    }
+
+    public void ProcessDialogueEvent()
+    {
+        switch (Event)
+        {
+            case "Lose":
+                UiManager.Instance.GetPlayer().OnTimerEnd(); //Makes game over popup show
+                break;
+            case "Win":
+                UiManager.Instance.GetPlayer().OnWin(); //Makes Win popup show
+                break;
         }
     }
 }

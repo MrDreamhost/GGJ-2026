@@ -13,6 +13,7 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private Array<MaskData> maskData = new Array<MaskData>();
     [Export] private PauseScreen pauseScreen = null;
     [Export] private GameOverScreen gameOverScreen = null;
+    [Export] private GameOverScreen winScreen = null;
     [Export] private double gameTimerSeconds = 300;
     private Timer gameTimer = null;
     
@@ -88,9 +89,14 @@ public partial class PlayerCharacter : CharacterBody2D
             Logger.Fatal("gameOverScreen was not assigned on playerCharacter");
         }
 
+        if (winScreen == null)
+        {
+            Logger.Fatal("winScreen was not assigned on PlayerCharacter");
+        }
         nextIdleAnim = "Down_Idle";
         pauseScreen.DoHide();
         gameOverScreen.DoHide();
+        winScreen.DoHide();
         StartTimer();
         LoadFromSaveData();
         UiManager.Instance.RegisterPlayer(this);
@@ -390,7 +396,7 @@ public partial class PlayerCharacter : CharacterBody2D
         gameTimer.Start();
     }
 
-    private void OnTimerEnd()
+    public void OnTimerEnd()
     {
         SetState(State.EGameOver, "Game timer ended, locking player");
         Logger.DebugInfo("Start saving player");
@@ -402,11 +408,33 @@ public partial class PlayerCharacter : CharacterBody2D
                 saveData[flag] = flags.GetFlag(flag).ToString();
             }
         }
+
+        gameTimer.SetPaused(true);
         SaveManager.Instance.UpdateSaveData(saveData);
         Logger.DebugInfo("Finished saving player");
         gameOverScreen.DoShow();
         Logger.DebugInfo("Timer ended!");
     }
+
+    public void OnWin()
+    {
+        SetState(State.EGameOver, "Player won, locking player");
+        Logger.DebugInfo("Start saving player");
+        var saveData =  SaveManager.Instance.GetSaveData();
+        foreach (var mask in maskData)
+        {
+            foreach (var flag in mask.UnlockConditionFlags)
+            {
+                saveData[flag] = flags.GetFlag(flag).ToString();
+            }
+        }
+
+        gameTimer.SetPaused(true);
+        SaveManager.Instance.UpdateSaveData(saveData);
+        Logger.DebugInfo("Finished saving player");
+        winScreen.DoShow();
+    }
+    
 
     private void LoadFromSaveData()
     {

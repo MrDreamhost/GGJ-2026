@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json;
-using GGJ2026.Scripts.Dialogue;
 using Godot;
 using Godot.Collections;
 
@@ -13,6 +12,7 @@ public static class DialogueLoader
         public int ConditionValue { get; set; }
         
         public string ConditionFlagValue { get; set; }
+        public string FinalStringValue { get; set; }
         public string Font { get; set; }
     }
     
@@ -39,6 +39,7 @@ public static class DialogueLoader
         public string Name { get; set; }
         public int ItemId { get; set; }
         public int Amount { get; set; }
+        public string Event { get; set; }
         public List<DialogueConditionGroupDB> DialogueConditionGroups { get; set; }
         public List<FontConditionGroupDB> FontConditionGroups { get; set; }
         
@@ -84,7 +85,7 @@ public static class DialogueLoader
 
         foreach (var lineDb in dialogueDb.DialogueLines)
         {
-            var line = new DialogueLine(lineDb.ID, lineDb.Line, lineDb.ItemId, lineDb.Amount);
+            var line = new DialogueLine(lineDb.ID, lineDb.Line, lineDb.ItemId, lineDb.Amount, lineDb.Event);
             line.AudioPath = lineDb.Audio;
             line.Name = lineDb.Name;
             if (lineDb.DialogueConditionGroups != null)
@@ -152,6 +153,10 @@ public static class DialogueLoader
                     break;
                 case "True":
                     condition = new DialogueCondition();
+                    break;
+                case "FinalString":
+                    condition = new FinalStringCondition();
+                    condition.FinalStringValue = conditionDb.FinalStringValue;
                     break;
             }
 

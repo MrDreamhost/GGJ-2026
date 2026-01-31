@@ -23,6 +23,11 @@ public partial class UiManager : Node
         this.dialogueManager = dialogueManager;
     }
 
+    public DialogueManager GetDialogueManager()
+    {
+        return dialogueManager;
+    }
+
     //TODO this is disgusting
     public void RegisterPlayer(PlayerCharacter player)
     {

@@ -30,27 +30,159 @@ shader_parameter/softness = 0.6
 
 [sub_resource type="Theme" id="Theme_psnte"]
 
-[sub_resource type="Resource" id="Resource_lrioy"]
-script = ExtResource("19_lrioy")
-Line = "am line 1"
-NextLineId = 3
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_8ys6w"]
-script = ExtResource("19_lrioy")
-Line = "am line 2"
-NextLineId = 4
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
 [sub_resource type="Resource" id="Resource_8kn8h"]
 script = ExtResource("19_lrioy")
-Line = "am line 3"
-NextLineId = 5
+Line = "1_1 - "
+NextLineId = 9992
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_ync2q"]
+script = ExtResource("19_lrioy")
+Line = "1_2 - "
+NextLineId = 9992
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_7bkcm"]
+script = ExtResource("19_lrioy")
+Line = "1_3 - "
+NextLineId = 9992
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_6kyvd"]
 script = ExtResource("18_lqayy")
-Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_lrioy"), SubResource("Resource_8ys6w"), SubResource("Resource_8kn8h")])
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_8kn8h"), SubResource("Resource_ync2q"), SubResource("Resource_7bkcm")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_b1hwh"]
+script = ExtResource("19_lrioy")
+Line = "2_1 - "
+NextLineId = 9993
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_ew2rj"]
+script = ExtResource("19_lrioy")
+Line = "2_2 - "
+NextLineId = 9993
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_2b6re"]
+script = ExtResource("19_lrioy")
+Line = "2_3 - "
+NextLineId = 993
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_15qt1"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_b1hwh"), SubResource("Resource_ew2rj"), SubResource("Resource_2b6re")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_wy4oo"]
+script = ExtResource("19_lrioy")
+Line = "3_1 - "
+NextLineId = 9994
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_eukkl"]
+script = ExtResource("19_lrioy")
+Line = "3_2 - "
+NextLineId = 9994
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_tvuu7"]
+script = ExtResource("19_lrioy")
+Line = "3_3 - "
+NextLineId = 9994
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_esw7j"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_wy4oo"), SubResource("Resource_eukkl"), SubResource("Resource_tvuu7")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_1slhg"]
+script = ExtResource("19_lrioy")
+Line = "4_1 - "
+NextLineId = 9995
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_ij8d5"]
+script = ExtResource("19_lrioy")
+Line = "4_2 - "
+NextLineId = 9995
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_ljo2x"]
+script = ExtResource("19_lrioy")
+Line = "4_3 - "
+NextLineId = 9995
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_7gk6a"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_1slhg"), SubResource("Resource_ij8d5"), SubResource("Resource_ljo2x")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_g4dvh"]
+script = ExtResource("19_lrioy")
+Line = "5_1 - "
+NextLineId = 9996
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_52xo4"]
+script = ExtResource("19_lrioy")
+Line = "5_2 - "
+NextLineId = 9996
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_ulk2q"]
+script = ExtResource("19_lrioy")
+Line = "5_3 - "
+NextLineId = 9996
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_vdgmp"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_g4dvh"), SubResource("Resource_52xo4"), SubResource("Resource_ulk2q")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_j3rjm"]
+script = ExtResource("19_lrioy")
+Line = "6_1"
+NextLineId = 9950
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_y1r3c"]
+script = ExtResource("19_lrioy")
+Line = "6_2"
+NextLineId = 9950
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_pss1r"]
+script = ExtResource("19_lrioy")
+Line = "6_3"
+NextLineId = 9950
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_d3djm"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_j3rjm"), SubResource("Resource_y1r3c"), SubResource("Resource_pss1r")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_0jpwu"]
+script = ExtResource("19_lrioy")
+Line = "Yes"
+NextLineId = 9951
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_l0mrj"]
+script = ExtResource("19_lrioy")
+Line = "No"
+NextLineId = 9991
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_2dcso"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_0jpwu"), SubResource("Resource_l0mrj")])
 metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
 
 [node name="Hud" type="CanvasLayer" unique_id=371431169]
@@ -106,19 +238,22 @@ script = ExtResource("4_w0blg")
 [node name="Spacer" type="Control" parent="VBoxContainer" unique_id=1805470223]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=488629163]
 layout_mode = 2
+mouse_filter = 2
 alignment = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1401967351]
 layout_mode = 2
+mouse_filter = 2
 
-[node name="ChoiceBox1" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=468404168]
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=127989533]
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/ChoiceBox1" unique_id=23173805]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button" unique_id=1719128622]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -126,10 +261,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ChoiceBoxID" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/ChoiceBox1/HBoxContainer" unique_id=1443018193]
+[node name="ChoiceBoxID" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button/HBoxContainer" unique_id=2132754391]
 clip_contents = false
 custom_minimum_size = Vector2(20, 25)
 layout_mode = 2
+mouse_filter = 1
 mouse_force_pass_scroll_events = false
 theme_override_font_sizes/normal_font_size = 10
 text = "1."
@@ -137,10 +273,11 @@ scroll_active = false
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="ChoiceBox1Text" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/ChoiceBox1/HBoxContainer" unique_id=164411121]
+[node name="ChoiceBox1Text" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button/HBoxContainer" unique_id=1149355460]
 clip_contents = false
 custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
+mouse_filter = 1
 mouse_force_pass_scroll_events = false
 theme = SubResource("Theme_psnte")
 theme_override_font_sizes/normal_font_size = 10
@@ -149,11 +286,11 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ChoiceBox2" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=194286653]
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=825714940]
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/ChoiceBox2" unique_id=1115196620]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button2" unique_id=1997985764]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -161,10 +298,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ChoiceBoxID" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/ChoiceBox2/HBoxContainer" unique_id=1619362467]
+[node name="ChoiceBoxID" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button2/HBoxContainer" unique_id=1806028832]
 clip_contents = false
 custom_minimum_size = Vector2(20, 25)
 layout_mode = 2
+mouse_filter = 1
 mouse_force_pass_scroll_events = false
 theme_override_font_sizes/normal_font_size = 10
 text = "2."
@@ -172,10 +310,11 @@ scroll_active = false
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="ChoiceBox2Text" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/ChoiceBox2/HBoxContainer" unique_id=882238539]
+[node name="ChoiceBox2Text" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button2/HBoxContainer" unique_id=676795179]
 clip_contents = false
 custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
+mouse_filter = 1
 mouse_force_pass_scroll_events = false
 theme = SubResource("Theme_psnte")
 theme_override_font_sizes/normal_font_size = 10
@@ -184,11 +323,11 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ChoiceBox3" type="Panel" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1425970625]
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1723873869]
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/ChoiceBox3" unique_id=176747947]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button3" unique_id=1675718896]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -196,10 +335,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ChoiceBoxID" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/ChoiceBox3/HBoxContainer" unique_id=235958426]
+[node name="ChoiceBoxID" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button3/HBoxContainer" unique_id=351209549]
 clip_contents = false
 custom_minimum_size = Vector2(20, 25)
 layout_mode = 2
+mouse_filter = 1
 mouse_force_pass_scroll_events = false
 theme_override_font_sizes/normal_font_size = 10
 text = "3."
@@ -207,10 +347,11 @@ scroll_active = false
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="ChoiceBox3Text" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/ChoiceBox3/HBoxContainer" unique_id=226935101]
+[node name="ChoiceBox3Text" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button3/HBoxContainer" unique_id=647324935]
 clip_contents = false
 custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
+mouse_filter = 1
 mouse_force_pass_scroll_events = false
 theme = SubResource("Theme_psnte")
 theme_override_font_sizes/normal_font_size = 10
@@ -243,12 +384,12 @@ audioFiles = Dictionary[String, AudioStreamWAV]({
 "Pickup": ExtResource("14_5ouvn")
 })
 audioPlayer = NodePath("DialogueAudioPlayer")
-choiceBox1 = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox1")
-choiceBox1Text = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox1/HBoxContainer/ChoiceBox1Text")
-choiceBox2 = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox2")
-choiceBox2Text = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox2/HBoxContainer/ChoiceBox2Text")
-choiceBox3 = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox3")
-choiceBox3Text = NodePath("../../HBoxContainer/VBoxContainer/ChoiceBox3/HBoxContainer/ChoiceBox3Text")
+choiceBox1 = NodePath("../../HBoxContainer/VBoxContainer/Button")
+choiceBox1Text = NodePath("../../HBoxContainer/VBoxContainer/Button/HBoxContainer/ChoiceBox1Text")
+choiceBox2 = NodePath("../../HBoxContainer/VBoxContainer/Button2")
+choiceBox2Text = NodePath("../../HBoxContainer/VBoxContainer/Button2/HBoxContainer/ChoiceBox2Text")
+choiceBox3 = NodePath("../../HBoxContainer/VBoxContainer/Button3")
+choiceBox3Text = NodePath("../../HBoxContainer/VBoxContainer/Button3/HBoxContainer/ChoiceBox3Text")
 nameTag = NodePath("MarginContainer/Panel/NameTagLabel")
 nameTagBox = NodePath("MarginContainer/Panel")
 nextIcon = NodePath("NextIcon")
@@ -257,7 +398,13 @@ fonts = Dictionary[String, Font]({
 "gibberish": ExtResource("15_5ouvn")
 })
 choiceDatabase = Dictionary[int, ExtResource("18_lqayy")]({
-2: SubResource("Resource_ync2q")
+9950: SubResource("Resource_2dcso"),
+9991: SubResource("Resource_6kyvd"),
+9992: SubResource("Resource_15qt1"),
+9993: SubResource("Resource_esw7j"),
+9994: SubResource("Resource_7gk6a"),
+9995: SubResource("Resource_vdgmp"),
+9996: SubResource("Resource_d3djm")
 })
 
 [node name="DialogueBox" type="Panel" parent="VBoxContainer/HBoxContainer2/DialogueManager" unique_id=1957812271]
@@ -285,6 +432,7 @@ text = "a ihi HAHA HIHI aaaa I AM SPEAKING WEIRD LANGUAGE AAAAAAAAAAAAAAA"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/DialogueManager" unique_id=927326797]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = -15
 

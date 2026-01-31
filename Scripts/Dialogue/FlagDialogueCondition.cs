@@ -1,5 +1,4 @@
-﻿namespace GGJ2026.Scripts.Dialogue;
-
+﻿
 public partial class FlagDialogueCondition : DialogueCondition
 {
     public override bool IsConditionTrue()

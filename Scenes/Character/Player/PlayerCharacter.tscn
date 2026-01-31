@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cbw3il7ovq3p6" path="res://Scenes/HUD.tscn" id="10_ew8jb"]
 [ext_resource type="SpriteFrames" uid="uid://dbxrkknxs2rrv" path="res://Art/Sprites/Characters/1/01_spriteframe.tres" id="10_kgfos"]
 [ext_resource type="PackedScene" uid="uid://2jw8bkp17xrl" path="res://Scenes/GameOverScreen.tscn" id="11_ew8jb"]
+[ext_resource type="PackedScene" uid="uid://iwp82q5jdjmp" path="res://Scenes/WinScreen.tscn" id="12_61rfw"]
 
 [sub_resource type="Resource" id="Resource_7v36p"]
 script = ExtResource("2_7dca7")
@@ -40,7 +41,7 @@ height = 18.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlonj"]
 size = Vector2(20, 28)
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "pauseScreen", "gameOverScreen", "inventory", "flags")]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "pauseScreen", "gameOverScreen", "winScreen", "inventory", "flags")]
 script = ExtResource("1_q032g")
 collider = NodePath("Area2D")
 playerSprite = NodePath("AnimatedSprite2D")
@@ -48,6 +49,7 @@ footsteps = NodePath("Footsteps")
 maskData = Array[ExtResource("2_7dca7")]([SubResource("Resource_7v36p"), SubResource("Resource_ew8jb"), SubResource("Resource_61rfw")])
 pauseScreen = NodePath("PauseScreen")
 gameOverScreen = NodePath("GameOverScreen")
+winScreen = NodePath("WinScreen")
 inventory = NodePath("Inventory")
 flags = NodePath("PlayerFlags")
 
@@ -85,3 +87,5 @@ script = ExtResource("5_l36xu")
 [node name="Hud" parent="." unique_id=371431169 instance=ExtResource("10_ew8jb")]
 
 [node name="GameOverScreen" parent="." unique_id=623124825 instance=ExtResource("11_ew8jb")]
+
+[node name="WinScreen" parent="." unique_id=463104337 instance=ExtResource("12_61rfw")]

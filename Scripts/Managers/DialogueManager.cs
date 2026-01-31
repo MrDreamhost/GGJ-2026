@@ -7,11 +7,11 @@ public partial class DialogueManager : Node
     [Export] private Panel dialogueBox = null;
     [Export] private Dictionary<string, AudioStreamWav> audioFiles = new Dictionary<string, AudioStreamWav>();
     [Export] private AudioStreamPlayer2D audioPlayer = null;
-    [Export] private Panel choiceBox1 = null;
+    [Export] private Button choiceBox1 = null;
     [Export] private RichTextLabel choiceBox1Text = null;
-    [Export] private Panel choiceBox2 = null;
+    [Export] private Button choiceBox2 = null;
     [Export] private RichTextLabel choiceBox2Text = null;
-    [Export] private Panel choiceBox3 = null;
+    [Export] private Button choiceBox3 = null;
     [Export] private RichTextLabel choiceBox3Text = null;
     [Export] private RichTextLabel nameTag = null;
     [Export] private Panel nameTagBox = null;
@@ -28,6 +28,8 @@ public partial class DialogueManager : Node
     private string dialogueDBPath = "res://resources/DialogueDB.txt";
 
     private string defaultFontName = "default";
+
+    public string FinalChoiceString = "";
     
     private DialogueLine currentLine;
     
@@ -105,6 +107,10 @@ public partial class DialogueManager : Node
         choiceBox1.Hide();
         choiceBox2.Hide();
         choiceBox3.Hide();
+
+        choiceBox1.ButtonUp += () => { SelectChoice(0); };
+        choiceBox2.ButtonUp += () => { SelectChoice(1); };
+        choiceBox3.ButtonUp += () => { SelectChoice(2); };
         
         //Fully Initialize before registering to UIManager
         LoadLines();
@@ -173,7 +179,10 @@ public partial class DialogueManager : Node
             return;
         }
         textBox.Theme.DefaultFont = GetFontForCurrentLine();
-        textBox.SetText(currentLine.Line);
+        string text = currentLine.Line;
+        text = text.Replace("!FS!", FinalChoiceString);
+        textBox.SetText(text);
+        
         nameTagBox.Hide();
         if (currentLine.Name != null && currentLine.Name != "")
         {
@@ -277,7 +286,17 @@ public partial class DialogueManager : Node
             var choice = group.Choices[index];
             if (choice == null)
                 return;
-            
+
+            if (currentLine.ID > 9990)
+            {
+                FinalChoiceString += choice.Line;
+            }
+
+            if (currentLine.ID == 9950 && index == 1)
+            {
+                FinalChoiceString = "";
+            }
+
             Logger.Info("Choice {0} selected, transitioning to line ID {1}", index, choice.NextLineId);
             StartDialogueSequence(choice.NextLineId);
         }
