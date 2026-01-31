@@ -2,8 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="1_853f1"]
 [ext_resource type="Script" uid="uid://dqyi605olglr4" path="res://Scripts/UI/MainMenu.cs" id="1_tt5f1"]
+[ext_resource type="AudioStream" uid="uid://ya3abi6i6axv" path="res://Audio/Workshop.wav" id="3_8saeu"]
 
-[node name="MainMenu" type="Control" unique_id=1468994464 node_paths=PackedStringArray("ResetSaveButton")]
+[node name="MainMenu" type="Control" unique_id=1468994464 node_paths=PackedStringArray("ResetSaveButton", "MasterSlider", "SFXSlider", "MusicSlider", "audioPlayer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +14,10 @@ grow_vertical = 2
 theme = ExtResource("1_853f1")
 script = ExtResource("1_tt5f1")
 ResetSaveButton = NodePath("HBoxContainer/VBoxContainer/ResetSaveButton")
+MasterSlider = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/HSlider")
+SFXSlider = NodePath("HBoxContainer/VBoxContainer/HBoxContainer2/HSlider")
+MusicSlider = NodePath("HBoxContainer/VBoxContainer/HBoxContainer3/HSlider")
+audioPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=709534236]
 layout_mode = 1
@@ -40,11 +45,6 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Play"
 
-[node name="SettingsButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=458929657]
-layout_mode = 2
-size_flags_vertical = 4
-text = "Settings"
-
 [node name="ResetSaveButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=2094579583]
 layout_mode = 2
 size_flags_vertical = 4
@@ -60,8 +60,57 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Quit"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1076356587]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1695511991]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+text = "Master"
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1798658278]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1548165558]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=736550334]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=2023562356]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1049817171]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1406766390]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=743441317]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1562692633]
+stream = ExtResource("3_8saeu")
+autoplay = true
+bus = &"Music"
+
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/PlayButton" to="." method="OnPlayButtonPressed"]
-[connection signal="button_up" from="HBoxContainer/VBoxContainer/SettingsButton" to="." method="OnSettingsButtonPressed"]
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/ResetSaveButton" to="." method="OnResetSaveButtonPressed"]
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/HowToPlayButton" to="." method="OnHowToPlayButtonPressed"]
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/QuitButton" to="." method="OnQuitButtonPressed"]
