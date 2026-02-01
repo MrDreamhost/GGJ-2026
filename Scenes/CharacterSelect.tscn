@@ -100,7 +100,7 @@ scale = Vector2(2.2447917, 2.2447917)
 sprite_frames = ExtResource("2_fxt7g")
 animation = &"Down_Idle"
 autoplay = "Down_Idle"
-frame_progress = 0.52538466
+frame_progress = 0.96619207
 
 [node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=2096084243]
 custom_minimum_size = Vector2(104, 0)
@@ -117,6 +117,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.827451)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/HBoxContainer/Panel/DisableRect" unique_id=642648409]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+text = "Not Unlocked"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel2" type="Panel" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=461024593]
 custom_minimum_size = Vector2(120, 150)
@@ -210,6 +227,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.827451)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/HBoxContainer/Panel3/DisableRect" unique_id=894251994]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+text = "Not Unlocked"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/HBoxContainer/Panel/MarginContainer/VBoxContainer/Button" to="." method="OnArtisanPicked"]
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/HBoxContainer/Panel2/MarginContainer/VBoxContainer/Button" to="." method="OnStrangerPicked"]
