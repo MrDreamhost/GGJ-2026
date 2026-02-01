@@ -292,7 +292,7 @@ autoplay = "Up_Idle"
 
 [node name="Artisan 1" parent="Interactable Objects/NPCs/Entrance Hall" unique_id=1474985067 instance=ExtResource("4_7rqgy")]
 position = Vector2(-55, -81)
-dialogueSequence = 123
+dialogueSequence = 52
 
 [node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Artisan 1" index="2" unique_id=1647837962]
 sprite_frames = ExtResource("10_5qxwa")
@@ -426,6 +426,7 @@ stream = ExtResource("8_4b75m")
 [node name="The Orb" type="Area2D" parent="Interactable Objects/Objects" unique_id=1560705017 node_paths=PackedStringArray("audioStreamPlayer")]
 position = Vector2(-56, 950)
 script = ExtResource("7_0iob3")
+dialogueSequence = 9990
 audioStreamPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Objects/The Orb" unique_id=1556808917]
