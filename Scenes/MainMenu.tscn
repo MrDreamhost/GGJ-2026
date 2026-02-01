@@ -2,11 +2,13 @@
 
 [ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="1_853f1"]
 [ext_resource type="Script" uid="uid://dqyi605olglr4" path="res://Scripts/UI/MainMenu.cs" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://cueh5d2ebstgu" path="res://Art/UIAssets/AssetPack/Tiles/Large tiles/Thick outline/tile_0000.png" id="3_cmrfp"]
 [ext_resource type="Texture2D" uid="uid://74t56h8nnnvq" path="res://Art/UIAssets/In-Use/arrowKeys.png" id="3_xim88"]
 [ext_resource type="Texture2D" uid="uid://cnymf7ejektac" path="res://Art/UIAssets/In-Use/Spacebar.png" id="4_koqhg"]
 [ext_resource type="Texture2D" uid="uid://cefux30y6b8er" path="res://Art/UIAssets/In-Use/Escape.png" id="5_cmrfp"]
 [ext_resource type="Texture2D" uid="uid://2fsb1utxde0q" path="res://Art/UIAssets/In-Use/onetwothree.png" id="6_loo7a"]
 [ext_resource type="AudioStream" uid="uid://klyfu14mdnki" path="res://Audio/Mask.wav" id="7_xim88"]
+[ext_resource type="FontFile" uid="uid://bmsrewwebqbux" path="res://resources/Kenney Pixel Square.ttf" id="8_loo7a"]
 
 [node name="MainMenu" type="Control" unique_id=1468994464 node_paths=PackedStringArray("ResetSaveButton", "MasterSlider", "SFXSlider", "MusicSlider", "audioPlayer")]
 layout_mode = 3
@@ -23,19 +25,27 @@ SFXSlider = NodePath("HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxCon
 MusicSlider = NodePath("HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer3/HSlider")
 audioPlayer = NodePath("AudioStreamPlayer2D")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=709534236]
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=236233260]
+layout_mode = 0
+offset_right = 1923.0
+offset_bottom = 1087.0
+color = Color(0.42745098, 0.29411766, 0.15294118, 1)
+
+[node name="ColorRect2" type="TextureRect" parent="." unique_id=2075573602]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_cmrfp")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=350401687]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 78.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -138,6 +148,19 @@ custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Play"
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PlayButton" unique_id=852115139]
+layout_mode = 0
+offset_left = -135.0
+offset_top = -59.0
+offset_right = 305.0
+offset_bottom = -13.0
+theme_override_colors/font_color = Color(0.5668723, 0.51472443, 0.36307755, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("8_loo7a")
+theme_override_font_sizes/font_size = 30
+text = "The Little Masquerade"
 
 [node name="ResetSaveButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=2094579583]
 custom_minimum_size = Vector2(160, 0)
