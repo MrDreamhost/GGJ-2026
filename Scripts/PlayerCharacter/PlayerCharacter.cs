@@ -393,15 +393,7 @@ public partial class PlayerCharacter : CharacterBody2D
         SetState(State.EGameOver, "Game timer ended, locking player");
         Logger.DebugInfo("Start saving player");
         
-        var saveData = SaveManager.Instance.GetSaveData();
-        foreach (var flag in flags.GetFlags())
-        {
-            if (flag.Key.StartsWith("s_"))
-            {
-                saveData["flag_" + flag.Key] = flag.Value.ToString();
-            }
-        }
-        SaveManager.Instance.UpdateSaveData(saveData);
+        SaveGame();
         Logger.DebugInfo("Finished saving player");
         
         gameTimer.SetPaused(true);
@@ -410,14 +402,11 @@ public partial class PlayerCharacter : CharacterBody2D
         UiManager.Instance.GetExplosionmanager().StartExplosions(50);
         
         //TODO show winscreen after timer
-        //gameOverScreen.DoShow();
+        gameOverScreen.DoShow();
     }
 
-    public void OnWin()
+    public void SaveGame()
     {
-        SetState(State.EGameOver, "Player won, locking player");
-        Logger.DebugInfo("Start saving player");
-        
         var saveData = SaveManager.Instance.GetSaveData();
         foreach (var flag in flags.GetFlags())
         {
@@ -427,6 +416,14 @@ public partial class PlayerCharacter : CharacterBody2D
             }
         }
         SaveManager.Instance.UpdateSaveData(saveData);
+    }
+
+    public void OnWin()
+    {
+        SetState(State.EGameOver, "Player won, locking player");
+        Logger.DebugInfo("Start saving player");
+        
+        SaveGame();
         Logger.DebugInfo("Finished saving player");
         
         gameTimer.SetPaused(true);

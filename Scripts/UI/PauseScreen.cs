@@ -92,11 +92,13 @@ public partial class PauseScreen : Node
     public void OnRestartButton()
     {
         DoHide();
+        UiManager.Instance.GetPlayer().SaveGame();
         SceneManager.Instance.LoadGame();
     }
 
     public void OnBackToMenuButton()
     {
+      UiManager.Instance.GetPlayer().SaveGame();
       SceneManager.Instance.LoadMainMenu();
     }
 
