@@ -43,7 +43,6 @@ height = 18.0
 size = Vector2(20, 28)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "music", "pauseScreen", "gameOverScreen", "winScreen", "inventory", "flags")]
-position = Vector2(1, 0)
 script = ExtResource("1_q032g")
 baseSpeed = 200
 collider = NodePath("Area2D")
