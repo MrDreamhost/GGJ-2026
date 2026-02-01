@@ -440,6 +440,7 @@ sprite_frames = SubResource("SpriteFrames_i0j58")
 autoplay = "default"
 frame_progress = 0.24878907
 
+[node name="CharacterSelect" parent="." unique_id=125877908 instance=ExtResource("19_i0j58")]
 
 [editable path="Interactable Objects/NPCs/Entrance Hall/Mage1"]
 [editable path="Interactable Objects/NPCs/Entrance Hall/Mage2"]
