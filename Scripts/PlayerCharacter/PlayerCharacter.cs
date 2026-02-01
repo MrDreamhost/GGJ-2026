@@ -405,8 +405,12 @@ public partial class PlayerCharacter : CharacterBody2D
         Logger.DebugInfo("Finished saving player");
         
         gameTimer.SetPaused(true);
-        gameOverScreen.DoShow();
         Logger.DebugInfo("Timer ended!");
+        
+        UiManager.Instance.GetExplosionmanager().StartExplosions(50);
+        
+        //TODO show winscreen after timer
+        //gameOverScreen.DoShow();
     }
 
     public void OnWin()

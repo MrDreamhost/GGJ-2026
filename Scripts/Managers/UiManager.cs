@@ -15,11 +15,23 @@ public partial class UiManager : Node
 
     private InteractionPanel interactionPanel;
 
+    private ExplosionManager explosionManager;
+
     public override void _Ready()
     {
         Instance = this;
     }
 
+    public void RegisterExplosionManager(ExplosionManager explosionManager)
+    {
+        this.explosionManager = explosionManager;
+    }
+
+    public ExplosionManager GetExplosionmanager()
+    {
+        return explosionManager;
+    }
+    
     public void RegisterDialogueManager(DialogueManager dialogueManager)
     {
         this.dialogueManager = dialogueManager;
