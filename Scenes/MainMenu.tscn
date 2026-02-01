@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="1_853f1"]
 [ext_resource type="Script" uid="uid://dqyi605olglr4" path="res://Scripts/UI/MainMenu.cs" id="1_tt5f1"]
-[ext_resource type="Texture2D" uid="uid://cueh5d2ebstgu" path="res://Art/UIAssets/AssetPack/Tiles/Large tiles/Thick outline/tile_0000.png" id="3_cmrfp"]
+[ext_resource type="Texture2D" uid="uid://cueh5d2ebstgu" path="res://Art/UIAssets/In-Use/tile_0000.png" id="3_cmrfp"]
 [ext_resource type="Texture2D" uid="uid://74t56h8nnnvq" path="res://Art/UIAssets/In-Use/arrowKeys.png" id="3_xim88"]
 [ext_resource type="Texture2D" uid="uid://cnymf7ejektac" path="res://Art/UIAssets/In-Use/Spacebar.png" id="4_koqhg"]
 [ext_resource type="Texture2D" uid="uid://cefux30y6b8er" path="res://Art/UIAssets/In-Use/Escape.png" id="5_cmrfp"]
