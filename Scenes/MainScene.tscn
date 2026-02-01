@@ -292,7 +292,7 @@ autoplay = "Up_Idle"
 
 [node name="Artisan 1" parent="Interactable Objects/NPCs/Entrance Hall" unique_id=1474985067 instance=ExtResource("4_7rqgy")]
 position = Vector2(-55, -81)
-dialogueSequence = 9991
+dialogueSequence = 123
 
 [node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Artisan 1" index="2" unique_id=1647837962]
 sprite_frames = ExtResource("10_5qxwa")

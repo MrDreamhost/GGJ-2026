@@ -19,7 +19,6 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private double gameTimerSeconds = 30;
     private Timer gameTimer = null;
     private int curMaskIndex = 0;
-
     [Export] private PlayerInventory inventory = null;
     [Export] private PlayerFlags flags = null;
     private State currentState = State.ECharacterSelect;
@@ -165,7 +164,8 @@ public partial class PlayerCharacter : CharacterBody2D
             }
         }
 
-        if (Input.IsActionJustReleased("open_pause_menu") && currentState != State.EGameOver && currentState != State.ECharacterSelect)
+        if (Input.IsActionJustReleased("open_pause_menu") && currentState != State.EGameOver &&
+            currentState != State.ECharacterSelect)
         {
             pauseScreen.FlipFlop();
             if (pauseScreen.IsGamePaused())
@@ -391,18 +391,19 @@ public partial class PlayerCharacter : CharacterBody2D
     {
         SetState(State.EGameOver, "Game timer ended, locking player");
         Logger.DebugInfo("Start saving player");
+        
         var saveData = SaveManager.Instance.GetSaveData();
-        foreach (var mask in maskData)
+        foreach (var flag in flags.GetFlags())
         {
-            foreach (var flag in mask.UnlockConditionFlags)
+            if (flag.Key.StartsWith("s_"))
             {
-                saveData["flag_" + flag] = flags.GetFlag(flag).ToString();
+                saveData["flag_" + flag.Key] = flag.Value.ToString();
             }
         }
-
-        gameTimer.SetPaused(true);
         SaveManager.Instance.UpdateSaveData(saveData);
         Logger.DebugInfo("Finished saving player");
+        
+        gameTimer.SetPaused(true);
         gameOverScreen.DoShow();
         Logger.DebugInfo("Timer ended!");
     }
@@ -411,18 +412,19 @@ public partial class PlayerCharacter : CharacterBody2D
     {
         SetState(State.EGameOver, "Player won, locking player");
         Logger.DebugInfo("Start saving player");
+        
         var saveData = SaveManager.Instance.GetSaveData();
-        foreach (var mask in maskData)
+        foreach (var flag in flags.GetFlags())
         {
-            foreach (var flag in mask.UnlockConditionFlags)
+            if (flag.Key.StartsWith("s_"))
             {
-                saveData["flag_" + flag] = flags.GetFlag(flag).ToString();
+                saveData["flag_" + flag.Key] = flag.Value.ToString();
             }
         }
-
-        gameTimer.SetPaused(true);
         SaveManager.Instance.UpdateSaveData(saveData);
         Logger.DebugInfo("Finished saving player");
+        
+        gameTimer.SetPaused(true);
         winScreen.DoShow();
     }
 

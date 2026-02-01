@@ -12,6 +12,11 @@ public partial class PlayerFlags : Node
         return CollectionExtensions.GetValueOrDefault(flags, key, false);
     }
 
+    public Dictionary<string, bool> GetFlags()
+    {
+        return flags;
+    }
+
     public void SetFlag(string key, bool value)
     {
         Logger.DebugInfo("Setting flag {0} with value {1}", key, value);

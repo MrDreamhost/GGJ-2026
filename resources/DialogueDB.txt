@@ -213,6 +213,13 @@
 	  "ChangeFlags": [{
 		  "Flag": "LibraryButton",
 		  "Value": true
+		},
+		{
+		  "Flag": "s_Machinebutton",
+		  "Value": true
+		},{
+		  "Flag": "s_beerbutton",
+		  "Value": false
 		}],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 124,
