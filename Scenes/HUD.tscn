@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://bt8gls0mk3jjm" path="res://Scripts/Dialogue/ChoiceGroup.cs" id="18_lqayy"]
 [ext_resource type="Script" uid="uid://b5u1kxmecsead" path="res://Scripts/Dialogue/Choice.cs" id="19_lrioy"]
 [ext_resource type="Texture2D" uid="uid://bq0m18vcencqw" path="res://Art/UIAssets/In-Use/tile_0009.png" id="21_8kn8h"]
+[ext_resource type="Texture2D" uid="uid://cnymf7ejektac" path="res://Art/UIAssets/In-Use/Spacebar.png" id="23_6kyvd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g8s2e"]
 shader = ExtResource("1_c3eba")
@@ -472,7 +473,21 @@ layout_mode = 2
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 20
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/DialogueManager/NextIcon" unique_id=1635446168]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/DialogueManager/NextIcon" unique_id=1480680147]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/DialogueManager/NextIcon/HBoxContainer" unique_id=1295914834]
+layout_mode = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer2/DialogueManager/NextIcon/HBoxContainer/MarginContainer" unique_id=1717461474]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("23_6kyvd")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2/DialogueManager/NextIcon/HBoxContainer" unique_id=1635446168]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
