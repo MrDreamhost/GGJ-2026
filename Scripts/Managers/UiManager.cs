@@ -9,8 +9,6 @@ public partial class UiManager : Node
 
     private PlayerCharacter player;
 
-    private HudVignette vignette;
-
     private RichTextLabel timerLabel;
 
     private InteractionPanel interactionPanel;
@@ -70,19 +68,9 @@ public partial class UiManager : Node
         this.player = player;
     }
 
-    public void RegisterHudVignette(HudVignette vignette)
-    {
-        this.vignette = vignette;
-    }
-
     public void RegisterTimerLabel(RichTextLabel timerLabel)
     {
         this.timerLabel = timerLabel;
-    }
-
-    public HudVignette GetHudVignette()
-    {
-        return vignette;
     }
 
     public PlayerCharacter GetPlayer()

@@ -359,17 +359,9 @@ public partial class PlayerCharacter : CharacterBody2D
         var currentAnim = playerSprite.Animation;
         playerSprite.SetSpriteFrames(mask.PlayerSprite);
         playerSprite.Play(currentAnim);
-        var material = UiManager.Instance.GetHudVignette()?.GetMaterial() as ShaderMaterial;
-        if (material == null)
-        {
-            Logger.Error("Found no shader material on vignette");
-            return;
-        }
-
         gameTimer.SetPaused(false);
         curMaskIndex = index;
         currentState = State.EIdle;
-        material.SetShaderParameter("vignette_color", mask.VignetteColor);
     }
 
     public int GetCurMask()
