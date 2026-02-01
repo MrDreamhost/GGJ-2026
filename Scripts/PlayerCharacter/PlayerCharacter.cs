@@ -354,6 +354,7 @@ public partial class PlayerCharacter : CharacterBody2D
         }
 
         gameTimer.SetPaused(false);
+        curMaskIndex = index;
         currentState = State.EIdle;
         material.SetShaderParameter("vignette_color", mask.VignetteColor);
     }
