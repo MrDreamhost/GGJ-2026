@@ -149,6 +149,7 @@ public static class DialogueLoader
                     break;
                 case "Not_Has_Flag":
                     condition = new FlagDialogueCondition();
+                    condition.Invert = true;
                     condition.FlagValue = conditionDb.ConditionFlagValue;
                     break;
                 case "True":
