@@ -13,6 +13,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dbxrkknxs2rrv" path="res://Art/Sprites/Characters/1/01_spriteframe.tres" id="10_kgfos"]
 [ext_resource type="PackedScene" uid="uid://2jw8bkp17xrl" path="res://Scenes/GameOverScreen.tscn" id="11_ew8jb"]
 [ext_resource type="PackedScene" uid="uid://iwp82q5jdjmp" path="res://Scenes/WinScreen.tscn" id="12_61rfw"]
+[ext_resource type="AudioStream" uid="uid://klyfu14mdnki" path="res://Audio/Mask.wav" id="14_1m23f"]
 
 [sub_resource type="Resource" id="Resource_7v36p"]
 script = ExtResource("2_7dca7")
@@ -104,3 +105,8 @@ script = ExtResource("5_l36xu")
 [node name="GameOverScreen" parent="." unique_id=623124825 instance=ExtResource("11_ew8jb")]
 
 [node name="WinScreen" parent="." unique_id=463104337 instance=ExtResource("12_61rfw")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2074370327]
+stream = ExtResource("14_1m23f")
+autoplay = true
+bus = &"Music"
