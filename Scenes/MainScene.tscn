@@ -319,7 +319,7 @@ dialogueSequence = 53
 sprite_frames = ExtResource("10_5qxwa")
 animation = &"Up_Special"
 autoplay = "Up_Special"
-frame_progress = 0.66189986
+frame_progress = 0.8016489
 
 [node name="Library" type="Node" parent="Interactable Objects/NPCs" unique_id=1002721591]
 
@@ -347,7 +347,7 @@ dialogueSequence = 54
 [node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Artisan 1" index="2" unique_id=1647837962]
 sprite_frames = ExtResource("10_5qxwa")
 animation = &"Up_Idle"
-frame_progress = 0.5768061
+frame_progress = 0.716555
 
 [node name="Library2" type="Node" parent="Interactable Objects/NPCs" unique_id=1744797719]
 
@@ -365,7 +365,8 @@ dialogueSequence = 101
 [node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library2/Archmage" index="2" unique_id=1647837962]
 sprite_frames = ExtResource("9_6t1o7")
 animation = &"Archmage"
-frame_progress = 0.47969854
+autoplay = "Archmage"
+frame_progress = 0.6543431
 speed_scale = 1.0
 flip_h = true
 
