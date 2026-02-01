@@ -15,12 +15,15 @@ run/main_scene="uid://c5p6kaf6iyrl"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dvhk4bjk7to7h"
+
 [autoload]
 
 SaveManager="*uid://cdgki33gn0sre"
 UIManager="*uid://btdviqcos4ikq"
 SceneManager="*uid://217gpwppxaf5"
-Hud="*uid://cbw3il7ovq3p6"
 
 [display]
 

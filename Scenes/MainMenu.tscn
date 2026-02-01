@@ -3,6 +3,10 @@
 [ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="1_853f1"]
 [ext_resource type="Script" uid="uid://dqyi605olglr4" path="res://Scripts/UI/MainMenu.cs" id="1_tt5f1"]
 [ext_resource type="AudioStream" uid="uid://ya3abi6i6axv" path="res://Audio/Workshop.wav" id="3_8saeu"]
+[ext_resource type="Texture2D" uid="uid://74t56h8nnnvq" path="res://Art/UIAssets/In-Use/arrowKeys.png" id="3_xim88"]
+[ext_resource type="Texture2D" uid="uid://cnymf7ejektac" path="res://Art/UIAssets/In-Use/Spacebar.png" id="4_koqhg"]
+[ext_resource type="Texture2D" uid="uid://cefux30y6b8er" path="res://Art/UIAssets/In-Use/Escape.png" id="5_cmrfp"]
+[ext_resource type="Texture2D" uid="uid://2fsb1utxde0q" path="res://Art/UIAssets/In-Use/onetwothree.png" id="6_loo7a"]
 
 [node name="MainMenu" type="Control" unique_id=1468994464 node_paths=PackedStringArray("ResetSaveButton", "MasterSlider", "SFXSlider", "MusicSlider", "audioPlayer")]
 layout_mode = 3
@@ -29,12 +33,101 @@ grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=350401687]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Control3" type="Control" parent="HBoxContainer" unique_id=2109625603]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Control3" unique_id=185160021]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control3/MarginContainer" unique_id=897211208]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Movement" type="Panel" parent="HBoxContainer/Control3/MarginContainer/VBoxContainer" unique_id=893381372]
+custom_minimum_size = Vector2(125, 80)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Control3/MarginContainer/VBoxContainer/Movement" unique_id=1838176884]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control3/MarginContainer/VBoxContainer/Movement/MarginContainer" unique_id=1622283824]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Control3/MarginContainer/VBoxContainer/Movement/MarginContainer/VBoxContainer" unique_id=762720752]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_xim88")
+stretch_mode = 2
+
+[node name="MovementText" type="RichTextLabel" parent="HBoxContainer/Control3/MarginContainer/VBoxContainer/Movement/MarginContainer/VBoxContainer" unique_id=1305979882]
+layout_mode = 2
+text = "Use the arrow keys to move around"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Interact" type="Panel" parent="HBoxContainer/Control3/MarginContainer/VBoxContainer" unique_id=587978285]
+custom_minimum_size = Vector2(125, 80)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Control3/MarginContainer/VBoxContainer/Interact" unique_id=1604814638]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control3/MarginContainer/VBoxContainer/Interact/MarginContainer" unique_id=198271968]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Control3/MarginContainer/VBoxContainer/Interact/MarginContainer/VBoxContainer" unique_id=778639650]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_koqhg")
+stretch_mode = 2
+
+[node name="MovementText" type="RichTextLabel" parent="HBoxContainer/Control3/MarginContainer/VBoxContainer/Interact/MarginContainer/VBoxContainer" unique_id=103493159]
+layout_mode = 2
+text = "Press Spacebar To interact with NPC's and Objects"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=78512131]
 layout_mode = 2
@@ -49,11 +142,6 @@ text = "Play"
 layout_mode = 2
 size_flags_vertical = 4
 text = "Reset Save FIle"
-
-[node name="HowToPlayButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1896566696]
-layout_mode = 2
-size_flags_vertical = 4
-text = "How To Play"
 
 [node name="QuitButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=147842940]
 layout_mode = 2
@@ -124,6 +212,97 @@ size_flags_vertical = 1
 max_value = 1.0
 step = 0.05
 
+[node name="Control4" type="Control" parent="HBoxContainer" unique_id=790363309]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Control4" unique_id=1309506104]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control4/MarginContainer" unique_id=2053622743]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PauseMenu" type="Panel" parent="HBoxContainer/Control4/MarginContainer/VBoxContainer" unique_id=1402806534]
+custom_minimum_size = Vector2(125, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Control4/MarginContainer/VBoxContainer/PauseMenu" unique_id=1262477227]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control4/MarginContainer/VBoxContainer/PauseMenu/MarginContainer" unique_id=865001816]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Control4/MarginContainer/VBoxContainer/PauseMenu/MarginContainer/VBoxContainer" unique_id=1800869738]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_cmrfp")
+stretch_mode = 2
+
+[node name="MovementText" type="RichTextLabel" parent="HBoxContainer/Control4/MarginContainer/VBoxContainer/PauseMenu/MarginContainer/VBoxContainer" unique_id=1397796746]
+layout_mode = 2
+text = "Press Escape to bring up the pause menu"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Choice" type="Panel" parent="HBoxContainer/Control4/MarginContainer/VBoxContainer" unique_id=215632581]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Control4/MarginContainer/VBoxContainer/Choice" unique_id=1684832738]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control4/MarginContainer/VBoxContainer/Choice/MarginContainer" unique_id=1167750458]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Control4/MarginContainer/VBoxContainer/Choice/MarginContainer/VBoxContainer" unique_id=1237135202]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_loo7a")
+stretch_mode = 2
+
+[node name="MovementText" type="RichTextLabel" parent="HBoxContainer/Control4/MarginContainer/VBoxContainer/Choice/MarginContainer/VBoxContainer" unique_id=510520290]
+layout_mode = 2
+text = "Press 1, 2 or 3 to make a choice in a dialogue choice screen 
+(or click an option with your mouse)"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1562692633]
 stream = ExtResource("3_8saeu")
 autoplay = true
@@ -131,5 +310,4 @@ bus = &"Music"
 
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/PlayButton" to="." method="OnPlayButtonPressed"]
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/ResetSaveButton" to="." method="OnResetSaveButtonPressed"]
-[connection signal="button_up" from="HBoxContainer/VBoxContainer/HowToPlayButton" to="." method="OnHowToPlayButtonPressed"]
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/QuitButton" to="." method="OnQuitButtonPressed"]
