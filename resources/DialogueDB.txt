@@ -7,9 +7,9 @@
 	},
 	{
 	  "ID": 1,
-	  "Line": "The first option is 2",
-	  "Audio": "Fem_Laugh",
-	  "Name": "Friendly Mage",
+	  "Line": "The Archmage seems to be absent from their own party, and I'd heard they've been really into Egyptian lore as of late, so the lack of decoration is a little disappointing",
+	  "Audio": "Fem_Sigh",
+	  "Name": "Critical Mage",
 	  "FontConditionGroups": [{
 		"Font": "gibberish", 
 		"FontConditions": [{
@@ -21,8 +21,27 @@
   },
 	{
 	  "ID": 2,
-	  "Line": "My name? How could you possibly not know the name of The Great Silas, The One With The Power Of The 7 Spirits, The First Born Child Of The Amazing Zalenor! How do you expect to get anywhere in this world, if you can't call people by their proper names. Shame to you youngling...",
-	  "Audio": "Fem_Laugh",
+	  "Line": "My name? How could you possibly not know the name of The Great Silas, The One With The Power Of The 7 Spirits, The First Born Child Of The Amazing Zalenor!",
+	  "Audio": "Fem_ThroatClean",
+	  "Name": "Grandiose Mage",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 1}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 7,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 1}]
+	  }]
+	},
+	{
+	  "ID": 7,
+	  "Line": "How do you expect to get anywhere in this world, if you can't call people by their proper names. Shame to you youngling...",
+	  "Audio": "Fem_Sigh",
 	  "Name": "Grandiose Mage",
 	  "FontConditionGroups": [{
 		"Font": "gibberish", 
@@ -35,8 +54,46 @@
 	},
 	{
 	  "ID": 3,
-	  "Line": "Hello, hello, what brings you here tonight? Are you part of the Holly Seekers? You know, I overheard the Arch Mage the other day rant to his pupils about... oh but I shouldn't tell... You're trustworthy aren't you? Us Mages must be able to trust each other. So, as I was saying, I heard him say that the Holly Seekers are starting to get on his nerves, I swear he was yelling 'Holiness is so overrated!' I couldn't believe my ears... Go on now, we're starting to look suspicious and no blabbering about our unholy secret. Shoo.",
+	  "Line": "Hello, hello, what brings you here tonight? Are you part of the Holly Seekers? You know, I overheard the Archmage the other day rant to his pupils about...",
+	  "Audio": "Fem_Curious",
+	  "Name": "Cowardly Mage",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 1}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 8,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 1}]
+	  }]
+	},
+	{
+	  "ID": 8,
+	  "Line": "oh but I shouldn't tell... You're trustworthy aren't you? Us Mages must be able to trust each other. So, as I was saying, I heard him say that the Holly Seekers are starting to get on his nerves, I swear he was yelling 'Holiness is so overrated!'",
 	  "Audio": "Fem_Laugh",
+	  "Name": "Cowardly Mage",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 1}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 9,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 1}]
+	  }]
+	},
+	{
+	  "ID": 9,
+	  "Line": "I couldn't believe my ears... Go on now, we're starting to look suspicious and no blabbering about our unholy secret. Shoo.",
+	  "Audio": "Fem_Mhm",
 	  "Name": "Cowardly Mage",
 	  "FontConditionGroups": [{
 		"Font": "gibberish", 
@@ -49,8 +106,46 @@
 	},
 	{
 	  "ID": 4,
-	  "Line": "The fourth option is 1",
-	  "Audio": "Fem_Laugh",
+	  "Line": "Maybe my spell's incantation wasn't strong enough, maybe if I adjust the wording",
+	  "Audio": "Fem_Mhm",
+	  "Name": "Frolicking Mage",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 1}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 10,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 1}]
+	  }]
+	},
+	{
+	  "ID": 10,
+	  "Line": "SPIRITS OF WATER, I COMMAND THEE, BRING ME THY RICHES",
+	  "Audio": "Fem_ThroatClean",
+	  "Name": "Frolicking Mage",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 1}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 11,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 1}]
+	  }]
+	},
+	{
+	  "ID": 11,
+	  "Line": "Oh? That seems to be doing something!",
+	  "Audio": "Fem_Curious",
 	  "Name": "Frolicking Mage",
 	  "FontConditionGroups": [{
 		"Font": "gibberish", 
@@ -63,9 +158,9 @@
 	},
 	{
 	  "ID": 5,
-	  "Line": "The fifth option is 3",
-	  "Audio": "Fem_Laugh",
-	  "Name": "Cautious Mage",
+	  "Line": "SILENCE IN THE LIBRARY! I swear no-one on this WHOLE PLANE understands the importance of some good silence.",
+	  "Audio": "Fem_ThroatClean",
+	  "Name": "Studious Mage",
 	  "FontConditionGroups": [{
 		"Font": "gibberish", 
 		"FontConditions": [{
@@ -77,8 +172,8 @@
 	},
 	{
 	  "ID": 6,
-	  "Line": "The sixth option is 2",
-	  "Audio": "Fem_Laugh",
+	  "Line": "OOPS! Guess I should get myself checked for some curses. Really don't need any angry spirits on me right now.",
+	  "Audio": "Fem_Sigh",
 	  "Name": "Adventurous Mage",
 	  "FontConditionGroups": [{
 		  "Font": "gibberish", 
@@ -96,8 +191,8 @@
 	},
 	{
 	  "ID": 52,
-	  "Line": "Building full of mages. They're up to no good, I'm tellin' ya. Even the Arch Mage has been acting weird lately. I think he's getting into dark magic. There's only one of THEM God forsaken books in the library and I've personally seen him pick it up 5 times only this week! Something is definitely up...",
-	  "Audio": "M_Laugh",
+	  "Line": "Huh?",
+	  "Audio": "M_Mhm",
 	  "Name": "Proud Artisan",
 	  "FontConditionGroups": [{
 		"Font": "gibberish", 
@@ -113,51 +208,171 @@
 		  "NextLineID": 51,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 1}]
-	  }]
+			  "ConditionValue": 1}
+		  ]},
+		  {"NextLineID": 55,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 0}]
+		  },
+		  {"NextLineID": 56,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 2}]
+		  }]
+	},
+	{
+	  "ID": 55,
+	  "Line": "Haven't seen ya round before, and you ain't look like one of them fancy mage types.\nIf you're looking for some'in to do, talk to our boss at the forge.",
+	  "Audio": "M_Nod",
+	  "Name": "Proud Artisan",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
+	},
+	{
+	  "ID": 56,
+	  "Line": "All these mages. They're up to no good, I tell ya. Even the Archmage's been actin weird lately. I think he's gettin into dark magic. There's only ONE of them God forsaken books in the library and I seen 'im pick it up 5 times just this week! Somethin's up...",
+	  "Audio": "M_Sigh",
+	  "Name": "Proud Artisan",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
 	},
 	{
 	  "ID": 53,
-	  "Line": "The forges need a constant supply of quenching liquid.",
-	  "Audio": "M_Laugh",
-	  "Name": "Cold Artisan",
+	  "Line": "Who?",
+	  "Audio": "M_Surprise",
+	  "Name": "Proud Artisan",
 	  "FontConditionGroups": [{
 		"Font": "gibberish", 
 		"FontConditions": [{
 			"ConditionType": "Not_Has_Mask",
 			"ConditionValue": 0}]
 	  }],
-	  "ChangeFlags": [],
+	  "ChangeFlags": [{
+		  "Flag": "s_metArtisan",
+		  "Value": true
+		}],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 51,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 1}]
-	  }]
+			  "ConditionValue": 1}
+		  ]},
+		  {"NextLineID": 57,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 0}]
+		  },
+		  {"NextLineID": 60,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 2}]
+		  }]
+	},
+	{
+	  "ID": 57,
+	  "Line": "Finally, someone I can actually talk to. Those mages really love their little codes.\nI'm sure there's some cool stuff to do 'round this place.",
+	  "Audio": "M_Laugh",
+	  "Name": "Cold Artisan",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 58,
+		  "DialogueConditions": [{
+			  "ConditionType": "Not_Has_Flag",
+			  "ConditionFlagValue": "s_metArtisan"}
+		  ]}]
+	},
+	{
+	  "ID": 58,
+	  "Line": "Here, take this. Wear it if you get the chance, the guys tend to be more comfortable around their own",
+	  "Audio": "M_Nod",
+	  "Name": "Cold Artisan",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 59,
+		  "DialogueConditions": []}]
+	},
+	{
+	  "ID": 59,
+	  "Line": "Obtained the Artisan Outfit!",
+	  "Audio": "Success",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [{
+		  "Flag": "s_metArtisan",
+		  "Value": true
+		}],
+	  "DialogueConditionGroups": []
+	},
+	{
+	  "ID": 60,
+	  "Line": "Oh hey, it's you again. Even with the forges on full blast this place is still freezing. Might go to the hall for a bit, pretend to work by moving the planters around or something.",
+	  "Audio": "M_Sigh",
+	  "Name": "Cold Artisan",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
 	},
 	{
 	  "ID": 54,
-	  "Line": "The Entrance button is on the odd stone out",
-	  "Audio": "M_Laugh",
+	  "Line": "What?",
+	  "Audio": "M_Mhm",
 	  "Name": "Inquisitive Artisan",
-	  "FontConditionGroups": [{
-		"Font": "gibberish", 
-		"FontConditions": [{
-			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 0}]
-	  }],
+	  "FontConditionGroups": [],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 51,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 1}]
-	  }]
+			  "ConditionValue": 1}
+		  ]},
+		  {"NextLineID": 61,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 0}]
+		  },
+		  {"NextLineID": 62,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 2}]
+		  }]
+	},
+	{
+	  "ID": 61,
+	  "Line": "The other two tell me I don't need book smarts to work the trade, but I think I make better things when I understand how all these things work.",
+	  "Audio": "M_Sigh",
+	  "Name": "Inquisitive Artisan",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
+	},
+	{
+	  "ID": 62,
+	  "Line": "When forging you need a constant supply of quenching water. Its nice that there's a well in teh workshop, but those mages keep moving our water pots and it ruins my focus",
+	  "Audio": "M_Sigh",
+	  "Name": "Inquisitive Artisan",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
 	},
 	{
 	  "ID": 101,
-	  "Line": "Watch out! The Skull of Montu can only be tamed with the following phrase:\n",
-	  "Audio": "M_Sigh",
+	  "Line": "Oh dear, this appears to be the Archmage. Something must have happened to them",
+	  "Audio": "Pickup",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 102,
+		  "DialogueConditions": []
+	  }]
+	},
+	{
+	  "ID": 102,
+	  "Line": "Watch out! The Skull of Montu can only be tamed with the following phrase:\nIn the name of the great unholy Anubis I command thee to calm thy anger and leave this plane!",
+	  "Audio": "Fem_Sigh",
 	  "Name": "Archmage",
 	  "FontConditionGroups": [{
 		"Font": "gibberish", 
@@ -165,6 +380,33 @@
 			"ConditionType": "Has_Mask",
 			"ConditionValue": 3}]
 	  }],
+	  "ChangeFlags": [{
+		  "Flag": "s_metArchmage",
+		  "Value": true
+		}],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 103,
+		  "DialogueConditions": []
+	  }]
+	},
+	{
+	  "ID": 103,
+	  "Line": "The spirit tries to communicate but you can't understand it. Perhaps the other mages could aid in the situation somehow and that floating skull seems suspicious",
+	  "Audio": "Pickup",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 104,
+		  "DialogueConditions": [{
+			  "ConditionType": "Not_Has_Flag",
+			  "ConditionFlagValue": "s_metArchmage"}
+		  ]}]
+	},
+	{
+	  "ID": 104,
+	  "Line": "Obtained the Mage Outfit!",
+	  "Audio": "Success",
+	  "FontConditionGroups": [],
 	  "ChangeFlags": [{
 		  "Flag": "s_metArchmage",
 		  "Value": true
@@ -219,13 +461,6 @@
 	  "ChangeFlags": [{
 		  "Flag": "LibraryButton",
 		  "Value": true
-		},
-		{
-		  "Flag": "s_Machinebutton",
-		  "Value": true
-		},{
-		  "Flag": "s_beerbutton",
-		  "Value": false
 		}],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 124,
@@ -247,6 +482,18 @@
 	  "DialogueConditionGroups": []
 	},
 	{
+	  "ID": 9989,
+	  "Line": "It's a floating skull, brimming with magical energies",
+	  "Audio": "Pickup",
+	  "Name": "Montu",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 9991,
+		  "DialogueConditions": []
+	  }]
+	},
+	{
 	  "ID": 9990,
 	  "Line": "You dare approach the mighty Montu, mortal! Only he with the mage's words may tame me!",
 	  "Audio": "Rot_Click",
@@ -262,55 +509,63 @@
 			"ID": 9991,
 			"Line": "What is the correct phrase?",
 			"Name": "Me",
+		  "Audio": "Pickup",
 			"DialogueConditionGroups": []
 		},
 		{
 			"ID": 9992,
 			"Line": "!FS!",
 			"Name": "Me",
+		  "Audio": "Pickup",
 			"DialogueConditionGroups": []
 		},
 		{
 			"ID": 9993,
 			"Line": "!FS!",
 			"Name": "Me",
+		  "Audio": "Pickup",
 			"DialogueConditionGroups": []
 		},
 		{
 			"ID": 9994,
 			"Line": "!FS!",
 			"Name": "Me",
+		  "Audio": "Pickup",
 			"DialogueConditionGroups": []
 		},
 		{
 			"ID": 9995,
 			"Line": "!FS!",
 			"Name": "Me",
+		  "Audio": "Pickup",
 			"DialogueConditionGroups": []
 		},
 		{
 			"ID": 9996,
 			"Line": "!FS!",
 			"Name": "Me",
+		  "Audio": "Pickup",
 			"DialogueConditionGroups": []
 		},
 		{
 			"ID": 9950,
 			"Line": "!FS!\r Are you certain that is correct mortal, get it wrong and you may release me early! HAHAHA!",
 			"Name": "Montu",
+		  "Audio": "Rot_Click",
 			"DialogueConditionGroups": []
 		},
 		{
 			"ID": 9951,
-			"Line": "!FS!\n !FS!",
+			"Line": "!FS!\n!FS!",
 			"Name": "Me",
+		  "Audio": "Pickup",
 			"DialogueConditionGroups": [
 				{
 					"NextLineID": 9953,
 					"DialogueConditions": [
 						{
 							"ConditionType": "FinalString",
-							"FinalStringValue": "In the name of the great unholy Anubis I command thee to calm thy anger and leave this plane"
+							"FinalStringValue": "In the name of the great unholy Anubis I command thee to calm thy anger and leave this plane!"
 						}
 					]
 				},
@@ -324,6 +579,7 @@
 			"ID": 9952,
 			"Line": "INCORRECT MORTAL! NOW FACE MY POWER",
 			"Name": "Montu",
+		  "Audio": "Rot_Click",
 			"Event": "Lose",
 			"DialogueConditionGroups": []
 		},
@@ -331,6 +587,7 @@
 			"ID": 9953,
 			"Line": "WHAT!? HOW DID YOU KNOW THAT! NOOOOOOOO!",
 			"Name": "Montu",
+		  "Audio": "Rot_Click",
 			"Event": "Win",
 			"DialogueConditionGroups": []
 		}
