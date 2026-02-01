@@ -10,6 +10,8 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private Area2D collider = null;
     [Export] private AnimatedSprite2D playerSprite = null;
     [Export] private AudioStreamPlayer2D footsteps = null;
+    [Export] private AudioStreamPlayer2D music = null;
+    [Export] private AudioStream initialSong = null;
     [Export] private Array<MaskData> maskData = new Array<MaskData>();
     [Export] private PauseScreen pauseScreen = null;
     [Export] private GameOverScreen gameOverScreen = null;
@@ -18,7 +20,6 @@ public partial class PlayerCharacter : CharacterBody2D
     private Timer gameTimer = null;
     private int curMaskIndex = 0;
 
-    //TODO save both inventory (and maybe flags?)
     [Export] private PlayerInventory inventory = null;
     [Export] private PlayerFlags flags = null;
     private State currentState = State.EIdle;
@@ -57,6 +58,11 @@ public partial class PlayerCharacter : CharacterBody2D
             Logger.Fatal("Footsteps AudioStreamPlayer2D not assigned on playerCharacter");
         }
 
+        if (music == null)
+        {
+            Logger.Fatal("Music AudioStreamPlayer2D not assigned on playerCharacter");
+        }
+
         if (inventory == null)
         {
             Logger.Fatal("inventory was not assigned on playerCharacter");
@@ -92,6 +98,11 @@ public partial class PlayerCharacter : CharacterBody2D
             Logger.Fatal("winScreen was not assigned on PlayerCharacter");
         }
 
+        if (initialSong == null)
+        {
+            Logger.Fatal("initialSong was not assigned on PlayerCharacter");
+        }
+
         nextIdleAnim = "Down_Idle";
         pauseScreen.DoHide();
         gameOverScreen.DoHide();
@@ -100,6 +111,7 @@ public partial class PlayerCharacter : CharacterBody2D
         LoadFromSaveData();
         UiManager.Instance.RegisterPlayer(this);
         SetCurMask(maskData[0]);
+        PlayMusic(initialSong);
         base._Ready();
     }
 
@@ -446,5 +458,12 @@ public partial class PlayerCharacter : CharacterBody2D
             var flagKey = entry.Key.Replace("flag_", "");
             flags.SetFlag(flagKey, Convert.ToBoolean(entry.Value));
         }
+    }
+
+    public void PlayMusic(AudioStream track)
+    {
+        music.SetStream(track);
+        music.Play();
+        Logger.DebugInfo("Starting playing song {0}", track.ResourceName);
     }
 }

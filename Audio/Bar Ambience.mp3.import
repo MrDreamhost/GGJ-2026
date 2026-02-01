@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Bar Ambience.mp3-754e72acd10c540adbc80c421ebc
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

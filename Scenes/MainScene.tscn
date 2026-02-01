@@ -10,9 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://dra0f2hukoppn" path="res://Art/Sprites/Stairs_To_Secret.png" id="6_xb4mg"]
 [ext_resource type="Script" uid="uid://bbwb5jkodam1e" path="res://Scripts/World/NPC/NpcBase.cs" id="7_0iob3"]
 [ext_resource type="AudioStream" uid="uid://ckyjx8p37wsvh" path="res://Audio/Click.wav" id="8_4b75m"]
+[ext_resource type="AudioStream" uid="uid://wlrsgxb7mcqx" path="res://Audio/Library.wav" id="8_hx8n4"]
 [ext_resource type="SpriteFrames" uid="uid://bs7p03qaejxes" path="res://Art/Sprites/Characters/4/04_spriteframe.tres" id="9_6t1o7"]
 [ext_resource type="Texture2D" uid="uid://cubvyqsk17tpa" path="res://Art/Sprites/Book.png" id="9_8ju71"]
+[ext_resource type="AudioStream" uid="uid://85f6i2be0mbf" path="res://Audio/Entrance Hall.wav" id="9_i0j58"]
 [ext_resource type="SpriteFrames" uid="uid://dbxrkknxs2rrv" path="res://Art/Sprites/Characters/1/01_spriteframe.tres" id="10_5qxwa"]
+[ext_resource type="AudioStream" uid="uid://ya3abi6i6axv" path="res://Audio/Workshop.wav" id="10_c1ier"]
 [ext_resource type="Texture2D" uid="uid://dohuj6sy2l7k1" path="res://Art/Sprites/FloatingSkull.png" id="11_6t1o7"]
 [ext_resource type="Texture2D" uid="uid://cjh4tk21oenmi" path="res://Art/Sprites/Characters/4/U_Special.png" id="11_xc4hf"]
 
@@ -238,6 +241,7 @@ visibility_layer = 524288
 position = Vector2(320, 14)
 linkedDoor = NodePath("../Door L-E")
 teleportOffset = Vector2(0, 0)
+songOfLinkedArea = ExtResource("8_hx8n4")
 
 [node name="Door L-E" parent="Interactable Objects/Doors" unique_id=274986066 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("2_7rqgy")]
 light_mask = 524288
@@ -245,6 +249,7 @@ visibility_layer = 524288
 position = Vector2(1170, -82)
 linkedDoor = NodePath("../Door E-L")
 teleportOffset = Vector2(0, 0)
+songOfLinkedArea = ExtResource("9_i0j58")
 
 [node name="Door E-W" parent="Interactable Objects/Doors" unique_id=1152285793 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("2_7rqgy")]
 light_mask = 524288
@@ -252,6 +257,7 @@ visibility_layer = 524288
 position = Vector2(-279, -152)
 linkedDoor = NodePath("../Door W-E")
 teleportOffset = Vector2(0, 0)
+songOfLinkedArea = ExtResource("10_c1ier")
 
 [node name="Door W-E" parent="Interactable Objects/Doors" unique_id=852116569 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("2_7rqgy")]
 light_mask = 524288
@@ -259,6 +265,7 @@ visibility_layer = 524288
 position = Vector2(-1085, 78)
 linkedDoor = NodePath("../Door E-W")
 teleportOffset = Vector2(0, 0)
+songOfLinkedArea = ExtResource("9_i0j58")
 
 [node name="NPCs" type="Node" parent="Interactable Objects" unique_id=1792982426]
 

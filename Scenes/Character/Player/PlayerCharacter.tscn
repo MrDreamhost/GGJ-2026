@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://iwpust1vsmo" path="res://Scripts/PlayerCharacter/PlayerCharacter.cs" id="1_q032g"]
 [ext_resource type="Script" uid="uid://ctw31u6rki5y5" path="res://Scripts/PlayerCharacter/MaskData.cs" id="2_7dca7"]
+[ext_resource type="AudioStream" uid="uid://85f6i2be0mbf" path="res://Audio/Entrance Hall.wav" id="2_7v36p"]
 [ext_resource type="AudioStream" uid="uid://ddhdh0mn7acth" path="res://Audio/Footsteps.wav" id="3_rlonj"]
 [ext_resource type="Script" uid="uid://ckcuqx6p7by8t" path="res://Scripts/PlayerCharacter/Inventory/PlayerInventory.cs" id="4_4vboh"]
 [ext_resource type="SpriteFrames" uid="uid://coi78gjxjmtkt" path="res://Art/Sprites/Characters/2/02_spriteframe.tres" id="4_cuei4"]
@@ -41,11 +42,13 @@ height = 18.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlonj"]
 size = Vector2(20, 28)
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "pauseScreen", "gameOverScreen", "winScreen", "inventory", "flags")]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "music", "pauseScreen", "gameOverScreen", "winScreen", "inventory", "flags")]
 script = ExtResource("1_q032g")
 collider = NodePath("Area2D")
 playerSprite = NodePath("AnimatedSprite2D")
 footsteps = NodePath("Footsteps")
+music = NodePath("MusicPlayer")
+initialSong = ExtResource("2_7v36p")
 maskData = Array[ExtResource("2_7dca7")]([SubResource("Resource_7v36p"), SubResource("Resource_ew8jb"), SubResource("Resource_61rfw")])
 pauseScreen = NodePath("PauseScreen")
 gameOverScreen = NodePath("GameOverScreen")
@@ -76,6 +79,9 @@ current = true
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="." unique_id=1244662103]
 stream = ExtResource("3_rlonj")
 bus = &"SFX"
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1870548337]
+bus = &"Music"
 
 [node name="Inventory" type="Node" parent="." unique_id=1423886156]
 script = ExtResource("4_4vboh")
