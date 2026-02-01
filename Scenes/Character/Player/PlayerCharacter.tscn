@@ -21,7 +21,7 @@ metadata/_custom_type_script = "uid://ctw31u6rki5y5"
 
 [sub_resource type="Resource" id="Resource_ew8jb"]
 script = ExtResource("2_7dca7")
-MaskId = 2
+MaskId = 1
 PlayerSprite = ExtResource("10_kgfos")
 VignetteColor = Color(1, 0, 0, 0.40392157)
 UnlockConditionFlags = Array[String](["s_metArtisan"])
@@ -29,10 +29,15 @@ metadata/_custom_type_script = "uid://ctw31u6rki5y5"
 
 [sub_resource type="Resource" id="Resource_61rfw"]
 script = ExtResource("2_7dca7")
-MaskId = 1
+MaskId = 2
 PlayerSprite = ExtResource("6_7v36p")
 VignetteColor = Color(0, 1, 0, 0.37254903)
 UnlockConditionFlags = Array[String](["s_metArchmage"])
+metadata/_custom_type_script = "uid://ctw31u6rki5y5"
+
+[sub_resource type="Resource" id="Resource_1m23f"]
+script = ExtResource("2_7dca7")
+MaskId = 3
 metadata/_custom_type_script = "uid://ctw31u6rki5y5"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dca7"]
@@ -50,7 +55,7 @@ playerSprite = NodePath("AnimatedSprite2D")
 footsteps = NodePath("Footsteps")
 music = NodePath("MusicPlayer")
 initialSong = ExtResource("2_7v36p")
-maskData = Array[ExtResource("2_7dca7")]([SubResource("Resource_7v36p"), SubResource("Resource_ew8jb"), SubResource("Resource_61rfw")])
+maskData = Array[ExtResource("2_7dca7")]([SubResource("Resource_7v36p"), SubResource("Resource_ew8jb"), SubResource("Resource_61rfw"), SubResource("Resource_1m23f")])
 pauseScreen = NodePath("PauseScreen")
 gameOverScreen = NodePath("GameOverScreen")
 winScreen = NodePath("WinScreen")

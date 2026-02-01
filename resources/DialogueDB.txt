@@ -14,7 +14,7 @@
 		"Font": "gibberish", 
 		"FontConditions": [{
 			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 1}]
+			"ConditionValue": 2}]
 	  }],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": []
@@ -28,14 +28,14 @@
 		"Font": "gibberish", 
 		"FontConditions": [{
 			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 1}]
+			"ConditionValue": 2}]
 	  }],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 7,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 1}]
+			  "ConditionValue": 2}]
 	  }]
 	},
 	{
@@ -47,7 +47,7 @@
 		"Font": "gibberish", 
 		"FontConditions": [{
 			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 1}]
+			"ConditionValue": 2}]
 	  }],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": []
@@ -61,14 +61,14 @@
 		"Font": "gibberish", 
 		"FontConditions": [{
 			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 1}]
+			"ConditionValue": 2}]
 	  }],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 8,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 1}]
+			  "ConditionValue": 2}]
 	  }]
 	},
 	{
@@ -80,14 +80,14 @@
 		"Font": "gibberish", 
 		"FontConditions": [{
 			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 1}]
+			"ConditionValue": 2}]
 	  }],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 9,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 1}]
+			  "ConditionValue": 2}]
 	  }]
 	},
 	{
@@ -99,7 +99,7 @@
 		"Font": "gibberish", 
 		"FontConditions": [{
 			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 1}]
+			"ConditionValue": 2}]
 	  }],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": []
@@ -113,14 +113,14 @@
 		"Font": "gibberish", 
 		"FontConditions": [{
 			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 1}]
+			"ConditionValue": 2}]
 	  }],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 10,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 1}]
+			  "ConditionValue": 2}]
 	  }]
 	},
 	{
@@ -132,14 +132,14 @@
 		"Font": "gibberish", 
 		"FontConditions": [{
 			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 1}]
+			"ConditionValue": 2}]
 	  }],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 11,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 1}]
+			  "ConditionValue": 2}]
 	  }]
 	},
 	{
@@ -151,7 +151,7 @@
 		"Font": "gibberish", 
 		"FontConditions": [{
 			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 1}]
+			"ConditionValue": 2}]
 	  }],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": []
@@ -165,7 +165,7 @@
 		"Font": "gibberish", 
 		"FontConditions": [{
 			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 1}]
+			"ConditionValue": 2}]
 	  }],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": []
@@ -179,7 +179,7 @@
 		  "Font": "gibberish", 
 		  "FontConditions": [{
 	  		"ConditionType": "Not_Has_Mask",
-				"ConditionValue": 1}]
+				"ConditionValue": 2}]
 	  }],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": []
@@ -250,10 +250,7 @@
 			"ConditionType": "Not_Has_Mask",
 			"ConditionValue": 0}]
 	  }],
-	  "ChangeFlags": [{
-		  "Flag": "s_metArtisan",
-		  "Value": true
-		}],
+	  "ChangeFlags": [],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 51,
 		  "DialogueConditions": [{
@@ -489,8 +486,10 @@
 	  "FontConditionGroups": [],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": [{
-		  "NextLineID": 9991,
-		  "DialogueConditions": []
+		  "NextLineID": 9990,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "s_metArchmage"}]
 	  }]
 	},
 	{
