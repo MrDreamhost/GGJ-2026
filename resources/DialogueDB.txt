@@ -235,7 +235,7 @@
 	  "ID": 53,
 	  "Line": "Who?",
 	  "Audio": "M_Surprise",
-	  "Name": "Proud Artisan",
+	  "Name": "Cold Artisan",
 	  "FontConditionGroups": [],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": [{

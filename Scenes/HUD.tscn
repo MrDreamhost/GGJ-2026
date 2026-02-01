@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://cbw3il7ovq3p6"]
 
-[ext_resource type="Shader" uid="uid://bis8cw7qif8k" path="res://Shaders/Vignette.gdshader" id="1_c3eba"]
 [ext_resource type="Script" uid="uid://fwdmeta2y3qf" path="res://Scripts/Managers/DialogueManager.cs" id="1_jo1ms"]
-[ext_resource type="Script" uid="uid://blwl4xmxir15x" path="res://Scripts/UI/HudVignette.cs" id="1_s3jbq"]
 [ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="3_w0blg"]
 [ext_resource type="AudioStream" uid="uid://c0cyg85ifiyqx" path="res://Audio/Voice Reactions/Voice_Female_V1_Laugh_Short_Mono_08.wav" id="4_g8s2e"]
 [ext_resource type="Script" uid="uid://4xrlkhusjcn8" path="res://Scripts/UI/TimerLabel.cs" id="4_w0blg"]
@@ -28,12 +26,6 @@
 [ext_resource type="Script" uid="uid://b5u1kxmecsead" path="res://Scripts/Dialogue/Choice.cs" id="19_lrioy"]
 [ext_resource type="Texture2D" uid="uid://bq0m18vcencqw" path="res://Art/UIAssets/In-Use/tile_0009.png" id="21_8kn8h"]
 [ext_resource type="Texture2D" uid="uid://cnymf7ejektac" path="res://Art/UIAssets/In-Use/Spacebar.png" id="23_6kyvd"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8s2e"]
-shader = ExtResource("1_c3eba")
-shader_parameter/vignette_color = Color(0, 0, 0, 1)
-shader_parameter/intensity = 0.4
-shader_parameter/softness = 0.6
 
 [sub_resource type="Theme" id="Theme_psnte"]
 
@@ -193,17 +185,6 @@ Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_j3rjm"), SubReso
 metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
 
 [node name="Hud" type="CanvasLayer" unique_id=371431169]
-
-[node name="Vignette" type="ColorRect" parent="." unique_id=1481305342]
-material = SubResource("ShaderMaterial_g8s2e")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(1, 1, 1, 0.15686275)
-script = ExtResource("1_s3jbq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=533690240]
 anchors_preset = 15

@@ -283,7 +283,7 @@ interactionText = "to move to entrance hall"
 [node name="Mage1" parent="Interactable Objects/NPCs/Entrance Hall" unique_id=1820013233 instance=ExtResource("4_7rqgy")]
 position = Vector2(152, -180)
 dialogueSequence = 1
-interactionText = "to talk to friendly mage"
+interactionText = "to talk to critical mage"
 
 [node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Mage1" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("9_6t1o7")
@@ -348,7 +348,7 @@ frame_progress = 0.8016489
 [node name="Mage1" parent="Interactable Objects/NPCs/Library" unique_id=2100291416 instance=ExtResource("4_7rqgy")]
 position = Vector2(1231, -62)
 dialogueSequence = 5
-interactionText = "to talk to cautious mage"
+interactionText = "to talk to studious  mage"
 
 [node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Mage1" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("9_6t1o7")
@@ -357,7 +357,7 @@ autoplay = "Down_Idle"
 [node name="Mage2" parent="Interactable Objects/NPCs/Library" unique_id=1431913109 instance=ExtResource("4_7rqgy")]
 position = Vector2(1224, -333)
 dialogueSequence = 6
-interactionText = "to talk to Adventurious Mage"
+interactionText = "to talk to Adventurous Mage"
 
 [node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Mage2" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("9_6t1o7")
