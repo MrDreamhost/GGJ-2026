@@ -18,7 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://ya3abi6i6axv" path="res://Audio/Workshop.wav" id="10_c1ier"]
 [ext_resource type="Texture2D" uid="uid://dohuj6sy2l7k1" path="res://Art/Sprites/FloatingSkull.png" id="11_6t1o7"]
 [ext_resource type="Texture2D" uid="uid://cjh4tk21oenmi" path="res://Art/Sprites/Characters/4/U_Special.png" id="11_xc4hf"]
-[ext_resource type="SpriteFrames" uid="uid://ddyl0i12ykgd8" path="res://Art/UIAssets/In-Use/explosion_SF.tres" id="16_c1ier"]
+[ext_resource type="SpriteFrames" path="res://Art/UIAssets/In-Use/explosion_SF.tres" id="16_c1ier"]
 [ext_resource type="PackedScene" uid="uid://uwxxwwmbyxsh" path="res://Scenes/CharacterSelect.tscn" id="19_i0j58"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q68mp"]
@@ -282,12 +282,7 @@ position = Vector2(152, -180)
 dialogueSequence = 1
 interactionText = "to talk to friendly mage"
 
-[node name="AudioStreamPlayer2D" parent="Interactable Objects/NPCs/Entrance Hall/Mage1" index="1" unique_id=523874294]
-stream = ExtResource("8_4b75m")
-volume_db = -80.0
-bus = &"SFX"
-
-[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Mage1" index="2" unique_id=1647837962]
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Mage1" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("9_6t1o7")
 animation = &"Left_Idle"
 autoplay = "Left_Idle"
@@ -297,12 +292,7 @@ position = Vector2(-222, 41)
 dialogueSequence = 2
 interactionText = "to talk to grandiose mage"
 
-[node name="AudioStreamPlayer2D" parent="Interactable Objects/NPCs/Entrance Hall/Mage2" index="1" unique_id=523874294]
-stream = ExtResource("8_4b75m")
-volume_db = -80.0
-bus = &"SFX"
-
-[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Mage2" index="2" unique_id=1647837962]
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Mage2" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("9_6t1o7")
 animation = &"Up_Idle"
 autoplay = "Up_Idle"
@@ -312,12 +302,7 @@ position = Vector2(-55, -81)
 dialogueSequence = 52
 interactionText = "to talk to proud artisan"
 
-[node name="AudioStreamPlayer2D" parent="Interactable Objects/NPCs/Entrance Hall/Artisan 1" index="1" unique_id=523874294]
-stream = ExtResource("8_4b75m")
-volume_db = -80.0
-bus = &"SFX"
-
-[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Artisan 1" index="2" unique_id=1647837962]
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Artisan 1" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("10_5qxwa")
 autoplay = "Down_Idle"
 frame_progress = 0.43179652
@@ -329,12 +314,7 @@ position = Vector2(-1097, -134)
 dialogueSequence = 3
 interactionText = "to talk to cowardly mage"
 
-[node name="AudioStreamPlayer2D" parent="Interactable Objects/NPCs/Workshop/Mage1" index="1" unique_id=523874294]
-stream = ExtResource("8_4b75m")
-volume_db = -80.0
-bus = &"SFX"
-
-[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Workshop/Mage1" index="2" unique_id=1647837962]
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Workshop/Mage1" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("9_6t1o7")
 animation = &"Left_Idle"
 autoplay = "Left_Idle"
@@ -344,12 +324,7 @@ position = Vector2(-1601, 79)
 dialogueSequence = 4
 interactionText = "to talk to frolicking mage"
 
-[node name="AudioStreamPlayer2D" parent="Interactable Objects/NPCs/Workshop/Mage2" index="1" unique_id=523874294]
-stream = ExtResource("8_4b75m")
-volume_db = -80.0
-bus = &"SFX"
-
-[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Workshop/Mage2" index="2" unique_id=1647837962]
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Workshop/Mage2" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("9_6t1o7")
 autoplay = "Down_Idle"
 frame_progress = 0.7150288
@@ -359,12 +334,7 @@ position = Vector2(-1448, -207)
 dialogueSequence = 53
 interactionText = "to talk to cold artisan"
 
-[node name="AudioStreamPlayer2D" parent="Interactable Objects/NPCs/Workshop/Artisan 1" index="1" unique_id=523874294]
-stream = ExtResource("8_4b75m")
-volume_db = -80.0
-bus = &"SFX"
-
-[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Workshop/Artisan 1" index="2" unique_id=1647837962]
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Workshop/Artisan 1" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("10_5qxwa")
 animation = &"Up_Special"
 autoplay = "Up_Special"
@@ -377,12 +347,7 @@ position = Vector2(1231, -62)
 dialogueSequence = 5
 interactionText = "to talk to cautious mage"
 
-[node name="AudioStreamPlayer2D" parent="Interactable Objects/NPCs/Library/Mage1" index="1" unique_id=523874294]
-stream = ExtResource("8_4b75m")
-volume_db = -80.0
-bus = &"SFX"
-
-[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Mage1" index="2" unique_id=1647837962]
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Mage1" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("9_6t1o7")
 autoplay = "Down_Idle"
 
@@ -391,12 +356,7 @@ position = Vector2(1224, -333)
 dialogueSequence = 6
 interactionText = "to talk to Adventurious Mage"
 
-[node name="AudioStreamPlayer2D" parent="Interactable Objects/NPCs/Library/Mage2" index="1" unique_id=523874294]
-stream = ExtResource("8_4b75m")
-volume_db = -80.0
-bus = &"SFX"
-
-[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Mage2" index="2" unique_id=1647837962]
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Mage2" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("9_6t1o7")
 animation = &"Up_Idle"
 autoplay = "Up_Idle"
@@ -406,12 +366,7 @@ position = Vector2(1465, -186)
 dialogueSequence = 54
 interactionText = "to talk to inquisitive artisan"
 
-[node name="AudioStreamPlayer2D" parent="Interactable Objects/NPCs/Library/Artisan 1" index="1" unique_id=523874294]
-stream = ExtResource("8_4b75m")
-volume_db = -80.0
-bus = &"SFX"
-
-[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Artisan 1" index="2" unique_id=1647837962]
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Library/Artisan 1" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("10_5qxwa")
 animation = &"Up_Idle"
 frame_progress = 0.716555
@@ -430,12 +385,7 @@ position = Vector2(-120, 906)
 dialogueSequence = 101
 interactionText = "to talk to archmage"
 
-[node name="AudioStreamPlayer2D" parent="Interactable Objects/NPCs/Orb Room/Archmage" index="1" unique_id=523874294]
-stream = ExtResource("8_4b75m")
-volume_db = -80.0
-bus = &"SFX"
-
-[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Archmage" index="2" unique_id=1647837962]
+[node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Archmage" index="1" unique_id=1647837962]
 sprite_frames = ExtResource("9_6t1o7")
 animation = &"Archmage"
 autoplay = "Archmage"
@@ -509,7 +459,7 @@ stream = ExtResource("8_4b75m")
 [node name="The Orb" type="Area2D" parent="Interactable Objects/Objects" unique_id=1560705017]
 position = Vector2(-56, 950)
 script = ExtResource("7_0iob3")
-dialogueSequence = 9990
+dialogueSequence = 9989
 interactionText = "to interact with the orb"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Objects/The Orb" unique_id=1556808917]
