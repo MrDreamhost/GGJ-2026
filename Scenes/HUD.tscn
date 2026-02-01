@@ -18,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://ckyjx8p37wsvh" path="res://Audio/Click.wav" id="14_5ouvn"]
 [ext_resource type="FontFile" uid="uid://di5mcjvv6dbmj" path="res://resources/Gibberish_v1-Regular.ttf" id="15_5ouvn"]
 [ext_resource type="FontFile" uid="uid://d074ain5jl370" path="res://resources/Kenney Pixel.ttf" id="16_w0blg"]
+[ext_resource type="AudioStream" uid="uid://dosip8oy6r30" path="res://Audio/Rotation Click.wav" id="17_ync2q"]
+[ext_resource type="AudioStream" uid="uid://c6l1vnukjrbdr" path="res://Audio/Mask-Pickup.wav" id="18_7bkcm"]
 [ext_resource type="Script" uid="uid://bt8gls0mk3jjm" path="res://Scripts/Dialogue/ChoiceGroup.cs" id="18_lqayy"]
 [ext_resource type="Script" uid="uid://b5u1kxmecsead" path="res://Scripts/Dialogue/Choice.cs" id="19_lrioy"]
 [ext_resource type="Texture2D" uid="uid://bq0m18vcencqw" path="res://Art/UIAssets/In-Use/tile_0009.png" id="21_8kn8h"]
@@ -29,144 +31,6 @@ shader_parameter/intensity = 0.4
 shader_parameter/softness = 0.6
 
 [sub_resource type="Theme" id="Theme_psnte"]
-
-[sub_resource type="Resource" id="Resource_8kn8h"]
-script = ExtResource("19_lrioy")
-Line = "1_1 - "
-NextLineId = 9992
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_ync2q"]
-script = ExtResource("19_lrioy")
-Line = "1_2 - "
-NextLineId = 9992
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_7bkcm"]
-script = ExtResource("19_lrioy")
-Line = "1_3 - "
-NextLineId = 9992
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_6kyvd"]
-script = ExtResource("18_lqayy")
-Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_8kn8h"), SubResource("Resource_ync2q"), SubResource("Resource_7bkcm")])
-metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
-
-[sub_resource type="Resource" id="Resource_b1hwh"]
-script = ExtResource("19_lrioy")
-Line = "2_1 - "
-NextLineId = 9993
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_ew2rj"]
-script = ExtResource("19_lrioy")
-Line = "2_2 - "
-NextLineId = 9993
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_2b6re"]
-script = ExtResource("19_lrioy")
-Line = "2_3 - "
-NextLineId = 993
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_15qt1"]
-script = ExtResource("18_lqayy")
-Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_b1hwh"), SubResource("Resource_ew2rj"), SubResource("Resource_2b6re")])
-metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
-
-[sub_resource type="Resource" id="Resource_wy4oo"]
-script = ExtResource("19_lrioy")
-Line = "3_1 - "
-NextLineId = 9994
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_eukkl"]
-script = ExtResource("19_lrioy")
-Line = "3_2 - "
-NextLineId = 9994
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_tvuu7"]
-script = ExtResource("19_lrioy")
-Line = "3_3 - "
-NextLineId = 9994
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_esw7j"]
-script = ExtResource("18_lqayy")
-Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_wy4oo"), SubResource("Resource_eukkl"), SubResource("Resource_tvuu7")])
-metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
-
-[sub_resource type="Resource" id="Resource_1slhg"]
-script = ExtResource("19_lrioy")
-Line = "4_1 - "
-NextLineId = 9995
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_ij8d5"]
-script = ExtResource("19_lrioy")
-Line = "4_2 - "
-NextLineId = 9995
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_ljo2x"]
-script = ExtResource("19_lrioy")
-Line = "4_3 - "
-NextLineId = 9995
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_7gk6a"]
-script = ExtResource("18_lqayy")
-Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_1slhg"), SubResource("Resource_ij8d5"), SubResource("Resource_ljo2x")])
-metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
-
-[sub_resource type="Resource" id="Resource_g4dvh"]
-script = ExtResource("19_lrioy")
-Line = "5_1 - "
-NextLineId = 9996
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_52xo4"]
-script = ExtResource("19_lrioy")
-Line = "5_2 - "
-NextLineId = 9996
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_ulk2q"]
-script = ExtResource("19_lrioy")
-Line = "5_3 - "
-NextLineId = 9996
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_vdgmp"]
-script = ExtResource("18_lqayy")
-Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_g4dvh"), SubResource("Resource_52xo4"), SubResource("Resource_ulk2q")])
-metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
-
-[sub_resource type="Resource" id="Resource_j3rjm"]
-script = ExtResource("19_lrioy")
-Line = "6_1"
-NextLineId = 9950
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_y1r3c"]
-script = ExtResource("19_lrioy")
-Line = "6_2"
-NextLineId = 9950
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_pss1r"]
-script = ExtResource("19_lrioy")
-Line = "6_3"
-NextLineId = 9950
-metadata/_custom_type_script = "uid://b5u1kxmecsead"
-
-[sub_resource type="Resource" id="Resource_d3djm"]
-script = ExtResource("18_lqayy")
-Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_j3rjm"), SubResource("Resource_y1r3c"), SubResource("Resource_pss1r")])
-metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
 
 [sub_resource type="Resource" id="Resource_0jpwu"]
 script = ExtResource("19_lrioy")
@@ -183,6 +47,144 @@ metadata/_custom_type_script = "uid://b5u1kxmecsead"
 [sub_resource type="Resource" id="Resource_2dcso"]
 script = ExtResource("18_lqayy")
 Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_0jpwu"), SubResource("Resource_l0mrj")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_8kn8h"]
+script = ExtResource("19_lrioy")
+Line = "By decree of"
+NextLineId = 9992
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_ync2q"]
+script = ExtResource("19_lrioy")
+Line = "In the name of"
+NextLineId = 9992
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_7bkcm"]
+script = ExtResource("19_lrioy")
+Line = "As foretold by"
+NextLineId = 9992
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_6kyvd"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_8kn8h"), SubResource("Resource_ync2q"), SubResource("Resource_7bkcm")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_b1hwh"]
+script = ExtResource("19_lrioy")
+Line = "the great unholy"
+NextLineId = 9993
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_ew2rj"]
+script = ExtResource("19_lrioy")
+Line = "his holiness"
+NextLineId = 9993
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_2b6re"]
+script = ExtResource("19_lrioy")
+Line = "the luminary"
+NextLineId = 993
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_15qt1"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_b1hwh"), SubResource("Resource_ew2rj"), SubResource("Resource_2b6re")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_wy4oo"]
+script = ExtResource("19_lrioy")
+Line = "Geoffrey"
+NextLineId = 9994
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_eukkl"]
+script = ExtResource("19_lrioy")
+Line = "Pythia"
+NextLineId = 9994
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_tvuu7"]
+script = ExtResource("19_lrioy")
+Line = "Osiris"
+NextLineId = 9994
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_esw7j"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_wy4oo"), SubResource("Resource_eukkl"), SubResource("Resource_tvuu7")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_1slhg"]
+script = ExtResource("19_lrioy")
+Line = "thou shalt"
+NextLineId = 9995
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_ij8d5"]
+script = ExtResource("19_lrioy")
+Line = "you must"
+NextLineId = 9995
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_ljo2x"]
+script = ExtResource("19_lrioy")
+Line = "I command thee"
+NextLineId = 9995
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_7gk6a"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_1slhg"), SubResource("Resource_ij8d5"), SubResource("Resource_ljo2x")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_g4dvh"]
+script = ExtResource("19_lrioy")
+Line = "release thy qualms"
+NextLineId = 9996
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_52xo4"]
+script = ExtResource("19_lrioy")
+Line = "to calm thy anger"
+NextLineId = 9996
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_ulk2q"]
+script = ExtResource("19_lrioy")
+Line = "break your chains"
+NextLineId = 9996
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_vdgmp"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_g4dvh"), SubResource("Resource_52xo4"), SubResource("Resource_ulk2q")])
+metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
+
+[sub_resource type="Resource" id="Resource_j3rjm"]
+script = ExtResource("19_lrioy")
+Line = "and leave this plane!"
+NextLineId = 9950
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_y1r3c"]
+script = ExtResource("19_lrioy")
+Line = "and fly free!"
+NextLineId = 9950
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_pss1r"]
+script = ExtResource("19_lrioy")
+Line = "and buzz off!"
+NextLineId = 9950
+metadata/_custom_type_script = "uid://b5u1kxmecsead"
+
+[sub_resource type="Resource" id="Resource_d3djm"]
+script = ExtResource("18_lqayy")
+Choices = Array[ExtResource("19_lrioy")]([SubResource("Resource_j3rjm"), SubResource("Resource_y1r3c"), SubResource("Resource_pss1r")])
 metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
 
 [node name="Hud" type="CanvasLayer" unique_id=371431169]
@@ -381,7 +383,9 @@ audioFiles = Dictionary[String, AudioStreamWAV]({
 "M_Nod": ExtResource("12_lrioy"),
 "M_Sigh": ExtResource("13_g6jqq"),
 "M_Surprise": ExtResource("11_lqayy"),
-"Pickup": ExtResource("14_5ouvn")
+"Pickup": ExtResource("14_5ouvn"),
+"Rot_Click": ExtResource("17_ync2q"),
+"Success": ExtResource("18_7bkcm")
 })
 audioPlayer = NodePath("DialogueAudioPlayer")
 choiceBox1 = NodePath("../../HBoxContainer/VBoxContainer/Button")
@@ -428,7 +432,7 @@ layout_mode = 2
 theme = SubResource("Theme_psnte")
 text = "a ihi HAHA HIHI aaaa I AM SPEAKING WEIRD LANGUAGE AAAAAAAAAAAAAAA"
 
-[node name="DialogueAudioPlayer" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer2/DialogueManager" unique_id=735548018]
+[node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="VBoxContainer/HBoxContainer2/DialogueManager" unique_id=171101841]
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/DialogueManager" unique_id=927326797]
 layout_mode = 2

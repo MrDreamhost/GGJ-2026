@@ -1,340 +1,237 @@
 {
-	"DialogueLines": [
-		{
-			"ID": 0,
-			"Line": "PLACEHOLDER YOU FORGOT TO SET THE CCORRECT VARIABLES LMAO",
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 1,
-			"Line": "The first option is 2",
-			"Audio": "Fem_Laugh",
-			"FontConditionGroups": [
-				{
-					"Font": "gibberish",
-					"FontConditions": [
-						{
-							"ConditionType": "Not_Has_Mask",
-							"ConditionValue": 1
-						}
-					]
-				}
-			],
-			"ChangeFlags": [],
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 2,
-			"Line": "The second option is 1",
-			"Audio": "Fem_Laugh",
-			"FontConditionGroups": [
-				{
-					"Font": "gibberish",
-					"FontConditions": [
-						{
-							"ConditionType": "Not_Has_Mask",
-							"ConditionValue": 1
-						}
-					]
-				}
-			],
-			"ChangeFlags": [],
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 3,
-			"Line": "The third option is 3",
-			"Audio": "Fem_Laugh",
-			"FontConditionGroups": [
-				{
-					"Font": "gibberish",
-					"FontConditions": [
-						{
-							"ConditionType": "Not_Has_Mask",
-							"ConditionValue": 1
-						}
-					]
-				}
-			],
-			"ChangeFlags": [],
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 4,
-			"Line": "The fourth option is 1",
-			"Audio": "Fem_Laugh",
-			"FontConditionGroups": [
-				{
-					"Font": "gibberish",
-					"FontConditions": [
-						{
-							"ConditionType": "Not_Has_Mask",
-							"ConditionValue": 1
-						}
-					]
-				}
-			],
-			"ChangeFlags": [],
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 5,
-			"Line": "The fifth option is 3",
-			"Audio": "Fem_Laugh",
-			"FontConditionGroups": [
-				{
-					"Font": "gibberish",
-					"FontConditions": [
-						{
-							"ConditionType": "Not_Has_Mask",
-							"ConditionValue": 1
-						}
-					]
-				}
-			],
-			"ChangeFlags": [],
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 6,
-			"Line": "The sixth option is 2",
-			"Audio": "Fem_Laugh",
-			"FontConditionGroups": [
-				{
-					"Font": "gibberish",
-					"FontConditions": [
-						{
-							"ConditionType": "Not_Has_Mask",
-							"ConditionValue": 1
-						}
-					]
-				}
-			],
-			"ChangeFlags": [],
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 51,
-			"Line": "I ain't talkin to no mage",
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 52,
-			"Line": "The Workshop Button is in the water",
-			"Audio": "M_Laugh",
-			"Name": "Temporary",
-			"FontConditionGroups": [
-				{
-					"Font": "gibberish",
-					"FontConditions": [
-						{
-							"ConditionType": "Not_Has_Mask",
-							"ConditionValue": 2
-						}
-					]
-				}
-			],
-			"ChangeFlags": [],
-			"DialogueConditionGroups": [
-				{
-					"NextLineID": 51,
-					"DialogueConditions": [
-						{
-							"ConditionType": "Has_Mask",
-							"ConditionValue": 1
-						}
-					]
-				}
-			]
-		},
-		{
-			"ID": 53,
-			"Line": "The Library button is behind the bookshelf with the skull",
-			"Audio": "M_Laugh",
-			"FontConditionGroups": [
-				{
-					"Font": "gibberish",
-					"FontConditions": [
-						{
-							"ConditionType": "Not_Has_Mask",
-							"ConditionValue": 2
-						}
-					]
-				}
-			],
-			"ChangeFlags": [],
-			"DialogueConditionGroups": [
-				{
-					"NextLineID": 51,
-					"DialogueConditions": [
-						{
-							"ConditionType": "Has_Mask",
-							"ConditionValue": 1
-						}
-					]
-				}
-			]
-		},
-		{
-			"ID": 54,
-			"Line": "The Entrance button is on the odd stone out",
-			"Audio": "M_Laugh",
-			"FontConditionGroups": [
-				{
-					"Font": "gibberish",
-					"FontConditions": [
-						{
-							"ConditionType": "Not_Has_Mask",
-							"ConditionValue": 2
-						}
-					]
-				}
-			],
-			"ChangeFlags": [],
-			"DialogueConditionGroups": [
-				{
-					"NextLineID": 51,
-					"DialogueConditions": [
-						{
-							"ConditionType": "Has_Mask",
-							"ConditionValue": 1
-						}
-					]
-				}
-			]
-		},
-		{
-			"ID": 101,
-			"Line": "The sequence goes: 2,1,3,1,3,2",
-			"Audio": "M_Sigh",
-			"FontConditionGroups": [
-				{
-					"Font": "gibberish",
-					"FontConditions": [
-						{
-							"ConditionType": "Has_Mask",
-							"ConditionValue": 0
-						}
-					]
-				}
-			],
-			"ChangeFlags": [],
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 121,
-			"Line": "Pressed the Entrance button",
-			"Audio": "Pickup",
-			"FontConditionGroups": [],
-			"ChangeFlags": [
-				{
-					"Flag": "EntranceButton",
-					"Value": true
-				}
-			],
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 122,
-			"Line": "Pressed the Workshop button",
-			"Audio": "Pickup",
-			"FontConditionGroups": [],
-			"ChangeFlags": [
-				{
-					"Flag": "WorkshopButton",
-					"Value": true
-				}
-			],
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 123,
-			"Line": "Pressed the Library button",
-			"Audio": "Pickup",
-			"FontConditionGroups": [],
-			"ChangeFlags": [
-				{
-					"Flag": "LibraryButton",
-					"Value": true
-				}
-			],
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 9991,
-			"Line": "What should i choose?",
-			"Name": "Me",
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 9992,
-			"Line": "!FS!",
-			"Name": "Me",
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 9993,
-			"Line": "!FS!",
-			"Name": "Me",
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 9994,
-			"Line": "!FS!",
-			"Name": "Me",
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 9995,
-			"Line": "!FS!",
-			"Name": "Me",
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 9996,
-			"Line": "!FS!",
-			"Name": "Me",
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 9950,
-			"Line": "!FS!\r Am I sure that this is the answer? ",
-			"Name": "Me",
-			"DialogueConditionGroups": []
-		},
-		{
-			"ID": 9951,
-			"Line": "CHANT !FS! !FS!",
-			"Name": "Me",
-			"DialogueConditionGroups": [
-				{
-					"NextLineID": 9953,
-					"DialogueConditions": [
-						{
-							"ConditionType": "FinalString",
-							"FinalStringValue": "1_1 - 2_1 - 3_1 - 4_1 - 5_1 - 6_1"
-						}
-					]
-				},
-				{
-					"NextLineID": 9952,
-					"DialogueConditions": []
-				}
-			]
-		},
-				{
-			"ID": 9952,
-			"Line": "MI BOMBA BOOOOOOOOOOOOOOOOOOOOM ",
-			"Name": "Me",
-			"Event": "Lose",
-			"DialogueConditionGroups": []
-		},
-				{
-			"ID": 9953,
-			"Line": "!FS!\r WOW THAT WAS THE RIGHT ANSWER !?!? ",
-			"Name": "Me",
-			"Event": "Win",
-			"DialogueConditionGroups": []
-		}
-	]
+  "DialogueLines": [
+	{
+	  "ID": 0,
+	  "Line": "PLACEHOLDER YOU FORGOT TO SET THE CCORRECT VARIABLES LMAO",
+	  "DialogueConditionGroups": []
+	},
+	{
+	  "ID": 1,
+	  "Line": "The first option is 2",
+	  "Audio": "Fem_Laugh",
+	  "Name": "Friendly Mage",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 1}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
+  },
+	{
+	  "ID": 2,
+	  "Line": "My name? How could you possibly not know the name of The Great Silas, The One With The Power Of The 7 Spirits, The First Born Child Of The Amazing Zalenor! How do you expect to get anywhere in this world, if you can't call people by their proper names. Shame to you youngling...",
+	  "Audio": "Fem_Laugh",
+	  "Name": "Grandiose Mage",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 1}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
+	},
+	{
+	  "ID": 3,
+	  "Line": "Hello, hello, what brings you here tonight? Are you part of the Holly Seekers? You know, I overheard the Arch Mage the other day rant to his pupils about... oh but I shouldn't tell... You're trustworthy aren't you? Us Mages must be able to trust each other. So, as I was saying, I heard him say that the Holly Seekers are starting to get on his nerves, I swear he was yelling 'Holiness is so overrated!' I couldn't believe my ears... Go on now, we're starting to look suspicious and no blabbering about our unholy secret. Shoo.",
+	  "Audio": "Fem_Laugh",
+	  "Name": "Cowardly Mage",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 1}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
+	},
+	{
+	  "ID": 4,
+	  "Line": "The fourth option is 1",
+	  "Audio": "Fem_Laugh",
+	  "Name": "Frolicking Mage",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 1}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
+	},
+	{
+	  "ID": 5,
+	  "Line": "The fifth option is 3",
+	  "Audio": "Fem_Laugh",
+	  "Name": "Cautious Mage",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 1}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
+	},
+	{
+	  "ID": 6,
+	  "Line": "The sixth option is 2",
+	  "Audio": "Fem_Laugh",
+	  "Name": "Adventurous Mage",
+	  "FontConditionGroups": [{
+		  "Font": "gibberish", 
+		  "FontConditions": [{
+	  		"ConditionType": "Not_Has_Mask",
+				"ConditionValue": 1}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
+	},
+	{
+	  "ID": 51,
+	  "Line": "I ain't talkin to no mage",
+	  "DialogueConditionGroups": []
+	},
+	{
+	  "ID": 52,
+	  "Line": "The Workshop Button is in the water",
+	  "Audio": "M_Laugh",
+	  "Name": "Proud Artisan",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 0}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 51,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 1}]
+	  }]
+	},
+	{
+	  "ID": 53,
+	  "Line": "The Library button is behind the bookshelf with the skull",
+	  "Audio": "M_Laugh",
+	  "Name": "Cold Artisan",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 0}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 51,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 1}]
+	  }]
+	},
+	{
+	  "ID": 54,
+	  "Line": "The Entrance button is on the odd stone out",
+	  "Audio": "M_Laugh",
+	  "Name": "Inquisitive Artisan",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Not_Has_Mask",
+			"ConditionValue": 0}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 51,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Mask",
+			  "ConditionValue": 1}]
+	  }]
+	},
+	{
+	  "ID": 101,
+	  "Line": "The sequence goes: 2,1,3,1,3,2",
+	  "Audio": "M_Sigh",
+	  "Name": "Archmage",
+	  "FontConditionGroups": [{
+		"Font": "gibberish", 
+		"FontConditions": [{
+			"ConditionType": "Has_Mask",
+			"ConditionValue": 3}]
+	  }],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
+	},
+	{
+	  "ID": 121,
+	  "Line": "You find a switch hidden behind the planter, you press it with a satisfying 'kerchunk'.",
+	  "Audio": "Pickup",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [{
+		  "Flag": "EntranceButton",
+		  "Value": true
+		}],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 124,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "EntranceButton"},{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "WorkshopButton"},{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "LibraryButton"}]
+	  }]
+	},
+	{
+	  "ID": 122,
+	  "Line": "A lever is hidden between the water pots, you give it a good pull and it flips.",
+	  "Audio": "Pickup",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [{
+		  "Flag": "WorkshopButton",
+		  "Value": true
+		}],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 124,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "EntranceButton"},{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "WorkshopButton"},{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "LibraryButton"}]
+	  }]
+	},
+	{
+	  "ID": 123,
+	  "Line": "You find an out of place Black Book, as you pull it a hidden latch is tripped with a loud 'Klunk'.",
+	  "Audio": "Pickup",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [{
+		  "Flag": "LibraryButton",
+		  "Value": true
+		}],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 124,
+		  "DialogueConditions": [{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "EntranceButton"},{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "WorkshopButton"},{
+			  "ConditionType": "Has_Flag",
+			  "ConditionFlagValue": "LibraryButton"}]
+	  }]
+	},
+	{
+	  "ID": 124,
+	  "Line": "As you flip the final switch a loud grinding sound can be heard from somewhere",
+	  "Audio": "Rot_Click",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": []
+	}
+  ]
 }
