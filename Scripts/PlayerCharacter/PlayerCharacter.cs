@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Godot;
 using Godot.Collections;
 
@@ -165,7 +166,7 @@ public partial class PlayerCharacter : CharacterBody2D
         }
 
         if (Input.IsActionJustReleased("open_pause_menu") && currentState != State.EGameOver &&
-            currentState != State.ECharacterSelect)
+            currentState != State.ECharacterSelect && currentState != State.EInDialogue)
         {
             pauseScreen.FlipFlop();
             if (pauseScreen.IsGamePaused())

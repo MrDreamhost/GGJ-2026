@@ -7,15 +7,9 @@ public partial class Interactable : Area2D
 {
     //All required flags to show up in-game
     [Export] private Array<PlayerFlag> requiredFlags = new Array<PlayerFlag>();
-    [Export] private AudioStreamPlayer2D audioStreamPlayer;
 
     public override void _Ready()
     {
-        if (audioStreamPlayer == null)
-        {
-            Logger.Fatal("AudioStreamPlayer is not assigned on Interactable");
-        }
-
         base._Ready();
     }
 
@@ -45,7 +39,6 @@ public partial class Interactable : Area2D
 
     public virtual void OnInteract(PlayerCharacter playerCharacter)
     {
-        audioStreamPlayer.Play();
     }
 
     protected virtual void DoHide()

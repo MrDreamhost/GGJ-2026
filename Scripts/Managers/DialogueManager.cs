@@ -137,6 +137,7 @@ public partial class DialogueManager : Node
 		if (currentLine == null)
 		{
 			dialogueBox.Hide();
+			UiManager.Instance.GetInteractionPanel().DoShow("");
 			nextIcon.Hide();
 			nameTagBox.Hide();
 			return;
@@ -174,6 +175,7 @@ public partial class DialogueManager : Node
 		if (currentLine == null)
 		{
 			dialogueBox.Hide();
+			UiManager.Instance.GetInteractionPanel().DoShow("");
 			nextIcon.Hide();
 			nameTagBox.Hide();
 			return;
@@ -190,6 +192,7 @@ public partial class DialogueManager : Node
 			nameTagBox.Show();
 		}
 		dialogueBox.Show();
+		UiManager.Instance.GetInteractionPanel().DoHide();
 		nextIcon.Show();
 
 		if (currentLine.AudioPath != "")
@@ -283,6 +286,16 @@ public partial class DialogueManager : Node
 			return;
 		if (choiceDatabase.TryGetValue(currentLine.ID, out ChoiceGroup group))
 		{
+			if (group.Choices == null)
+			{
+				return;
+				
+			}
+			if (index >= group.Choices.Count)
+			{
+				return;
+				
+			}
 			var choice = group.Choices[index];
 			if (choice == null)
 				return;

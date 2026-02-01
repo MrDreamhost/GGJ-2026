@@ -13,6 +13,8 @@ public partial class UiManager : Node
 
     private RichTextLabel timerLabel;
 
+    private InteractionPanel interactionPanel;
+
     public override void _Ready()
     {
         Instance = this;
@@ -26,6 +28,16 @@ public partial class UiManager : Node
     public DialogueManager GetDialogueManager()
     {
         return dialogueManager;
+    }
+
+    public InteractionPanel GetInteractionPanel()
+    {
+        return interactionPanel;
+    }
+
+    public void RegisterInteractionPanel(InteractionPanel panel)
+    {
+        this.interactionPanel = panel;
     }
 
     //TODO this is disgusting

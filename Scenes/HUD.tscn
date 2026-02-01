@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="3_w0blg"]
 [ext_resource type="AudioStream" uid="uid://c0cyg85ifiyqx" path="res://Audio/Voice Reactions/Voice_Female_V1_Laugh_Short_Mono_08.wav" id="4_g8s2e"]
 [ext_resource type="Script" uid="uid://4xrlkhusjcn8" path="res://Scripts/UI/TimerLabel.cs" id="4_w0blg"]
+[ext_resource type="Script" uid="uid://be8xd5ly0csjd" path="res://Scripts/UI/InteractionPanel.cs" id="5_15qt1"]
 [ext_resource type="Texture2D" uid="uid://d3j67ph150ddx" path="res://Art/Sprites/one.png" id="5_ew2rj"]
 [ext_resource type="AudioStream" uid="uid://bdpmw5k7dj5sy" path="res://Audio/Voice Reactions/Voice_Female_V1_Reflexion_Mouth_Close_Mono_11.wav" id="5_t385i"]
 [ext_resource type="Texture2D" uid="uid://doauvbbrj4yb" path="res://Art/Sprites/two.png" id="6_2b6re"]
@@ -91,7 +92,7 @@ metadata/_custom_type_script = "uid://b5u1kxmecsead"
 [sub_resource type="Resource" id="Resource_2b6re"]
 script = ExtResource("19_lrioy")
 Line = "the luminary "
-NextLineId = 993
+NextLineId = 9993
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_15qt1"]
@@ -245,6 +246,45 @@ script = ExtResource("4_w0blg")
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1846043508]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3" unique_id=2141094850]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer3/VBoxContainer" unique_id=409660491 node_paths=PackedStringArray("textLabel")]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("5_15qt1")
+textLabel = NodePath("HBoxContainer/RichTextLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/VBoxContainer/Panel" unique_id=635663651]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3/VBoxContainer/Panel/HBoxContainer" unique_id=2135027522]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("23_6kyvd")
+stretch_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer3/VBoxContainer/Panel/HBoxContainer" unique_id=530477149]
+layout_mode = 2
+text = "to \"placeholder text\""
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=488629163]
 layout_mode = 2

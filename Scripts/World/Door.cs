@@ -5,6 +5,7 @@ public partial class Door : Interactable
     [Export] private Door linkedDoor = null;
     [Export] private Vector2 teleportOffset = new Vector2();
     [Export] private AudioStream songOfLinkedArea = null;
+    [Export] private string interactionText = "NoShow";
     public Door GetLinkedDoor()
     {
         return linkedDoor;
@@ -16,7 +17,28 @@ public partial class Door : Interactable
             Logger.Fatal("Door does not have a linked door");
         }
 
+        this.AreaEntered += OnAreaEntered;
+        this.AreaExited += OnAreaLeft;
+        
+
         base._Ready();
+    }
+
+    private void OnAreaEntered(Area2D area)
+    {
+        Logger.Info("Area Entered");
+        if (area.Owner is PlayerCharacter character)
+        {
+            UiManager.Instance.GetInteractionPanel().DoShow(interactionText);
+        } 
+    }
+
+    private void OnAreaLeft(Area2D area)
+    {
+        if (area.Owner is PlayerCharacter character)
+        {
+            UiManager.Instance.GetInteractionPanel().DoHide();
+        } 
     }
 
     public override void OnInteract(PlayerCharacter playerCharacter)
