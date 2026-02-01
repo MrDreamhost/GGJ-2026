@@ -89,10 +89,10 @@ public partial class PauseScreen : Node
     }
 
 
-    public void OnHowToPlayButton()
+    public void OnRestartButton()
     {
-        //TODO
-        Logger.Info("TODO");
+        DoHide();
+        SceneManager.Instance.LoadGame();
     }
 
     public void OnBackToMenuButton()

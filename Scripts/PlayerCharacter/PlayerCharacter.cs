@@ -16,13 +16,13 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private PauseScreen pauseScreen = null;
     [Export] private GameOverScreen gameOverScreen = null;
     [Export] private GameOverScreen winScreen = null;
-    [Export] private double gameTimerSeconds = 300;
+    [Export] private double gameTimerSeconds = 30;
     private Timer gameTimer = null;
     private int curMaskIndex = 0;
 
     [Export] private PlayerInventory inventory = null;
     [Export] private PlayerFlags flags = null;
-    private State currentState = State.EIdle;
+    private State currentState = State.ECharacterSelect;
     private string nextIdleAnim = "";
 
     public enum State
@@ -32,6 +32,7 @@ public partial class PlayerCharacter : CharacterBody2D
         EInDialogue,
         EInMenu,
         EGameOver,
+        ECharacterSelect,
     }
 
     public State GetState()
@@ -110,7 +111,6 @@ public partial class PlayerCharacter : CharacterBody2D
         StartTimer();
         LoadFromSaveData();
         UiManager.Instance.RegisterPlayer(this);
-        SetCurMask(maskData[0]);
         PlayMusic(initialSong);
         base._Ready();
     }
@@ -165,12 +165,7 @@ public partial class PlayerCharacter : CharacterBody2D
             }
         }
 
-        if (Input.IsActionJustReleased("switch_mask") && CanMove())
-        {
-            SwitchMask();
-        }
-
-        if (Input.IsActionJustReleased("open_pause_menu") && currentState != State.EGameOver)
+        if (Input.IsActionJustReleased("open_pause_menu") && currentState != State.EGameOver && currentState != State.ECharacterSelect)
         {
             pauseScreen.FlipFlop();
             if (pauseScreen.IsGamePaused())
@@ -317,6 +312,7 @@ public partial class PlayerCharacter : CharacterBody2D
             case State.EInDialogue:
             case State.EInMenu:
             case State.EGameOver:
+            case State.ECharacterSelect:
                 return false;
         }
 
@@ -334,6 +330,7 @@ public partial class PlayerCharacter : CharacterBody2D
             case State.EInDialogue:
             case State.EInMenu:
             case State.EGameOver:
+            case State.ECharacterSelect:
                 return false;
         }
 
@@ -341,28 +338,9 @@ public partial class PlayerCharacter : CharacterBody2D
         return true;
     }
 
-    //TODO by index or ID?
-    private void SwitchMask()
+    public void SetCurMask(int index)
     {
-        if (maskData.Count > curMaskIndex + 1)
-        {
-            curMaskIndex += 1;
-            if (!IsMaskUnlocked(maskData[curMaskIndex]))
-            {
-                SwitchMask();
-                return;
-            }
-        }
-        else
-        {
-            curMaskIndex = 0;
-        }
-
-        SetCurMask(maskData[curMaskIndex]);
-    }
-
-    private void SetCurMask(MaskData mask)
-    {
+        var mask = maskData[index];
         Logger.DebugInfo("Setting current mask to {0}", mask.MaskId);
         var currentAnim = playerSprite.Animation;
         playerSprite.SetSpriteFrames(mask.PlayerSprite);
@@ -374,6 +352,8 @@ public partial class PlayerCharacter : CharacterBody2D
             return;
         }
 
+        gameTimer.SetPaused(false);
+        currentState = State.EIdle;
         material.SetShaderParameter("vignette_color", mask.VignetteColor);
     }
 
@@ -382,8 +362,9 @@ public partial class PlayerCharacter : CharacterBody2D
         return curMaskIndex;
     }
 
-    private bool IsMaskUnlocked(MaskData mask)
+    public bool IsMaskUnlocked(int index)
     {
+        var mask = maskData[index];
         foreach (var flagKey in mask.UnlockConditionFlags)
         {
             if (!flags.GetFlag(flagKey))
@@ -403,6 +384,7 @@ public partial class PlayerCharacter : CharacterBody2D
         gameTimer.OneShot = true;
         gameTimer.Timeout += OnTimerEnd;
         gameTimer.Start();
+        gameTimer.SetPaused(true); //Do this to show full timer upon mask select
     }
 
     public void OnTimerEnd()

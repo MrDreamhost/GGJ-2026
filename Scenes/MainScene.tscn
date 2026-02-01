@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://ya3abi6i6axv" path="res://Audio/Workshop.wav" id="10_c1ier"]
 [ext_resource type="Texture2D" uid="uid://dohuj6sy2l7k1" path="res://Art/Sprites/FloatingSkull.png" id="11_6t1o7"]
 [ext_resource type="Texture2D" uid="uid://cjh4tk21oenmi" path="res://Art/Sprites/Characters/4/U_Special.png" id="11_xc4hf"]
+[ext_resource type="PackedScene" uid="uid://uwxxwwmbyxsh" path="res://Scenes/CharacterSelect.tscn" id="19_i0j58"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q68mp"]
 atlas = ExtResource("2_y4jh7")
@@ -438,6 +439,7 @@ stream = ExtResource("8_4b75m")
 sprite_frames = SubResource("SpriteFrames_i0j58")
 autoplay = "default"
 frame_progress = 0.24878907
+
 
 [editable path="Interactable Objects/NPCs/Entrance Hall/Mage1"]
 [editable path="Interactable Objects/NPCs/Entrance Hall/Mage2"]

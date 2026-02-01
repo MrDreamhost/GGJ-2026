@@ -6,8 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://ddhdh0mn7acth" path="res://Audio/Footsteps.wav" id="3_rlonj"]
 [ext_resource type="Script" uid="uid://ckcuqx6p7by8t" path="res://Scripts/PlayerCharacter/Inventory/PlayerInventory.cs" id="4_4vboh"]
 [ext_resource type="SpriteFrames" uid="uid://coi78gjxjmtkt" path="res://Art/Sprites/Characters/2/02_spriteframe.tres" id="4_cuei4"]
-[ext_resource type="SpriteFrames" uid="uid://dsemnpc16hltc" path="res://Art/Sprites/Characters/3/03_spriteframe.tres" id="5_kgfos"]
 [ext_resource type="Script" uid="uid://clwruc87wgnne" path="res://Scripts/PlayerCharacter/PlayerFlags.cs" id="5_l36xu"]
+[ext_resource type="SpriteFrames" uid="uid://bs7p03qaejxes" path="res://Art/Sprites/Characters/4/04_spriteframe.tres" id="6_7v36p"]
 [ext_resource type="PackedScene" uid="uid://cp2qxycup62mc" path="res://Scenes/PauseScreen.tscn" id="10_61rfw"]
 [ext_resource type="PackedScene" uid="uid://cbw3il7ovq3p6" path="res://Scenes/HUD.tscn" id="10_ew8jb"]
 [ext_resource type="SpriteFrames" uid="uid://dbxrkknxs2rrv" path="res://Art/Sprites/Characters/1/01_spriteframe.tres" id="10_kgfos"]
@@ -16,13 +16,13 @@
 
 [sub_resource type="Resource" id="Resource_7v36p"]
 script = ExtResource("2_7dca7")
-PlayerSprite = ExtResource("10_kgfos")
+PlayerSprite = ExtResource("4_cuei4")
 metadata/_custom_type_script = "uid://ctw31u6rki5y5"
 
 [sub_resource type="Resource" id="Resource_ew8jb"]
 script = ExtResource("2_7dca7")
 MaskId = 1
-PlayerSprite = ExtResource("4_cuei4")
+PlayerSprite = ExtResource("10_kgfos")
 VignetteColor = Color(1, 0, 0, 0.40392157)
 UnlockConditionFlags = Array[String](["test_01"])
 metadata/_custom_type_script = "uid://ctw31u6rki5y5"
@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://ctw31u6rki5y5"
 [sub_resource type="Resource" id="Resource_61rfw"]
 script = ExtResource("2_7dca7")
 MaskId = 2
-PlayerSprite = ExtResource("5_kgfos")
+PlayerSprite = ExtResource("6_7v36p")
 VignetteColor = Color(0, 1, 0, 0.37254903)
 UnlockConditionFlags = Array[String](["has_mask_02"])
 metadata/_custom_type_script = "uid://ctw31u6rki5y5"

@@ -157,6 +157,11 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Resume"
 
+[node name="RestartButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1079757890]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Restart"
+
 [node name="BackToMainMenuButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=2077474554]
 layout_mode = 2
 size_flags_vertical = 4
@@ -323,5 +328,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/ResumeButton" to="." method="OnResumeButton"]
+[connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/RestartButton" to="." method="OnRestartButton"]
 [connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/BackToMainMenuButton" to="." method="OnBackToMenuButton"]
 [connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/QuitButton" to="." method="OnQuitButton"]
