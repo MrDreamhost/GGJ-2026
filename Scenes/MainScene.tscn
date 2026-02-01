@@ -18,7 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://ya3abi6i6axv" path="res://Audio/Workshop.wav" id="10_c1ier"]
 [ext_resource type="Texture2D" uid="uid://dohuj6sy2l7k1" path="res://Art/Sprites/FloatingSkull.png" id="11_6t1o7"]
 [ext_resource type="Texture2D" uid="uid://cjh4tk21oenmi" path="res://Art/Sprites/Characters/4/U_Special.png" id="11_xc4hf"]
-[ext_resource type="PackedScene" uid="uid://uwxxwwmbyxsh" path="res://Scenes/CharacterSelect.tscn" id="19_i0j58"]
+[ext_resource type="PackedScene" path="res://Scenes/CharacterSelect.tscn" id="19_i0j58"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q68mp"]
 atlas = ExtResource("2_y4jh7")
@@ -292,7 +292,7 @@ autoplay = "Up_Idle"
 
 [node name="Artisan 1" parent="Interactable Objects/NPCs/Entrance Hall" unique_id=1474985067 instance=ExtResource("4_7rqgy")]
 position = Vector2(-55, -81)
-dialogueSequence = 9991
+dialogueSequence = 52
 
 [node name="AnimatedSprite2D" parent="Interactable Objects/NPCs/Entrance Hall/Artisan 1" index="2" unique_id=1647837962]
 sprite_frames = ExtResource("10_5qxwa")
@@ -426,6 +426,7 @@ stream = ExtResource("8_4b75m")
 [node name="The Orb" type="Area2D" parent="Interactable Objects/Objects" unique_id=1560705017 node_paths=PackedStringArray("audioStreamPlayer")]
 position = Vector2(-56, 950)
 script = ExtResource("7_0iob3")
+dialogueSequence = 9990
 audioStreamPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable Objects/Objects/The Orb" unique_id=1556808917]

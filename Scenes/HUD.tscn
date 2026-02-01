@@ -51,19 +51,19 @@ metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
 
 [sub_resource type="Resource" id="Resource_8kn8h"]
 script = ExtResource("19_lrioy")
-Line = "By decree of"
+Line = "By decree of "
 NextLineId = 9992
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_ync2q"]
 script = ExtResource("19_lrioy")
-Line = "In the name of"
+Line = "In the name of "
 NextLineId = 9992
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_7bkcm"]
 script = ExtResource("19_lrioy")
-Line = "As foretold by"
+Line = "As foretold by "
 NextLineId = 9992
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
@@ -74,19 +74,19 @@ metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
 
 [sub_resource type="Resource" id="Resource_b1hwh"]
 script = ExtResource("19_lrioy")
-Line = "the great unholy"
+Line = "the great unholy "
 NextLineId = 9993
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_ew2rj"]
 script = ExtResource("19_lrioy")
-Line = "his holiness"
+Line = "his holiness "
 NextLineId = 9993
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_2b6re"]
 script = ExtResource("19_lrioy")
-Line = "the luminary"
+Line = "the luminary "
 NextLineId = 993
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
@@ -97,19 +97,19 @@ metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
 
 [sub_resource type="Resource" id="Resource_wy4oo"]
 script = ExtResource("19_lrioy")
-Line = "Geoffrey"
+Line = "Geoffrey "
 NextLineId = 9994
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_eukkl"]
 script = ExtResource("19_lrioy")
-Line = "Pythia"
+Line = "Pythia "
 NextLineId = 9994
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_tvuu7"]
 script = ExtResource("19_lrioy")
-Line = "Osiris"
+Line = "Anubis "
 NextLineId = 9994
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
@@ -120,19 +120,19 @@ metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
 
 [sub_resource type="Resource" id="Resource_1slhg"]
 script = ExtResource("19_lrioy")
-Line = "thou shalt"
+Line = "thou shalt "
 NextLineId = 9995
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_ij8d5"]
 script = ExtResource("19_lrioy")
-Line = "you must"
+Line = "you must "
 NextLineId = 9995
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_ljo2x"]
 script = ExtResource("19_lrioy")
-Line = "I command thee"
+Line = "I command thee "
 NextLineId = 9995
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
@@ -143,19 +143,19 @@ metadata/_custom_type_script = "uid://bt8gls0mk3jjm"
 
 [sub_resource type="Resource" id="Resource_g4dvh"]
 script = ExtResource("19_lrioy")
-Line = "release thy qualms"
+Line = "release thy qualms "
 NextLineId = 9996
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_52xo4"]
 script = ExtResource("19_lrioy")
-Line = "to calm thy anger"
+Line = "to calm thy anger "
 NextLineId = 9996
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
 [sub_resource type="Resource" id="Resource_ulk2q"]
 script = ExtResource("19_lrioy")
-Line = "break your chains"
+Line = "break your chains "
 NextLineId = 9996
 metadata/_custom_type_script = "uid://b5u1kxmecsead"
 
@@ -441,7 +441,7 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = -15
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2/DialogueManager/MarginContainer" unique_id=1573180182]
-custom_minimum_size = Vector2(75, 25)
+custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0

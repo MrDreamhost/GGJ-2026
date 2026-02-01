@@ -21,18 +21,18 @@ metadata/_custom_type_script = "uid://ctw31u6rki5y5"
 
 [sub_resource type="Resource" id="Resource_ew8jb"]
 script = ExtResource("2_7dca7")
-MaskId = 1
+MaskId = 2
 PlayerSprite = ExtResource("10_kgfos")
 VignetteColor = Color(1, 0, 0, 0.40392157)
-UnlockConditionFlags = Array[String](["test_01"])
+UnlockConditionFlags = Array[String](["s_metArtisan"])
 metadata/_custom_type_script = "uid://ctw31u6rki5y5"
 
 [sub_resource type="Resource" id="Resource_61rfw"]
 script = ExtResource("2_7dca7")
-MaskId = 2
+MaskId = 1
 PlayerSprite = ExtResource("6_7v36p")
 VignetteColor = Color(0, 1, 0, 0.37254903)
-UnlockConditionFlags = Array[String](["has_mask_02"])
+UnlockConditionFlags = Array[String](["s_metArchmage"])
 metadata/_custom_type_script = "uid://ctw31u6rki5y5"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dca7"]
@@ -44,6 +44,7 @@ size = Vector2(20, 28)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "music", "pauseScreen", "gameOverScreen", "winScreen", "inventory", "flags")]
 script = ExtResource("1_q032g")
+baseSpeed = 200
 collider = NodePath("Area2D")
 playerSprite = NodePath("AnimatedSprite2D")
 footsteps = NodePath("Footsteps")
@@ -53,6 +54,7 @@ maskData = Array[ExtResource("2_7dca7")]([SubResource("Resource_7v36p"), SubReso
 pauseScreen = NodePath("PauseScreen")
 gameOverScreen = NodePath("GameOverScreen")
 winScreen = NodePath("WinScreen")
+gameTimerSeconds = 300.0
 inventory = NodePath("Inventory")
 flags = NodePath("PlayerFlags")
 
@@ -81,6 +83,7 @@ stream = ExtResource("3_rlonj")
 bus = &"SFX"
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1870548337]
+volume_db = -20.0
 bus = &"Music"
 
 [node name="Inventory" type="Node" parent="." unique_id=1423886156]

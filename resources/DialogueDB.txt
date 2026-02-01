@@ -96,7 +96,7 @@
 	},
 	{
 	  "ID": 52,
-	  "Line": "The Workshop Button is in the water",
+	  "Line": "Building full of mages. They're up to no good, I'm tellin' ya. Even the Arch Mage has been acting weird lately. I think he's getting into dark magic. There's only one of THEM God forsaken books in the library and I've personally seen him pick it up 5 times only this week! Something is definitely up...",
 	  "Audio": "M_Laugh",
 	  "Name": "Proud Artisan",
 	  "FontConditionGroups": [{
@@ -105,7 +105,10 @@
 			"ConditionType": "Not_Has_Mask",
 			"ConditionValue": 0}]
 	  }],
-	  "ChangeFlags": [],
+	  "ChangeFlags": [{
+		  "Flag": "s_metArtisan",
+		  "Value": true
+		}],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 51,
 		  "DialogueConditions": [{
@@ -115,7 +118,7 @@
 	},
 	{
 	  "ID": 53,
-	  "Line": "The Library button is behind the bookshelf with the skull",
+	  "Line": "The forges need a constant supply of quenching liquid.",
 	  "Audio": "M_Laugh",
 	  "Name": "Cold Artisan",
 	  "FontConditionGroups": [{
@@ -153,7 +156,7 @@
 	},
 	{
 	  "ID": 101,
-	  "Line": "The sequence goes: 2,1,3,1,3,2",
+	  "Line": "Watch out! The Skull of Montu can only be tamed with the following phrase:\n",
 	  "Audio": "M_Sigh",
 	  "Name": "Archmage",
 	  "FontConditionGroups": [{
@@ -162,7 +165,10 @@
 			"ConditionType": "Has_Mask",
 			"ConditionValue": 3}]
 	  }],
-	  "ChangeFlags": [],
+	  "ChangeFlags": [{
+		  "Flag": "s_metArchmage",
+		  "Value": true
+		}],
 	  "DialogueConditionGroups": []
 	},
 	{
@@ -228,10 +234,98 @@
 	{
 	  "ID": 124,
 	  "Line": "As you flip the final switch a loud grinding sound can be heard from somewhere",
-	  "Audio": "Rot_Click",
+	  "Audio": "Success",
 	  "FontConditionGroups": [],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": []
-	}
+	},
+	{
+	  "ID": 9990,
+	  "Line": "You dare approach the mighty Montu, mortal! Only he with the mage's words may tame me!",
+	  "Audio": "Rot_Click",
+	  "Name": "Montu",
+	  "FontConditionGroups": [],
+	  "ChangeFlags": [],
+	  "DialogueConditionGroups": [{
+		  "NextLineID": 9991,
+		  "DialogueConditions": []
+	  }]
+	},
+		{
+			"ID": 9991,
+			"Line": "What is the correct phrase?",
+			"Name": "Me",
+			"DialogueConditionGroups": []
+		},
+		{
+			"ID": 9992,
+			"Line": "!FS!",
+			"Name": "Me",
+			"DialogueConditionGroups": []
+		},
+		{
+			"ID": 9993,
+			"Line": "!FS!",
+			"Name": "Me",
+			"DialogueConditionGroups": []
+		},
+		{
+			"ID": 9994,
+			"Line": "!FS!",
+			"Name": "Me",
+			"DialogueConditionGroups": []
+		},
+		{
+			"ID": 9995,
+			"Line": "!FS!",
+			"Name": "Me",
+			"DialogueConditionGroups": []
+		},
+		{
+			"ID": 9996,
+			"Line": "!FS!",
+			"Name": "Me",
+			"DialogueConditionGroups": []
+		},
+		{
+			"ID": 9950,
+			"Line": "!FS!\r Are you certain that is correct mortal, get it wrong and you may release me early! HAHAHA!",
+			"Name": "Montu",
+			"DialogueConditionGroups": []
+		},
+		{
+			"ID": 9951,
+			"Line": "!FS!\n !FS!",
+			"Name": "Me",
+			"DialogueConditionGroups": [
+				{
+					"NextLineID": 9953,
+					"DialogueConditions": [
+						{
+							"ConditionType": "FinalString",
+							"FinalStringValue": "In the name of the great unholy Anubis I command thee to calm thy anger and leave this plane"
+						}
+					]
+				},
+				{
+					"NextLineID": 9952,
+					"DialogueConditions": []
+				}
+			]
+		},
+				{
+			"ID": 9952,
+			"Line": "INCORRECT MORTAL! NOW FACE MY POWER",
+			"Name": "Montu",
+			"Event": "Lose",
+			"DialogueConditionGroups": []
+		},
+				{
+			"ID": 9953,
+			"Line": "WHAT!? HOW DID YOU KNOW THAT! NOOOOOOOO!",
+			"Name": "Montu",
+			"Event": "Win",
+			"DialogueConditionGroups": []
+		}
   ]
 }

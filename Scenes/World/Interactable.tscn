@@ -24,4 +24,5 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=523874294]
 stream = ExtResource("2_rfew6")
+volume_db = -80.0
 bus = &"SFX"
