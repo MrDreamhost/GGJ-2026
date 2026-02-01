@@ -195,10 +195,7 @@
 	  "Audio": "M_Mhm",
 	  "Name": "Proud Artisan",
 	  "FontConditionGroups": [],
-	  "ChangeFlags": [{
-		  "Flag": "s_metArtisan",
-		  "Value": true
-		}],
+	  "ChangeFlags": [],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 51,
 		  "DialogueConditions": [{
