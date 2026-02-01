@@ -14,9 +14,9 @@ grow_vertical = 2
 theme = ExtResource("1_853f1")
 script = ExtResource("1_tt5f1")
 ResetSaveButton = NodePath("HBoxContainer/VBoxContainer/ResetSaveButton")
-MasterSlider = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/HSlider")
-SFXSlider = NodePath("HBoxContainer/VBoxContainer/HBoxContainer2/HSlider")
-MusicSlider = NodePath("HBoxContainer/VBoxContainer/HBoxContainer3/HSlider")
+MasterSlider = NodePath("HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer/HSlider")
+SFXSlider = NodePath("HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer2/HSlider")
+MusicSlider = NodePath("HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer3/HSlider")
 audioPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=709534236]
@@ -60,45 +60,64 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Quit"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1076356587]
+[node name="Panel2" type="Panel" parent="HBoxContainer/VBoxContainer" unique_id=1651803137]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1695511991]
-custom_minimum_size = Vector2(45, 0)
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/Panel2" unique_id=1862790476]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Panel2/MarginContainer" unique_id=1313756196]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer" unique_id=1025220605]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=42968436]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 text = "Master"
 
-[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1798658278]
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=232293890]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 max_value = 1.0
 step = 0.05
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1548165558]
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer" unique_id=685203107]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=736550334]
-custom_minimum_size = Vector2(45, 0)
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1513208806]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 text = "SFX"
 
-[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=2023562356]
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1826297364]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 max_value = 1.0
 step = 0.05
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1049817171]
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer" unique_id=966990099]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1406766390]
-custom_minimum_size = Vector2(45, 0)
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1559828258]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 text = "Music"
 
-[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=743441317]
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=297277306]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1

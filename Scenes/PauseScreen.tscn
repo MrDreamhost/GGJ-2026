@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cp2qxycup62mc"]
 
 [ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="1_8uhfr"]
-[ext_resource type="Script" path="res://Scripts/UI/PauseScreen.cs" id="1_pwwx1"]
+[ext_resource type="Script" uid="uid://bs1dx3ohf7uqu" path="res://Scripts/UI/PauseScreen.cs" id="1_pwwx1"]
 
-[node name="PauseScreen" type="Control" unique_id=623124825 node_paths=PackedStringArray("canvasLayer")]
+[node name="PauseScreen" type="Control" unique_id=623124825 node_paths=PackedStringArray("canvasLayer", "MasterSlider", "SFXSlider", "MusicSlider")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +13,9 @@ grow_vertical = 2
 theme = ExtResource("1_8uhfr")
 script = ExtResource("1_pwwx1")
 canvasLayer = NodePath("CanvasLayer")
+MasterSlider = NodePath("CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer/HSlider")
+SFXSlider = NodePath("CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer2/HSlider")
+MusicSlider = NodePath("CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer3/HSlider")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1547096555]
 layer = 10
@@ -63,11 +66,6 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Resume"
 
-[node name="SettingsButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=2089665834]
-layout_mode = 2
-size_flags_vertical = 4
-text = "Settings"
-
 [node name="HowToPlayButton" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1812721382]
 layout_mode = 2
 size_flags_vertical = 4
@@ -83,8 +81,71 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Quit"
 
+[node name="Panel2" type="Panel" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=523881704]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel2" unique_id=2120181854]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer" unique_id=1621238132]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer" unique_id=1223181005]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1189520053]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "Master"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=54004854]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer" unique_id=1185317279]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=329404465]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1901641115]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer" unique_id=2024552077]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=856082527]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/HBoxContainer/VBoxContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=520656710]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+
 [connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/ResumeButton" to="." method="OnResumeButton"]
-[connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/SettingsButton" to="." method="OnSettingsButton"]
 [connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/HowToPlayButton" to="." method="OnHowToPlayButton"]
 [connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/BackToMainMenuButton" to="." method="OnBackToMenuButton"]
 [connection signal="button_up" from="CanvasLayer/HBoxContainer/VBoxContainer/QuitButton" to="." method="OnQuitButton"]

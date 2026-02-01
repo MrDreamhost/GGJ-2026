@@ -60,7 +60,16 @@ public partial class SaveManager : Node
 
     public void ResetSaveData()
     {
-        saveData = new Dictionary<string, string>();
+        Logger.Info("Start SaveData Reset");
+        var keys = saveData.Keys;
+        foreach (var key in keys)
+        {
+            if (!key.Contains("audio"))
+            {
+                saveData.Remove(key);
+            }
+        }
         WriteSaveData();
+        Logger.Info("Finsh SaveData Reset");
     }
 }

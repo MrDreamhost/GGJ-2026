@@ -16,14 +16,12 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private GameOverScreen winScreen = null;
     [Export] private double gameTimerSeconds = 300;
     private Timer gameTimer = null;
-    
     private int curMaskIndex = 0;
 
     //TODO save both inventory (and maybe flags?)
     [Export] private PlayerInventory inventory = null;
     [Export] private PlayerFlags flags = null;
     private State currentState = State.EIdle;
-
     private string nextIdleAnim = "";
 
     public enum State
@@ -83,7 +81,7 @@ public partial class PlayerCharacter : CharacterBody2D
         {
             Logger.Fatal("pauseScreen was not assigned on playerCharacter");
         }
-        
+
         if (gameOverScreen == null)
         {
             Logger.Fatal("gameOverScreen was not assigned on playerCharacter");
@@ -93,6 +91,7 @@ public partial class PlayerCharacter : CharacterBody2D
         {
             Logger.Fatal("winScreen was not assigned on PlayerCharacter");
         }
+
         nextIdleAnim = "Down_Idle";
         pauseScreen.DoHide();
         gameOverScreen.DoHide();
@@ -116,12 +115,9 @@ public partial class PlayerCharacter : CharacterBody2D
 
     public override void _Process(double delta)
     {
-        
         double timeLeft = gameTimer.TimeLeft;
-
         int mins = (int)(timeLeft / 60);
         int secs = (int)(timeLeft % 60);
-
         var timerLabel = UiManager.Instance.GetTimerLabel();
         if (timerLabel != null)
         {
@@ -181,6 +177,7 @@ public partial class PlayerCharacter : CharacterBody2D
                 {
                     currentState = State.EIdle;
                 }
+
                 Logger.Info("Setting state to {0} after unpause", currentState);
             }
         }
@@ -189,16 +186,16 @@ public partial class PlayerCharacter : CharacterBody2D
         {
             UiManager.Instance.SelectDialogueChoice(0);
         }
-        
+
         if (Input.IsActionJustReleased("choicebox_2") && currentState == State.EInDialogue)
         {
             UiManager.Instance.SelectDialogueChoice(1);
         }
+
         if (Input.IsActionJustReleased("choicebox_3") && currentState == State.EInDialogue)
         {
             UiManager.Instance.SelectDialogueChoice(2);
         }
-        
     }
 
     private void UpdateState()
@@ -240,12 +237,12 @@ public partial class PlayerCharacter : CharacterBody2D
                     Logger.Info("Setting state to idle");
                     currentState = State.EIdle;
                 }
+
                 break;
             case State.EInMenu:
                 footsteps.Stop();
                 playerSprite.Play(nextIdleAnim);
                 break;
-                
         }
     }
 
@@ -279,7 +276,7 @@ public partial class PlayerCharacter : CharacterBody2D
             playerSprite.SetFlipH(Velocity.X > 0);
             return;
         }
-        
+
         if (Velocity.Y > 0)
         {
             playerSprite.Play("Down_Walk");
@@ -400,12 +397,12 @@ public partial class PlayerCharacter : CharacterBody2D
     {
         SetState(State.EGameOver, "Game timer ended, locking player");
         Logger.DebugInfo("Start saving player");
-        var saveData =  SaveManager.Instance.GetSaveData();
+        var saveData = SaveManager.Instance.GetSaveData();
         foreach (var mask in maskData)
         {
             foreach (var flag in mask.UnlockConditionFlags)
             {
-                saveData[flag] = flags.GetFlag(flag).ToString();
+                saveData["flag_" + flag] = flags.GetFlag(flag).ToString();
             }
         }
 
@@ -420,12 +417,12 @@ public partial class PlayerCharacter : CharacterBody2D
     {
         SetState(State.EGameOver, "Player won, locking player");
         Logger.DebugInfo("Start saving player");
-        var saveData =  SaveManager.Instance.GetSaveData();
+        var saveData = SaveManager.Instance.GetSaveData();
         foreach (var mask in maskData)
         {
             foreach (var flag in mask.UnlockConditionFlags)
             {
-                saveData[flag] = flags.GetFlag(flag).ToString();
+                saveData["flag_" + flag] = flags.GetFlag(flag).ToString();
             }
         }
 
@@ -434,7 +431,6 @@ public partial class PlayerCharacter : CharacterBody2D
         Logger.DebugInfo("Finished saving player");
         winScreen.DoShow();
     }
-    
 
     private void LoadFromSaveData()
     {
@@ -443,11 +439,12 @@ public partial class PlayerCharacter : CharacterBody2D
         {
             return; //Nothing to load from save file if save file is empty
         }
-        
+
         foreach (KeyValuePair<string, string> entry in saveData)
         {
-            flags.SetFlag(entry.Key, Convert.ToBoolean(entry.Value));
+            if (!entry.Key.Contains("flag_")) continue;
+            var flagKey = entry.Key.Replace("flag_", "");
+            flags.SetFlag(flagKey, Convert.ToBoolean(entry.Value));
         }
-        
     }
 }

@@ -36,22 +36,41 @@ public partial class MainMenu : Node
         }
         
         UpdateResetSaveButtonVisibility();
+
+        var saveData = SaveManager.Instance.GetSaveData();
         
         var masterIndex = AudioServer.GetBusIndex("Master");
         var currentMasterDb = AudioServer.GetBusVolumeLinear(masterIndex);
         MasterSlider.Value = currentMasterDb;
-        Logger.Info("Master DB = {0}", currentMasterDb);
-        MasterSlider.ValueChanged += value => { OnVolumeSliderChanged(value, masterIndex); };
+        
+        var masterBusSaveName = "audio_masterSlider";
+        MasterSlider.ValueChanged += value => { OnVolumeSliderChanged(value, masterIndex, masterBusSaveName); };
+        if (saveData.ContainsKey(masterBusSaveName))
+        {
+            MasterSlider.SetValue(Convert.ToDouble(saveData[masterBusSaveName]));
+        }
         
         var SFXIndex = AudioServer.GetBusIndex("SFX");
         var currentSFXDb = AudioServer.GetBusVolumeLinear(SFXIndex);
         SFXSlider.Value = currentSFXDb;
-        SFXSlider.ValueChanged += value => { OnVolumeSliderChanged(value, SFXIndex); };
+        
+        var SFXBusSaveName = "audio_SFXSlider";
+        SFXSlider.ValueChanged += value => { OnVolumeSliderChanged(value, SFXIndex, SFXBusSaveName); };
+        if (saveData.ContainsKey(SFXBusSaveName))
+        {
+            SFXSlider.SetValue(Convert.ToDouble(saveData[SFXBusSaveName]));
+        }
         
         var MusicIndex = AudioServer.GetBusIndex("Music");
         var currentMusicDb = AudioServer.GetBusVolumeLinear(MusicIndex);
         MusicSlider.Value = currentMusicDb;
-        MusicSlider.ValueChanged += value => { OnVolumeSliderChanged(value, MusicIndex); };
+        var MusicBusSaveName = "audio_MusicSlider";
+        MusicSlider.ValueChanged += value => { OnVolumeSliderChanged(value, MusicIndex, MusicBusSaveName); };
+        if (saveData.ContainsKey(MusicBusSaveName))
+        {
+            MusicSlider.SetValue(Convert.ToDouble(saveData[MusicBusSaveName]));
+        }
+        
         
         base._Ready();
     }
@@ -59,10 +78,15 @@ public partial class MainMenu : Node
     private void UpdateResetSaveButtonVisibility()
     {
         ResetSaveButton.Show();
-        if (SaveManager.Instance.GetSaveData().Count == 0)
+        var saveData = SaveManager.Instance.GetSaveData();
+        foreach (var keyValue in saveData)
         {
-            ResetSaveButton.Hide();
+            if (!keyValue.Key.Contains("audio"))
+            {
+                return;
+            }
         }
+            ResetSaveButton.Hide();
     }
 
     public void OnPlayButtonPressed()
@@ -87,16 +111,17 @@ public partial class MainMenu : Node
         Logger.Info("TODO");
     }
     
-    private void OnVolumeSliderChanged(double value, int busIndex)
+    private void OnVolumeSliderChanged(double value, int busIndex, string busName)
     {
-        // Convert 0.0-1.0 slider value to Decibels
-        // We use Max(-80, ...) because LinearToDb(0) is -Infinity
         float dbValue = Mathf.LinearToDb((float)value);
         
         AudioServer.SetBusVolumeDb(busIndex, dbValue);
         Logger.Info("setting bus {0} volume to {1}", busIndex, dbValue);
 
-        // Mute the bus entirely if the volume is at 0
         AudioServer.SetBusMute(busIndex, value <= 0.0001f);
+
+        var saveData = SaveManager.Instance.GetSaveData();
+        saveData[busName] = value.ToString();
+        SaveManager.Instance.UpdateSaveData(saveData);
     }
 }
