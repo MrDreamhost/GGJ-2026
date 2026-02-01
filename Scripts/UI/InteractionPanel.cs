@@ -29,7 +29,7 @@ public partial class InteractionPanel : Panel
         }
         
         //Check for when re-opening interaction panel from dialogue end
-        if (textLabel.Text.Contains("NoShow"))
+        if (textLabel.Text.Contains("NoShow") || text == "")
         {
             DoHide();
             return;

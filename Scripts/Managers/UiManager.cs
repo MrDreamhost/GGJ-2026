@@ -17,9 +17,21 @@ public partial class UiManager : Node
 
     private ExplosionManager explosionManager;
 
+    private BlueFlame blueFlame;
+
     public override void _Ready()
     {
         Instance = this;
+    }
+
+    public void RegisterBlueFlame(BlueFlame flame)
+    {
+        blueFlame = flame;
+    }
+
+    public BlueFlame getBlueFlame()
+    {
+        return blueFlame;
     }
 
     public void RegisterExplosionManager(ExplosionManager explosionManager)

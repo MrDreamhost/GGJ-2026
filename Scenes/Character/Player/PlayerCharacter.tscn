@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://2jw8bkp17xrl" path="res://Scenes/GameOverScreen.tscn" id="11_ew8jb"]
 [ext_resource type="PackedScene" uid="uid://iwp82q5jdjmp" path="res://Scenes/WinScreen.tscn" id="12_61rfw"]
 [ext_resource type="AudioStream" uid="uid://klyfu14mdnki" path="res://Audio/Mask.wav" id="14_1m23f"]
+[ext_resource type="AudioStream" uid="uid://yyofv0vpok18" path="res://Audio/WinJingle.wav" id="15_wje6j"]
+[ext_resource type="AudioStream" uid="uid://blxk7tjp5f2r4" path="res://Audio/LoseJingle.wav" id="16_hc6lx"]
 
 [sub_resource type="Resource" id="Resource_7v36p"]
 script = ExtResource("2_7dca7")
@@ -48,7 +50,7 @@ height = 18.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlonj"]
 size = Vector2(20, 28)
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "music", "pauseScreen", "gameOverScreen", "winScreen", "inventory", "flags")]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=2092427089 node_paths=PackedStringArray("collider", "playerSprite", "footsteps", "music", "pauseScreen", "gameOverScreen", "winScreen", "winAudio", "loseAudio", "inventory", "flags")]
 script = ExtResource("1_q032g")
 baseSpeed = 200
 collider = NodePath("Area2D")
@@ -61,6 +63,8 @@ pauseScreen = NodePath("PauseScreen")
 gameOverScreen = NodePath("GameOverScreen")
 winScreen = NodePath("WinScreen")
 gameTimerSeconds = 300.0
+winAudio = NodePath("WinAudio")
+loseAudio = NodePath("LoseAudio")
 inventory = NodePath("Inventory")
 flags = NodePath("PlayerFlags")
 
@@ -110,3 +114,9 @@ script = ExtResource("5_l36xu")
 stream = ExtResource("14_1m23f")
 autoplay = true
 bus = &"Music"
+
+[node name="WinAudio" type="AudioStreamPlayer2D" parent="." unique_id=2035129808]
+stream = ExtResource("15_wje6j")
+
+[node name="LoseAudio" type="AudioStreamPlayer2D" parent="." unique_id=586131710]
+stream = ExtResource("16_hc6lx")

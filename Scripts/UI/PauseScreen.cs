@@ -84,7 +84,7 @@ public partial class PauseScreen : Node
 
     public void OnResumeButton()
     {
-        DoHide();
+        DoHide(); 
         UiManager.Instance.GetPlayer()?.SetState(PlayerCharacter.State.EIdle, "Resuming game from pause menu");
     }
 

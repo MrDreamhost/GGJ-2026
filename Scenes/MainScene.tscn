@@ -18,8 +18,11 @@
 [ext_resource type="AudioStream" uid="uid://ya3abi6i6axv" path="res://Audio/Workshop.wav" id="10_c1ier"]
 [ext_resource type="Texture2D" uid="uid://dohuj6sy2l7k1" path="res://Art/Sprites/FloatingSkull.png" id="11_6t1o7"]
 [ext_resource type="Texture2D" uid="uid://cjh4tk21oenmi" path="res://Art/Sprites/Characters/4/U_Special.png" id="11_xc4hf"]
-[ext_resource type="SpriteFrames" path="res://Art/UIAssets/In-Use/explosion_SF.tres" id="16_c1ier"]
+[ext_resource type="Script" uid="uid://cwagjste2yv6l" path="res://Scripts/World/ExplosionManager.cs" id="15_gyaec"]
+[ext_resource type="SpriteFrames" uid="uid://daf53p7nlblil" path="res://Art/UIAssets/In-Use/explosion_SF.tres" id="16_c1ier"]
 [ext_resource type="PackedScene" uid="uid://uwxxwwmbyxsh" path="res://Scenes/CharacterSelect.tscn" id="19_i0j58"]
+[ext_resource type="SpriteFrames" uid="uid://be87dho4htdi5" path="res://Art/UIAssets/In-Use/blue_explosion_SF.tres" id="21_p5ymy"]
+[ext_resource type="Script" uid="uid://c4m3raku57gh7" path="res://Scripts/World/BlueFlame.cs" id="22_3va76"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q68mp"]
 atlas = ExtResource("2_y4jh7")
@@ -394,6 +397,7 @@ speed_scale = 1.0
 flip_h = true
 
 [node name="Node" type="Node" parent="Interactable Objects/NPCs/Orb Room" unique_id=433764281]
+script = ExtResource("15_gyaec")
 
 [node name="Explosion" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=632270375]
 position = Vector2(-108, 952)
@@ -413,6 +417,476 @@ frame_progress = 0.48661214
 position = Vector2(-43, 917)
 sprite_frames = ExtResource("16_c1ier")
 frame_progress = 0.08021522
+
+[node name="Explosion5" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1114900140]
+position = Vector2(-112, 1027)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion6" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=681705957]
+position = Vector2(-54, 1066)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion7" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=711168900]
+position = Vector2(20, 1030)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion8" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1748734614]
+position = Vector2(-124, 983)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion9" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1857528138]
+position = Vector2(-96, 900)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion10" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=207312837]
+position = Vector2(36, 912)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion11" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=229570662]
+position = Vector2(-108, 952)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion12" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1024477088]
+position = Vector2(-108, 952)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion13" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=289528027]
+position = Vector2(-142, 913)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion14" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1385199920]
+position = Vector2(11, 946)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion15" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1591587880]
+position = Vector2(-26, 1023)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion16" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1495327062]
+position = Vector2(-8, 902)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion17" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1441488505]
+position = Vector2(-44, 881)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Entrance_Hall_Start" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=821954446]
+position = Vector2(-235, 7)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion19" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1690015528]
+position = Vector2(-196, -41)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion20" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1722420400]
+position = Vector2(-228, -108)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion21" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=44161419]
+position = Vector2(-267, -68)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion22" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1541201845]
+position = Vector2(-292, -20)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion18" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=619816906]
+position = Vector2(-49, 44)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion23" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1565509068]
+position = Vector2(-113, -18)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion24" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=793854472]
+position = Vector2(31, -102)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion25" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=634872802]
+position = Vector2(-58, -141)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion26" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1737748149]
+position = Vector2(-112, -176)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion27" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1325780928]
+position = Vector2(-133, -107)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion28" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=414094499]
+position = Vector2(-152, 34)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion29" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1250165712]
+position = Vector2(195, -49)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion30" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1716896272]
+position = Vector2(195, -107)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion31" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1592638142]
+position = Vector2(130, -158)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion32" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=690512649]
+position = Vector2(33, -199)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion33" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=34448058]
+position = Vector2(-219, -204)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion34" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1808802935]
+position = Vector2(-64, -194)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion35" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=944362400]
+position = Vector2(97, -94)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion36" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1981727064]
+position = Vector2(136, 8)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion37" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1573066715]
+position = Vector2(39, -32)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion38" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=442528601]
+position = Vector2(47, 34)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion39" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=186673612]
+position = Vector2(285, -165)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion40" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=597132987]
+position = Vector2(266, -81)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion41" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1437374735]
+position = Vector2(262, -4)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion42" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=982846245]
+position = Vector2(211, 49)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion43" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=735367825]
+position = Vector2(1184, -30)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion44" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1669781180]
+position = Vector2(1310, -40)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion45" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1188161555]
+position = Vector2(1269, -121)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion46" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1835257662]
+position = Vector2(1369, -268)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion47" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=172177949]
+position = Vector2(1199, -321)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion48" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=845106769]
+position = Vector2(1397, -256)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion49" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=400845520]
+position = Vector2(1456, -182)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion50" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1984994751]
+position = Vector2(1323, -110)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion51" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=930136921]
+position = Vector2(1190, -114)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion52" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=40171697]
+position = Vector2(1304, -325)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion53" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1923392744]
+position = Vector2(1461, -347)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion54" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1597821794]
+position = Vector2(1371, -319)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion55" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1194137489]
+position = Vector2(1208, -283)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion56" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=389062017]
+position = Vector2(1446, -238)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion57" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=543107625]
+position = Vector2(1323, -216)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion58" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=743627758]
+position = Vector2(1195, -204)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion59" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1161119004]
+position = Vector2(1357, -164)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion60" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1036095126]
+position = Vector2(1231, -146)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion61" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1219338258]
+position = Vector2(1441, -98)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion62" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=366148051]
+position = Vector2(1375, -30)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion63" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1827527391]
+position = Vector2(-1514, -42)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion64" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=222192525]
+position = Vector2(-1458, -48)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion65" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=797516309]
+position = Vector2(-1503, -107)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion66" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1403578256]
+position = Vector2(-1460, -165)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion67" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1888695997]
+position = Vector2(-1392, -224)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion68" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1649725721]
+position = Vector2(-1449, -132)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion69" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1999514768]
+position = Vector2(-1414, -64)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion70" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=851076002]
+position = Vector2(-1376, -107)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion71" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=343230483]
+position = Vector2(-1385, -160)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion72" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1273785975]
+position = Vector2(-1306, -97)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion73" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=389399937]
+position = Vector2(-1308, -16)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion74" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=415759978]
+position = Vector2(-1260, -66)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion75" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1644059134]
+position = Vector2(-1267, -124)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion76" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1586334108]
+position = Vector2(-1067, -90)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion77" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=466476901]
+position = Vector2(-1135, -129)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion78" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1931269456]
+position = Vector2(-1192, -85)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion79" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1293810960]
+position = Vector2(-1188, -30)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion80" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1035933430]
+position = Vector2(-1129, -74)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion81" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=213936347]
+position = Vector2(-1094, -24)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion82" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=775123699]
+position = Vector2(-1171, 76)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion83" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=2783825]
+position = Vector2(-1258, 52)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion84" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=368146891]
+position = Vector2(-1311, 79)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion85" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=473933156]
+position = Vector2(-1636, 19)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion86" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=189862363]
+position = Vector2(-1656, 60)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion87" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1603396829]
+position = Vector2(-1541, 73)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion88" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=538545873]
+position = Vector2(-1501, 44)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion89" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=454531510]
+position = Vector2(-1527, -10)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion90" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1484048879]
+position = Vector2(-1486, 3)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion91" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=424989387]
+position = Vector2(-1559, -48)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion92" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1135645679]
+position = Vector2(-1553, -89)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion93" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=993783011]
+position = Vector2(-1112, 71)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion94" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1620700188]
+position = Vector2(-1366, -199)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion95" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=59746170]
+position = Vector2(-1316, -59)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion96" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=122038124]
+position = Vector2(-1571, 18)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
+
+[node name="Explosion97" type="AnimatedSprite2D" parent="Interactable Objects/NPCs/Orb Room/Node" unique_id=1877162365]
+position = Vector2(-1605, -43)
+sprite_frames = ExtResource("16_c1ier")
+frame_progress = 0.71186477
 
 [node name="Objects" type="Node" parent="Interactable Objects" unique_id=173522546]
 
@@ -472,7 +946,15 @@ stream = ExtResource("8_4b75m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactable Objects/Objects/The Orb" unique_id=855788774]
 sprite_frames = SubResource("SpriteFrames_i0j58")
 autoplay = "default"
-frame_progress = 0.24878907
+frame_progress = 0.48429298
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactable Objects/Objects" unique_id=617892265 node_paths=PackedStringArray("orb")]
+position = Vector2(-55, 950)
+sprite_frames = ExtResource("21_p5ymy")
+frame = 10
+frame_progress = 1.0
+script = ExtResource("22_3va76")
+orb = NodePath("../The Orb")
 
 [node name="CharacterSelect" parent="." unique_id=125877908 instance=ExtResource("19_i0j58")]
 

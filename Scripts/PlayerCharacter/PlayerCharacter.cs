@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using Godot;
 using Godot.Collections;
 
@@ -18,6 +19,10 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private GameOverScreen gameOverScreen = null;
     [Export] private GameOverScreen winScreen = null;
     [Export] private double gameTimerSeconds = 30;
+    [Export] private int gameOverScreenDelaySeconds = 5;
+    [Export] private int winScreenDelaySeconds = 5;
+    [Export] private AudioStreamPlayer2D winAudio = null;
+    [Export] private AudioStreamPlayer2D loseAudio = null;
     private Timer gameTimer = null;
     private int curMaskIndex = 0;
     [Export] private PlayerInventory inventory = null;
@@ -62,6 +67,14 @@ public partial class PlayerCharacter : CharacterBody2D
         if (music == null)
         {
             Logger.Fatal("Music AudioStreamPlayer2D not assigned on playerCharacter");
+        }
+        if (winAudio == null)
+        {
+            Logger.Fatal("winAudio AudioStreamPlayer2D not assigned on playerCharacter");
+        }
+        if (loseAudio == null)
+        {
+            Logger.Fatal("LoseAudio AudioStreamPlayer2D not assigned on playerCharacter");
         }
 
         if (inventory == null)
@@ -392,6 +405,8 @@ public partial class PlayerCharacter : CharacterBody2D
     public void OnTimerEnd()
     {
         SetState(State.EGameOver, "Game timer ended, locking player");
+        loseAudio.Play();
+        playerSprite.Play(nextIdleAnim);
         Logger.DebugInfo("Start saving player");
         
         SaveGame();
@@ -400,9 +415,14 @@ public partial class PlayerCharacter : CharacterBody2D
         gameTimer.SetPaused(true);
         Logger.DebugInfo("Timer ended!");
         
-        UiManager.Instance.GetExplosionmanager().StartExplosions(50);
-        
-        //TODO show winscreen after timer
+        UiManager.Instance.GetExplosionmanager().StartExplosions(500);
+
+        ShowGameoverScreen();
+    }
+
+    public async void ShowGameoverScreen()
+    {
+        await Task.Delay(gameOverScreenDelaySeconds * 1000);
         gameOverScreen.DoShow();
     }
 
@@ -421,15 +441,25 @@ public partial class PlayerCharacter : CharacterBody2D
 
     public void OnWin()
     {
+        UiManager.Instance.GetInteractionPanel().DoHide();
+        winAudio.Play();
         SetState(State.EGameOver, "Player won, locking player");
         Logger.DebugInfo("Start saving player");
         
         SaveGame();
         Logger.DebugInfo("Finished saving player");
         
+        UiManager.Instance.getBlueFlame().OnWin();
         gameTimer.SetPaused(true);
+        ShowWinScreen();
+    }
+    
+    public async void ShowWinScreen()
+    {
+        await Task.Delay(winScreenDelaySeconds * 1000);
         winScreen.DoShow();
     }
+
 
     private void LoadFromSaveData()
     {
