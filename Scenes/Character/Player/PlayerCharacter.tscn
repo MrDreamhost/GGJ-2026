@@ -89,7 +89,7 @@ bus = &"SFX"
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1870548337]
 volume_db = -20.0
-bus = &"Music"
+bus = &"SFX"
 
 [node name="Inventory" type="Node" parent="." unique_id=1423886156]
 script = ExtResource("4_4vboh")

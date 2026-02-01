@@ -194,12 +194,7 @@
 	  "Line": "Huh?",
 	  "Audio": "M_Mhm",
 	  "Name": "Proud Artisan",
-	  "FontConditionGroups": [{
-		"Font": "gibberish", 
-		"FontConditions": [{
-			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 0}]
-	  }],
+	  "FontConditionGroups": [],
 	  "ChangeFlags": [{
 		  "Flag": "s_metArtisan",
 		  "Value": true
@@ -208,7 +203,7 @@
 		  "NextLineID": 51,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 1}
+			  "ConditionValue": 2}
 		  ]},
 		  {"NextLineID": 55,
 		  "DialogueConditions": [{
@@ -218,7 +213,7 @@
 		  {"NextLineID": 56,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 2}]
+			  "ConditionValue": 1}]
 		  }]
 	},
 	{
@@ -244,18 +239,13 @@
 	  "Line": "Who?",
 	  "Audio": "M_Surprise",
 	  "Name": "Proud Artisan",
-	  "FontConditionGroups": [{
-		"Font": "gibberish", 
-		"FontConditions": [{
-			"ConditionType": "Not_Has_Mask",
-			"ConditionValue": 0}]
-	  }],
+	  "FontConditionGroups": [],
 	  "ChangeFlags": [],
 	  "DialogueConditionGroups": [{
 		  "NextLineID": 51,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 1}
+			  "ConditionValue": 2}
 		  ]},
 		  {"NextLineID": 57,
 		  "DialogueConditions": [{
@@ -265,7 +255,7 @@
 		  {"NextLineID": 60,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 2}]
+			  "ConditionValue": 1}]
 		  }]
 	},
 	{
@@ -324,7 +314,7 @@
 		  "NextLineID": 51,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 1}
+			  "ConditionValue": 2}
 		  ]},
 		  {"NextLineID": 61,
 		  "DialogueConditions": [{
@@ -334,7 +324,7 @@
 		  {"NextLineID": 62,
 		  "DialogueConditions": [{
 			  "ConditionType": "Has_Mask",
-			  "ConditionValue": 2}]
+			  "ConditionValue": 1}]
 		  }]
 	},
 	{
@@ -368,14 +358,13 @@
 	},
 	{
 	  "ID": 102,
-	  "Line": "Watch out! The Skull of Montu can only be tamed with the following phrase:\nIn the name of the great unholy Anubis I command thee to calm thy anger and leave this plane!",
+	  "Line": "The Skull of Montu can only listens to these words:\nIn the name of the great unholy Anubis I command thee to calm thy anger and leave this plane!",
 	  "Audio": "Fem_Sigh",
 	  "Name": "Archmage",
 	  "FontConditionGroups": [{
 		"Font": "gibberish", 
 		"FontConditions": [{
-			"ConditionType": "Has_Mask",
-			"ConditionValue": 3}]
+			"ConditionType": "True"}]
 	  }],
 	  "ChangeFlags": [{
 		  "Flag": "s_metArchmage",
