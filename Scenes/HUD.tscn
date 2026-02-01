@@ -6,8 +6,11 @@
 [ext_resource type="Theme" uid="uid://boqxxkie5r1f6" path="res://resources/UITheme.tres" id="3_w0blg"]
 [ext_resource type="AudioStream" uid="uid://c0cyg85ifiyqx" path="res://Audio/Voice Reactions/Voice_Female_V1_Laugh_Short_Mono_08.wav" id="4_g8s2e"]
 [ext_resource type="Script" uid="uid://4xrlkhusjcn8" path="res://Scripts/UI/TimerLabel.cs" id="4_w0blg"]
+[ext_resource type="Texture2D" uid="uid://d3j67ph150ddx" path="res://Art/Sprites/one.png" id="5_ew2rj"]
 [ext_resource type="AudioStream" uid="uid://bdpmw5k7dj5sy" path="res://Audio/Voice Reactions/Voice_Female_V1_Reflexion_Mouth_Close_Mono_11.wav" id="5_t385i"]
+[ext_resource type="Texture2D" uid="uid://doauvbbrj4yb" path="res://Art/Sprites/two.png" id="6_2b6re"]
 [ext_resource type="AudioStream" uid="uid://beeo7gilgosl3" path="res://Audio/Voice Reactions/Voice_Female_V1_Sigh_Mono_14.wav" id="6_nfm57"]
+[ext_resource type="Texture2D" uid="uid://bqvh73tgoyhyp" path="res://Art/Sprites/three.png" id="7_2b6re"]
 [ext_resource type="AudioStream" uid="uid://dr810w6ttdy4j" path="res://Audio/Voice Reactions/Voice_Female_V2_Reflexion_Mouth_Close_Mono_05.wav" id="7_xuldq"]
 [ext_resource type="AudioStream" uid="uid://c2p2oermfooyn" path="res://Audio/Voice Reactions/Voice_Female_V2_Throat_Cleaning_Mono_01.wav" id="8_g6jqq"]
 [ext_resource type="AudioStream" uid="uid://co5xi004vy6ca" path="res://Audio/Voice Reactions/Voice_Male_V1_Laugh_Short_Mono_03.wav" id="9_5ouvn"]
@@ -264,29 +267,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ChoiceBoxID" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button/HBoxContainer" unique_id=2132754391]
-clip_contents = false
-custom_minimum_size = Vector2(20, 25)
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button/HBoxContainer" unique_id=374259118]
 layout_mode = 2
-mouse_filter = 1
-mouse_force_pass_scroll_events = false
-theme_override_font_sizes/normal_font_size = 10
-text = "1."
-scroll_active = false
-horizontal_alignment = 2
-vertical_alignment = 1
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button/HBoxContainer/MarginContainer" unique_id=1322573849]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_ew2rj")
+stretch_mode = 2
 
 [node name="ChoiceBox1Text" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button/HBoxContainer" unique_id=1149355460]
 clip_contents = false
 custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 1
 mouse_force_pass_scroll_events = false
 theme = SubResource("Theme_psnte")
-theme_override_font_sizes/normal_font_size = 10
 text = "test answer 1"
 scroll_active = false
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=825714940]
@@ -301,29 +303,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ChoiceBoxID" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button2/HBoxContainer" unique_id=1806028832]
-clip_contents = false
-custom_minimum_size = Vector2(20, 25)
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button2/HBoxContainer" unique_id=450964259]
 layout_mode = 2
-mouse_filter = 1
-mouse_force_pass_scroll_events = false
-theme_override_font_sizes/normal_font_size = 10
-text = "2."
-scroll_active = false
-horizontal_alignment = 2
-vertical_alignment = 1
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button2/HBoxContainer/MarginContainer" unique_id=1428926437]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_2b6re")
+stretch_mode = 2
 
 [node name="ChoiceBox2Text" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button2/HBoxContainer" unique_id=676795179]
 clip_contents = false
 custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 1
 mouse_force_pass_scroll_events = false
 theme = SubResource("Theme_psnte")
-theme_override_font_sizes/normal_font_size = 10
-text = "test answer 1"
+text = "test answer 1 asfdssd"
 scroll_active = false
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1723873869]
@@ -338,29 +339,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ChoiceBoxID" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button3/HBoxContainer" unique_id=351209549]
-clip_contents = false
-custom_minimum_size = Vector2(20, 25)
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button3/HBoxContainer" unique_id=715640499]
 layout_mode = 2
-mouse_filter = 1
-mouse_force_pass_scroll_events = false
-theme_override_font_sizes/normal_font_size = 10
-text = "3."
-scroll_active = false
-horizontal_alignment = 2
-vertical_alignment = 1
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button3/HBoxContainer/MarginContainer" unique_id=799915320]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_2b6re")
+stretch_mode = 2
 
 [node name="ChoiceBox3Text" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button3/HBoxContainer" unique_id=647324935]
 clip_contents = false
 custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 1
 mouse_force_pass_scroll_events = false
 theme = SubResource("Theme_psnte")
-theme_override_font_sizes/normal_font_size = 10
 text = "test answer 1"
 scroll_active = false
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1341178303]
